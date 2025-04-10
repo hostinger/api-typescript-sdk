@@ -6,25 +6,6 @@ on:
       - main
 
 jobs:
-  npmjs:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
-          registry-url: 'https://registry.npmjs.org'
-
-      - run: npm install
-
-      - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
   github:
     runs-on: ubuntu-latest
     permissions:
@@ -40,8 +21,6 @@ jobs:
           scope: '@hostinger'
 
       - run: npm install
-
-      - run: cat .npmrc
 
       - run: npm publish --provenance --access public
         env:
