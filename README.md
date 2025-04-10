@@ -1,4 +1,4 @@
-## hostinger-api@0.0.3
+## hostinger-api@0.0.4
 
 For more information, please visit [https://developers.hostinger.com](https://developers.hostinger.com).
 
