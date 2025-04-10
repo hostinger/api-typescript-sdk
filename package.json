@@ -1,0 +1,34 @@
+{
+  "name": "hostinger-api",
+  "version": "0.0.6",
+  "description": "Hostinger API TypeScript SDK",
+  "author": "Hostinger",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hostinger/api-typescript-sdk.git"
+  },
+  "keywords": [
+    "hostinger",
+    "openapi",
+    "typescript",
+    "sdk",
+    "rest",
+    "api"
+  ],
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "module": "./dist/esm/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc && tsc -p tsconfig.esm.json",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "axios": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "12.11.5 - 12.20.42",
+    "typescript": "^4.0 || ^5.0"
+  }
+}
