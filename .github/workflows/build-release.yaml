@@ -6,8 +6,28 @@ on:
       - main
 
 jobs:
-  npmjs:
+  release:
     runs-on: ubuntu-latest
+    steps:
+      - name: Repo checkout
+        uses: actions/checkout@v4
+
+      - name: Bump version and push tag
+        id: bump
+        uses: hennejg/github-tag-action@v4.3.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          release_branches: main
+
+      - name: Release tag
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.bump.outputs.new_tag }}
+          generateReleaseNotes: true
+
+  publish-npmjs:
+    runs-on: ubuntu-latest
+    needs: [release]
     permissions:
       contents: read
       id-token: write
@@ -27,8 +47,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-  github:
+  publish-github:
     runs-on: ubuntu-latest
+    needs: [release]
     permissions:
       contents: read
       id-token: write
