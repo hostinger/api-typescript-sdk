@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **status** | **string** | Raw output from docker compose ps command showing service count and states | [optional] [default to undefined]
 **state** | **string** | Derived project state parsed from the raw docker compose status | [optional] [default to undefined]
 **path** | **string** | Full filesystem path to the docker-compose.yml file | [optional] [default to undefined]
+**containers** | [**Array&lt;VPSV1DockerManagerContainerResource&gt;**](VPSV1DockerManagerContainerResource.md) | Array of [&#x60;VPS.V1.DockerManager.ContainerResource&#x60;](#model/vpsv1dockermanagercontainerresource) | [optional] [default to undefined]
 
 ## Example
 
@@ -20,6 +21,7 @@ const instance: VPSV1DockerManagerProjectResource = {
     status,
     state,
     path,
+    containers,
 };
 ```
 

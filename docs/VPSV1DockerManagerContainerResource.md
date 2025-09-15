@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **command** | **string** | Command being executed inside the container (may be truncated with ...) | [optional] [default to undefined]
 **status** | **string** | Human-readable container status including uptime, exit codes, or error information | [optional] [default to undefined]
 **state** | **string** | Programmatic container lifecycle state for automated processing | [optional] [default to undefined]
+**health** | **string** | Container health status | [optional] [default to undefined]
 **ports** | [**Array&lt;VPSV1DockerManagerContainerPortResource&gt;**](VPSV1DockerManagerContainerPortResource.md) | Array of [&#x60;VPS.V1.DockerManager.ContainerPortResource&#x60;](#model/vpsv1dockermanagercontainerportresource) | [optional] [default to undefined]
 **stats** | [**VPSV1DockerManagerContainerStatsResource**](VPSV1DockerManagerContainerStatsResource.md) |  | [optional] [default to undefined]
 
@@ -26,6 +27,7 @@ const instance: VPSV1DockerManagerContainerResource = {
     command,
     status,
     state,
+    health,
     ports,
     stats,
 };

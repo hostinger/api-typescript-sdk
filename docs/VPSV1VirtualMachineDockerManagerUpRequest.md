@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **project_name** | **string** | Docker Compose project name using alphanumeric characters, dashes, and underscores only | [default to undefined]
 **content** | **string** | URL pointing to docker-compose.yaml file, Github repository or raw YAML content of the compose file | [default to undefined]
+**environment** | **string** | Project environment variables | [optional] [default to undefined]
 
 ## Example
 
@@ -16,6 +17,7 @@ import { VPSV1VirtualMachineDockerManagerUpRequest } from 'hostinger-api-sdk';
 const instance: VPSV1VirtualMachineDockerManagerUpRequest = {
     project_name,
     content,
+    environment,
 };
 ```
 

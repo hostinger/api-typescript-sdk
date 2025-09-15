@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **number** | Snapshot ID | [optional] [default to undefined]
+**restore_time** | **number** | Estimated snapshot restore time in seconds | [optional] [default to undefined]
 **created_at** | **string** |  | [optional] [default to undefined]
 **expires_at** | **string** |  | [optional] [default to undefined]
 
@@ -16,6 +17,7 @@ import { VPSV1SnapshotSnapshotResource } from 'hostinger-api-sdk';
 
 const instance: VPSV1SnapshotSnapshotResource = {
     id,
+    restore_time,
     created_at,
     expires_at,
 };

@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content** | **string** | Contents of docker-compose file | [optional] [default to undefined]
+**environment** | **string** | Project environment variables | [optional] [default to undefined]
 
 ## Example
 
@@ -14,6 +15,7 @@ import { VPSV1DockerManagerContentResource } from 'hostinger-api-sdk';
 
 const instance: VPSV1DockerManagerContentResource = {
     content,
+    environment,
 };
 ```
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **id** | **number** | Virtual machine ID | [optional] [default to undefined]
 **firewall_group_id** | **number** | Active firewall ID, &#x60;null&#x60; if disabled | [optional] [default to undefined]
 **subscription_id** | **string** | Subscription ID | [optional] [default to undefined]
+**data_center_id** | **number** | Data center ID | [optional] [default to undefined]
 **plan** | **string** | VPS plan name | [optional] [default to undefined]
 **hostname** | **string** |  | [optional] [default to undefined]
 **state** | **string** |  | [optional] [default to undefined]
@@ -32,6 +33,7 @@ const instance: VPSV1VirtualMachineVirtualMachineResource = {
     id,
     firewall_group_id,
     subscription_id,
+    data_center_id,
     plan,
     hostname,
     state,

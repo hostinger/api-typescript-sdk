@@ -1,9 +1,9 @@
-## hostinger-api-sdk@0.0.13
+## hostinger-api-sdk@0.0.15
 
 For more information, please visit [https://developers.hostinger.com](https://developers.hostinger.com).
 
 ### Usage
 
 ```
-npm install hostinger-api-sdk@0.0.13 --save
+npm install hostinger-api-sdk@0.0.15 --save
 ```
