@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **email** | **string** |  | [default to undefined]
 **name** | **string** |  | [optional] [default to undefined]
 **surname** | **string** |  | [optional] [default to undefined]
-**group_uuids** | **Array&lt;string&gt;** |  | [optional] [default to undefined]
+**phone** | **string** | Phone number in E.164 format (leading \&quot;+\&quot; then 7-15 digits) | [optional] [default to undefined]
 **note** | **string** |  | [optional] [default to undefined]
 
 ## Example
@@ -20,7 +20,7 @@ const instance: ReachV1ContactsStoreRequest = {
     email,
     name,
     surname,
-    group_uuids,
+    phone,
     note,
 };
 ```

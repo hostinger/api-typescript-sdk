@@ -5,14 +5,15 @@ All URIs are relative to *https://developers.hostinger.com*
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
 |[**createANewContactV1**](#createanewcontactv1) | **POST** /api/reach/v1/contacts | Create a new contact|
+|[**createNewContactsV1**](#createnewcontactsv1) | **POST** /api/reach/v1/profiles/{profileUuid}/contacts | Create new contacts|
 |[**deleteAContactV1**](#deleteacontactv1) | **DELETE** /api/reach/v1/contacts/{uuid} | Delete a contact|
 |[**listContactGroupsV1**](#listcontactgroupsv1) | **GET** /api/reach/v1/contacts/groups | List contact groups|
 |[**listContactsV1**](#listcontactsv1) | **GET** /api/reach/v1/contacts | List contacts|
 
 # **createANewContactV1**
-> ReachV1ContactsContactResource createANewContactV1(reachV1ContactsStoreRequest)
+> CommonSuccessEmptyResource createANewContactV1(reachV1ContactsStoreRequest)
 
-Create a new contact in the email marketing system.  This endpoint allows you to create a new contact with basic information like name, email, and surname. You can optionally assign the contact to specific groups and add notes.  The contact will be automatically subscribed to email communications.
+Create a new contact in the email marketing system.  This endpoint allows you to create a new contact with basic information like name, email, and surname.  If double opt-in is enabled, the contact will be created with a pending status and a confirmation email will be sent.
 
 ### Example
 
@@ -42,7 +43,7 @@ const { status, data } = await apiInstance.createANewContactV1(
 
 ### Return type
 
-**ReachV1ContactsContactResource**
+**CommonSuccessEmptyResource**
 
 ### Authorization
 
@@ -57,7 +58,65 @@ const { status, data } = await apiInstance.createANewContactV1(
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-|**200** | Success response |  -  |
+|**200** | Success empty response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **createNewContactsV1**
+> CommonSuccessEmptyResource createNewContactsV1(reachV1ContactsStoreRequest)
+
+Create a new contact in the email marketing system.  This endpoint allows you to create a new contact with basic information like name, email, and surname.  If double opt-in is enabled, the contact will be created with a pending status and a confirmation email will be sent.
+
+### Example
+
+```typescript
+import {
+    ReachContactsApi,
+    Configuration,
+    ReachV1ContactsStoreRequest
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new ReachContactsApi(configuration);
+
+let profileUuid: string; //Profile uuid parameter (default to undefined)
+let reachV1ContactsStoreRequest: ReachV1ContactsStoreRequest; //
+
+const { status, data } = await apiInstance.createNewContactsV1(
+    profileUuid,
+    reachV1ContactsStoreRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **reachV1ContactsStoreRequest** | **ReachV1ContactsStoreRequest**|  | |
+| **profileUuid** | [**string**] | Profile uuid parameter | defaults to undefined|
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success empty response |  -  |
 |**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |

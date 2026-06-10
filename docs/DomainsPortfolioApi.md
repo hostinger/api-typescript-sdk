@@ -327,7 +327,7 @@ This endpoint does not have any parameters.
 # **purchaseNewDomainV1**
 > BillingV1OrderOrderResource purchaseNewDomainV1(domainsV1PortfolioPurchaseRequest)
 
-Purchase and register a new domain name.  If registration fails, login to [hPanel](https://hpanel.hostinger.com/) and check domain registration status.  If no payment method is provided, your default payment method will be used automatically.  If no WHOIS information is provided, default contact information for that TLD will be used.  Before making request, ensure WHOIS information for desired TLD exists in your account.  Some TLDs require `additional_details` to be provided and these will be validated before completing purchase.  Use this endpoint to register new domains for users.
+Purchase and register a new domain name.  If registration fails, login to [hPanel](https://hpanel.hostinger.com/) and check domain registration status.  If no payment method is provided, your default payment method will be used automatically.  If no WHOIS information is provided, default contact information for that TLD will be used. Before making request, ensure WHOIS information for desired TLD exists in your account.  Some TLDs require `additional_details` to be provided and these will be validated before completing purchase.  Use this endpoint to register new domains for users.
 
 ### Example
 

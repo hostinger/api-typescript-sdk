@@ -18,7 +18,7 @@ All URIs are relative to *https://developers.hostinger.com*
 # **createNewProjectV1**
 > VPSV1ActionActionResource createNewProjectV1(vPSV1VirtualMachineDockerManagerUpRequest)
 
-Deploy new project from docker-compose.yaml contents or download contents from URL.   URL can be Github repository url in format https://github.com/[user]/[repo] and it will be automatically resolved to  docker-compose.yaml file in master branch. Any other URL provided must return docker-compose.yaml file contents.  If project with the same name already exists, existing project will be replaced.
+Deploy new project from docker-compose.yaml contents or download contents from URL.   URL can be Github repository url in format https://github.com/[user]/[repo] and it will be automatically resolved to docker-compose.yaml file in master branch. Any other URL provided must return docker-compose.yaml file contents.  If project with the same name already exists, existing project will be replaced.
 
 ### Example
 
@@ -133,7 +133,7 @@ const { status, data } = await apiInstance.deleteProjectV1(
 # **getProjectContainersV1**
 > Array<VPSV1DockerManagerContainerResource> getProjectContainersV1()
 
-Retrieves a list of all containers belonging to a specific Docker Compose project on the virtual machine.   This endpoint returns detailed information about each container including their current status, port mappings, and runtime configuration.   Use this to monitor the health and state of all services within your Docker Compose project.
+Retrieves a list of all containers belonging to a specific Docker Compose project on the virtual machine.   This endpoint returns detailed information about each container including their current status, port mappings, and runtime configuration.  Use this to monitor the health and state of all services within your Docker Compose project.
 
 ### Example
 
@@ -190,7 +190,7 @@ const { status, data } = await apiInstance.getProjectContainersV1(
 # **getProjectContentsV1**
 > VPSV1DockerManagerContentResource getProjectContentsV1()
 
-Retrieves the complete project information including the docker-compose.yml file contents, project metadata, and current deployment status.   This endpoint provides the full configuration and state details of a specific Docker Compose project.   Use this to inspect project settings, review the compose file, or check the overall project health.
+Retrieves the complete project information including the docker-compose.yml file contents, project metadata, and current deployment status.  This endpoint provides the full configuration and state details of a specific Docker Compose project.   Use this to inspect project settings, review the compose file, or check the overall project health.
 
 ### Example
 
@@ -247,7 +247,7 @@ const { status, data } = await apiInstance.getProjectContentsV1(
 # **getProjectListV1**
 > Array<VPSV1DockerManagerProjectResource> getProjectListV1()
 
-Retrieves a list of all Docker Compose projects currently deployed on the virtual machine.   This endpoint returns basic information about each project including name, status, file path and list of containers with  details about their names, image, status, health and ports. Container stats are omitted in this endpoint. If you need to get detailed information about container with stats included, use the `Get project containers` endpoint.   Use this to get an overview of all Docker projects on your VPS instance.
+Retrieves a list of all Docker Compose projects currently deployed on the virtual machine.   This endpoint returns basic information about each project including name, status, file path and list of containers with details about their names, image, status, health and ports. Container stats are omitted in this endpoint. If you need to get detailed information about container with stats included, use the `Get project containers` endpoint.  Use this to get an overview of all Docker projects on your VPS instance.
 
 ### Example
 
@@ -358,7 +358,7 @@ const { status, data } = await apiInstance.getProjectLogsV1(
 # **restartProjectV1**
 > VPSV1ActionActionResource restartProjectV1()
 
-Restarts all services in a Docker Compose project by stopping and starting containers in the correct dependency order.   This operation preserves data volumes and network configurations while refreshing the running containers.   Use this to apply configuration changes or recover from service failures.
+Restarts all services in a Docker Compose project by stopping and starting containers in the correct dependency order.  This operation preserves data volumes and network configurations while refreshing the running containers.   Use this to apply configuration changes or recover from service failures.
 
 ### Example
 
@@ -472,7 +472,7 @@ const { status, data } = await apiInstance.startProjectV1(
 # **stopProjectV1**
 > VPSV1ActionActionResource stopProjectV1()
 
-Stops all running services in a Docker Compose project while preserving container configurations and data volumes.   This operation gracefully shuts down containers in reverse dependency order.   Use this to temporarily halt a project without removing data or configurations.
+Stops all running services in a Docker Compose project while preserving container configurations and data volumes.  This operation gracefully shuts down containers in reverse dependency order.   Use this to temporarily halt a project without removing data or configurations.
 
 ### Example
 
@@ -529,7 +529,7 @@ const { status, data } = await apiInstance.stopProjectV1(
 # **updateProjectV1**
 > VPSV1ActionActionResource updateProjectV1()
 
-Updates a Docker Compose project by pulling the latest image versions and recreating containers with new configurations.   This operation preserves data volumes while applying changes from the compose file.   Use this to deploy application updates, apply configuration changes, or refresh container images to their latest versions.
+Updates a Docker Compose project by pulling the latest image versions and recreating containers with new configurations.  This operation preserves data volumes while applying changes from the compose file.   Use this to deploy application updates, apply configuration changes, or refresh container images to their latest versions.
 
 ### Example
 
