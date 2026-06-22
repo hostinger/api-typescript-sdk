@@ -1,4 +1,4 @@
-# ReachListSegmentContactsV1200Response
+# ReachListProfileSegmentContactsV1200Response
 
 
 ## Properties
@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachListSegmentContactsV1200Response } from 'hostinger-api-sdk';
+import { ReachListProfileSegmentContactsV1200Response } from 'hostinger-api-sdk';
 
-const instance: ReachListSegmentContactsV1200Response = {
+const instance: ReachListProfileSegmentContactsV1200Response = {
     data,
     meta,
 };

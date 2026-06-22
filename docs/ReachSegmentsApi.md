@@ -6,6 +6,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |------------- | ------------- | -------------|
 |[**createANewContactSegmentV1**](#createanewcontactsegmentv1) | **POST** /api/reach/v1/segmentation/segments | Create a new contact segment|
 |[**getSegmentDetailsV1**](#getsegmentdetailsv1) | **GET** /api/reach/v1/segmentation/segments/{segmentUuid} | Get segment details|
+|[**listProfileSegmentContactsV1**](#listprofilesegmentcontactsv1) | **GET** /api/reach/v1/profiles/{profileUuid}/segmentation/segments/{segmentUuid}/contacts | List profile segment contacts|
 |[**listSegmentContactsV1**](#listsegmentcontactsv1) | **GET** /api/reach/v1/segmentation/segments/{segmentUuid}/contacts | List segment contacts|
 |[**listSegmentsV1**](#listsegmentsv1) | **GET** /api/reach/v1/segmentation/segments | List segments|
 
@@ -117,8 +118,70 @@ const { status, data } = await apiInstance.getSegmentDetailsV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **listProfileSegmentContactsV1**
+> ReachListProfileSegmentContactsV1200Response listProfileSegmentContactsV1()
+
+Retrieve contacts associated with a specific segment for a given profile.  This endpoint allows you to fetch and filter contacts that belong to a particular segment, identified by its UUID, scoped to a specific profile.
+
+### Example
+
+```typescript
+import {
+    ReachSegmentsApi,
+    Configuration
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new ReachSegmentsApi(configuration);
+
+let profileUuid: string; //Profile uuid parameter (default to undefined)
+let segmentUuid: string; //Segment uuid parameter (default to undefined)
+let page: number; //Page number (optional) (default to undefined)
+let perPage: number; //Number of items per page (optional) (default to 25)
+
+const { status, data } = await apiInstance.listProfileSegmentContactsV1(
+    profileUuid,
+    segmentUuid,
+    page,
+    perPage
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **profileUuid** | [**string**] | Profile uuid parameter | defaults to undefined|
+| **segmentUuid** | [**string**] | Segment uuid parameter | defaults to undefined|
+| **page** | [**number**] | Page number | (optional) defaults to undefined|
+| **perPage** | [**number**] | Number of items per page | (optional) defaults to 25|
+
+
+### Return type
+
+**ReachListProfileSegmentContactsV1200Response**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **listSegmentContactsV1**
-> ReachListSegmentContactsV1200Response listSegmentContactsV1()
+> ReachListProfileSegmentContactsV1200Response listSegmentContactsV1()
 
 Retrieve contacts associated with a specific segment.  This endpoint allows you to fetch and filter contacts that belong to a particular segment, identified by its UUID.
 
@@ -155,7 +218,7 @@ const { status, data } = await apiInstance.listSegmentContactsV1(
 
 ### Return type
 
-**ReachListSegmentContactsV1200Response**
+**ReachListProfileSegmentContactsV1200Response**
 
 ### Authorization
 
