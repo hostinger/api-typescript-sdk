@@ -5,9 +5,12 @@ All URIs are relative to *https://developers.hostinger.com*
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
 |[**changeDatabasePasswordV1**](#changedatabasepasswordv1) | **PATCH** /api/hosting/v1/accounts/{username}/databases/{name}/change-password | Change database password|
+|[**createAccountDatabaseRemoteConnectionV1**](#createaccountdatabaseremoteconnectionv1) | **POST** /api/hosting/v1/accounts/{username}/databases/{name}/remote-connections | Create account database remote connection|
 |[**createAccountDatabaseV1**](#createaccountdatabasev1) | **POST** /api/hosting/v1/accounts/{username}/databases | Create account database|
+|[**deleteAccountDatabaseRemoteConnectionV1**](#deleteaccountdatabaseremoteconnectionv1) | **DELETE** /api/hosting/v1/accounts/{username}/databases/{name}/remote-connections | Delete account database remote connection|
 |[**deleteAccountDatabaseV1**](#deleteaccountdatabasev1) | **DELETE** /api/hosting/v1/accounts/{username}/databases/{name} | Delete account database|
 |[**getPhpMyAdminLinkV1**](#getphpmyadminlinkv1) | **GET** /api/hosting/v1/accounts/{username}/databases/{name}/phpmyadmin-link | Get phpMyAdmin link|
+|[**listAccountDatabaseRemoteConnectionsV1**](#listaccountdatabaseremoteconnectionsv1) | **GET** /api/hosting/v1/accounts/{username}/databases/remote-connections | List account database remote connections|
 |[**listAccountDatabasesV1**](#listaccountdatabasesv1) | **GET** /api/hosting/v1/accounts/{username}/databases | List account databases|
 |[**repairDatabaseV1**](#repairdatabasev1) | **PATCH** /api/hosting/v1/accounts/{username}/databases/{name}/repair | Repair database|
 
@@ -44,6 +47,67 @@ const { status, data } = await apiInstance.changeDatabasePasswordV1(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **hostingV1DatabasesChangeDatabasePasswordRequest** | **HostingV1DatabasesChangeDatabasePasswordRequest**|  | |
+| **username** | [**string**] |  | defaults to undefined|
+| **name** | [**string**] | Full database name as returned by the list databases endpoint. | defaults to undefined|
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success empty response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **createAccountDatabaseRemoteConnectionV1**
+> CommonSuccessEmptyResource createAccountDatabaseRemoteConnectionV1(hostingV1DatabasesRemoteConnectionsCreateRemoteConnectionRequest)
+
+Allows a remote host to connect to the specified database.  Provide an IPv4/IPv6 address, or \"%\" to allow any host. The database name must be the full name returned by the list databases endpoint.
+
+### Example
+
+```typescript
+import {
+    HostingDatabasesApi,
+    Configuration,
+    HostingV1DatabasesRemoteConnectionsCreateRemoteConnectionRequest
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingDatabasesApi(configuration);
+
+let username: string; // (default to undefined)
+let name: string; //Full database name as returned by the list databases endpoint. (default to undefined)
+let hostingV1DatabasesRemoteConnectionsCreateRemoteConnectionRequest: HostingV1DatabasesRemoteConnectionsCreateRemoteConnectionRequest; //
+
+const { status, data } = await apiInstance.createAccountDatabaseRemoteConnectionV1(
+    username,
+    name,
+    hostingV1DatabasesRemoteConnectionsCreateRemoteConnectionRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **hostingV1DatabasesRemoteConnectionsCreateRemoteConnectionRequest** | **HostingV1DatabasesRemoteConnectionsCreateRemoteConnectionRequest**|  | |
 | **username** | [**string**] |  | defaults to undefined|
 | **name** | [**string**] | Full database name as returned by the list databases endpoint. | defaults to undefined|
 
@@ -125,6 +189,65 @@ const { status, data } = await apiInstance.createAccountDatabaseV1(
 |-------------|-------------|------------------|
 |**200** | Success empty response |  -  |
 |**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteAccountDatabaseRemoteConnectionV1**
+> CommonSuccessEmptyResource deleteAccountDatabaseRemoteConnectionV1()
+
+Permanently removes a remote-access rule, revoking the given host\'s remote access to the database.  Identify the rule with the required ip query parameter (the IPv4/IPv6 address, or \"%\", exactly as returned by the list remote connections endpoint). The database name must be the full name returned by the list databases endpoint.
+
+### Example
+
+```typescript
+import {
+    HostingDatabasesApi,
+    Configuration
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingDatabasesApi(configuration);
+
+let username: string; // (default to undefined)
+let name: string; //Full database name as returned by the list databases endpoint. (default to undefined)
+let ip: string; //Remote host to revoke: the IPv4/IPv6 address, or \"%\", exactly as returned by the list remote connections endpoint. (default to undefined)
+
+const { status, data } = await apiInstance.deleteAccountDatabaseRemoteConnectionV1(
+    username,
+    name,
+    ip
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **username** | [**string**] |  | defaults to undefined|
+| **name** | [**string**] | Full database name as returned by the list databases endpoint. | defaults to undefined|
+| **ip** | [**string**] | Remote host to revoke: the IPv4/IPv6 address, or \&quot;%\&quot;, exactly as returned by the list remote connections endpoint. | defaults to undefined|
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success empty response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
 
@@ -222,6 +345,62 @@ const { status, data } = await apiInstance.getPhpMyAdminLinkV1(
 ### Return type
 
 **HostingV1DatabasesPhpMyAdminLinkResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **listAccountDatabaseRemoteConnectionsV1**
+> Array<HostingV1DatabasesRemoteConnectionsRemoteConnectionResource> listAccountDatabaseRemoteConnectionsV1()
+
+Returns the remote-access rules for the specified account: the remote hosts (IPv4/IPv6 addresses, or \"%\" for any host) allowed to connect to the account databases.  Use the domain filter to only return rules for databases assigned to a specific domain.
+
+### Example
+
+```typescript
+import {
+    HostingDatabasesApi,
+    Configuration
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingDatabasesApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Filter remote connections by the domain the database is assigned to. Rules for databases not assigned to any domain are always included. (optional) (default to undefined)
+
+const { status, data } = await apiInstance.listAccountDatabaseRemoteConnectionsV1(
+    username,
+    domain
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Filter remote connections by the domain the database is assigned to. Rules for databases not assigned to any domain are always included. | (optional) defaults to undefined|
+
+
+### Return type
+
+**Array<HostingV1DatabasesRemoteConnectionsRemoteConnectionResource>**
 
 ### Authorization
 
