@@ -1,4 +1,4 @@
-# HostingV1WordpressWordpressInstallationResource
+# WordPressV1InstallationsWordPressInstallationResource
 
 
 ## Properties
@@ -21,9 +21,9 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1WordpressWordpressInstallationResource } from 'hostinger-api-sdk';
+import { WordPressV1InstallationsWordPressInstallationResource } from 'hostinger-api-sdk';
 
-const instance: HostingV1WordpressWordpressInstallationResource = {
+const instance: WordPressV1InstallationsWordPressInstallationResource = {
     id,
     username,
     domain,

@@ -1,4 +1,4 @@
-# HostingV1WordpressInstallWordpressRequestDatabase
+# WordPressV1InstallationsInstallWordPressRequestDatabase
 
 Optional. If the named database already exists, it will be used for this WordPress install. Otherwise a new database is created with a generated name and random credentials.
 
@@ -12,9 +12,9 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1WordpressInstallWordpressRequestDatabase } from 'hostinger-api-sdk';
+import { WordPressV1InstallationsInstallWordPressRequestDatabase } from 'hostinger-api-sdk';
 
-const instance: HostingV1WordpressInstallWordpressRequestDatabase = {
+const instance: WordPressV1InstallationsInstallWordPressRequestDatabase = {
     name,
     password,
 };

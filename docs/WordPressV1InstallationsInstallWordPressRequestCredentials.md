@@ -1,4 +1,4 @@
-# HostingV1WordpressInstallWordpressRequestCredentials
+# WordPressV1InstallationsInstallWordPressRequestCredentials
 
 WordPress admin credentials
 
@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1WordpressInstallWordpressRequestCredentials } from 'hostinger-api-sdk';
+import { WordPressV1InstallationsInstallWordPressRequestCredentials } from 'hostinger-api-sdk';
 
-const instance: HostingV1WordpressInstallWordpressRequestCredentials = {
+const instance: WordPressV1InstallationsInstallWordPressRequestCredentials = {
     email,
     login,
     password,
