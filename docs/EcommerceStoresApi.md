@@ -6,6 +6,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |------------- | ------------- | -------------|
 |[**createStoreV1**](#createstorev1) | **POST** /api/ecommerce/v1/stores | Create store|
 |[**deleteStoreV1**](#deletestorev1) | **DELETE** /api/ecommerce/v1/stores/{store_id} | Delete store|
+|[**getStoreMetadataV1**](#getstoremetadatav1) | **GET** /api/ecommerce/v1/stores/{store_id}/metadata | Get store metadata|
 |[**getStoresV1**](#getstoresv1) | **GET** /api/ecommerce/v1/stores | Get stores|
 
 # **createStoreV1**
@@ -96,6 +97,59 @@ const { status, data } = await apiInstance.deleteStoreV1(
 ### Return type
 
 **EcommerceV1StoreStoreDeleteResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getStoreMetadataV1**
+> EcommerceV1StoreStoreMetadataResource getStoreMetadataV1()
+
+Get a store\'s readiness metadata: whether payment methods and shipping are configured, plus its default currency. Useful to verify prerequisites before building a storefront.
+
+### Example
+
+```typescript
+import {
+    EcommerceStoresApi,
+    Configuration
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new EcommerceStoresApi(configuration);
+
+let storeId: string; //The ID of the store to read metadata for. (default to undefined)
+
+const { status, data } = await apiInstance.getStoreMetadataV1(
+    storeId
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **storeId** | [**string**] | The ID of the store to read metadata for. | defaults to undefined|
+
+
+### Return type
+
+**EcommerceV1StoreStoreMetadataResource**
 
 ### Authorization
 
