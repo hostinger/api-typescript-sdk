@@ -7,6 +7,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**createNodeJSBuildFromArchiveV1**](#createnodejsbuildfromarchivev1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/from-archive | Create NodeJS build from archive|
 |[**getNodeJSBuildLogsV1**](#getnodejsbuildlogsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/{uuid}/logs | Get NodeJS build logs|
 |[**listNodeJSBuildsV1**](#listnodejsbuildsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds | List NodeJS builds|
+|[**restartNodeJsApplicationV1**](#restartnodejsapplicationv1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/server/restart | Restart Node.js application|
 
 # **createNodeJSBuildFromArchiveV1**
 > HostingV1NodeJsBuildResource createNodeJSBuildFromArchiveV1(hostingV1NodeJsCreateFromArchiveRequest)
@@ -192,6 +193,62 @@ const { status, data } = await apiInstance.listNodeJSBuildsV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **restartNodeJsApplicationV1**
+> CommonSuccessEmptyResource restartNodeJsApplicationV1()
+
+Restarts the Node.js server process for the website. Does not rebuild or redeploy the application. Use it to apply environment or configuration changes, or to recover a hung application.  Only applicable to server-side applications (Express, Next.js, NestJS, etc.). Static front-end apps (React, Vue, Vite) have no persistent server process, so restarting them has no effect. Returns success even when the website has no server process to restart.
+
+### Example
+
+```typescript
+import {
+    HostingNodeJSApi,
+    Configuration
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingNodeJSApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+
+const { status, data } = await apiInstance.restartNodeJsApplicationV1(
+    username,
+    domain
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success empty response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
 
