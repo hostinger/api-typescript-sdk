@@ -172,7 +172,7 @@ const { status, data } = await apiInstance.getPostInstallScriptV1(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPostInstallScriptsV1**
-> VPSGetPostInstallScriptsV1200Response getPostInstallScriptsV1()
+> VPSV1PostInstallScriptListResponse getPostInstallScriptsV1()
 
 Retrieve post-install scripts associated with your account.  Use this endpoint to view available automation scripts for VPS deployment.
 
@@ -203,7 +203,7 @@ const { status, data } = await apiInstance.getPostInstallScriptsV1(
 
 ### Return type
 
-**VPSGetPostInstallScriptsV1200Response**
+**VPSV1PostInstallScriptListResponse**
 
 ### Authorization
 

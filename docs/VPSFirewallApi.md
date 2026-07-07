@@ -405,7 +405,7 @@ const { status, data } = await apiInstance.getFirewallDetailsV1(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFirewallListV1**
-> VPSGetFirewallListV1200Response getFirewallListV1()
+> VPSV1FirewallListResponse getFirewallListV1()
 
 Retrieve all available firewalls.  Use this endpoint to view existing firewall configurations.
 
@@ -436,7 +436,7 @@ const { status, data } = await apiInstance.getFirewallListV1(
 
 ### Return type
 
-**VPSGetFirewallListV1200Response**
+**VPSV1FirewallListResponse**
 
 ### Authorization
 

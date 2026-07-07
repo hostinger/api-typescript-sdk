@@ -64,7 +64,7 @@ const { status, data } = await apiInstance.getActionDetailsV1(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getActionsV1**
-> VPSGetActionsV1200Response getActionsV1()
+> VPSV1ActionListResponse getActionsV1()
 
 Retrieve actions performed on a specified virtual machine.  Actions are operations or events that have been executed on the virtual machine, such as starting, stopping, or modifying the machine. This endpoint allows you to view the history of these actions, providing details about each action, such as the action name, timestamp, and status.  Use this endpoint to view VPS operation history and troubleshoot issues.
 
@@ -98,7 +98,7 @@ const { status, data } = await apiInstance.getActionsV1(
 
 ### Return type
 
-**VPSGetActionsV1200Response**
+**VPSV1ActionListResponse**
 
 ### Authorization
 

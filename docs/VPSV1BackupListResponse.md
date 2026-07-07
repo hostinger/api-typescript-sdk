@@ -1,4 +1,4 @@
-# VPSGetBackupsV1200Response
+# VPSV1BackupListResponse
 
 
 ## Properties
@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSGetBackupsV1200Response } from 'hostinger-api-sdk';
+import { VPSV1BackupListResponse } from 'hostinger-api-sdk';
 
-const instance: VPSGetBackupsV1200Response = {
+const instance: VPSV1BackupListResponse = {
     data,
     meta,
 };

@@ -21,7 +21,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**stopVirtualMachineV1**](#stopvirtualmachinev1) | **POST** /api/vps/v1/virtual-machines/{virtualMachineId}/stop | Stop virtual machine|
 
 # **getAttachedPublicKeysV1**
-> VPSGetPublicKeysV1200Response getAttachedPublicKeysV1()
+> VPSV1PublicKeyListResponse getAttachedPublicKeysV1()
 
 Retrieve public keys attached to a specified virtual machine.  Use this endpoint to view SSH keys configured for specific VPS instances.
 
@@ -55,7 +55,7 @@ const { status, data } = await apiInstance.getAttachedPublicKeysV1(
 
 ### Return type
 
-**VPSGetPublicKeysV1200Response**
+**VPSV1PublicKeyListResponse**
 
 ### Authorization
 

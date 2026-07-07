@@ -8,7 +8,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**restoreBackupV1**](#restorebackupv1) | **POST** /api/vps/v1/virtual-machines/{virtualMachineId}/backups/{backupId}/restore | Restore backup|
 
 # **getBackupsV1**
-> VPSGetBackupsV1200Response getBackupsV1()
+> VPSV1BackupListResponse getBackupsV1()
 
 Retrieve backups for a specified virtual machine.  Use this endpoint to view available backup points for VPS data recovery.
 
@@ -42,7 +42,7 @@ const { status, data } = await apiInstance.getBackupsV1(
 
 ### Return type
 
-**VPSGetBackupsV1200Response**
+**VPSV1BackupListResponse**
 
 ### Authorization
 

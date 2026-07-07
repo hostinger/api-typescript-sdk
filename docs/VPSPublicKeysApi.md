@@ -176,7 +176,7 @@ const { status, data } = await apiInstance.deletePublicKeyV1(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPublicKeysV1**
-> VPSGetPublicKeysV1200Response getPublicKeysV1()
+> VPSV1PublicKeyListResponse getPublicKeysV1()
 
 Retrieve public keys associated with your account.  Use this endpoint to view available SSH keys for VPS authentication.
 
@@ -207,7 +207,7 @@ const { status, data } = await apiInstance.getPublicKeysV1(
 
 ### Return type
 
-**VPSGetPublicKeysV1200Response**
+**VPSV1PublicKeyListResponse**
 
 ### Authorization
 

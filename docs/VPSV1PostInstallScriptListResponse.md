@@ -1,4 +1,4 @@
-# VPSGetPostInstallScriptsV1200Response
+# VPSV1PostInstallScriptListResponse
 
 
 ## Properties
@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSGetPostInstallScriptsV1200Response } from 'hostinger-api-sdk';
+import { VPSV1PostInstallScriptListResponse } from 'hostinger-api-sdk';
 
-const instance: VPSGetPostInstallScriptsV1200Response = {
+const instance: VPSV1PostInstallScriptListResponse = {
     data,
     meta,
 };

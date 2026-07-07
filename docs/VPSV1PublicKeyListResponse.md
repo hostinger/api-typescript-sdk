@@ -1,4 +1,4 @@
-# VPSGetPublicKeysV1200Response
+# VPSV1PublicKeyListResponse
 
 
 ## Properties
@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSGetPublicKeysV1200Response } from 'hostinger-api-sdk';
+import { VPSV1PublicKeyListResponse } from 'hostinger-api-sdk';
 
-const instance: VPSGetPublicKeysV1200Response = {
+const instance: VPSV1PublicKeyListResponse = {
     data,
     meta,
 };
