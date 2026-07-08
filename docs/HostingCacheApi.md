@@ -5,10 +5,8 @@ All URIs are relative to *https://developers.hostinger.com*
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
 |[**clearWebsiteCacheV1**](#clearwebsitecachev1) | **DELETE** /api/hosting/v1/accounts/{username}/websites/{domain}/cache/clear | Clear website cache|
-|[**disableCachelessModeV1**](#disablecachelessmodev1) | **PATCH** /api/hosting/v1/accounts/{username}/websites/{domain}/cacheless-mode/disable | Disable cacheless mode|
-|[**disableWebsiteCacheV1**](#disablewebsitecachev1) | **PATCH** /api/hosting/v1/accounts/{username}/websites/{domain}/cache/disable | Disable website cache|
-|[**enableCachelessModeV1**](#enablecachelessmodev1) | **PATCH** /api/hosting/v1/accounts/{username}/websites/{domain}/cacheless-mode/enable | Enable cacheless mode|
-|[**enableWebsiteCacheV1**](#enablewebsitecachev1) | **PATCH** /api/hosting/v1/accounts/{username}/websites/{domain}/cache/enable | Enable website cache|
+|[**toggleCachelessModeV1**](#togglecachelessmodev1) | **PATCH** /api/hosting/v1/accounts/{username}/websites/{domain}/cacheless-mode/toggle | Toggle cacheless mode|
+|[**toggleWebsiteCacheV1**](#togglewebsitecachev1) | **PATCH** /api/hosting/v1/accounts/{username}/websites/{domain}/cache/toggle | Toggle website cache|
 
 # **clearWebsiteCacheV1**
 > CommonSuccessEmptyResource clearWebsiteCacheV1()
@@ -69,17 +67,18 @@ const { status, data } = await apiInstance.clearWebsiteCacheV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **disableCachelessModeV1**
-> CommonSuccessEmptyResource disableCachelessModeV1()
+# **toggleCachelessModeV1**
+> CommonSuccessEmptyResource toggleCachelessModeV1(hostingV1CacheToggleCachelessModeRequest)
 
-Turns off development (cacheless) mode and returns the website to normal caching. Use it after finishing development work to restore the performance benefits of caching.
+Turns development (cacheless) mode on or off, based on the enabled flag. When enabled, nothing is cached, effectively turning off all caching for the website; use it while actively developing, testing changes, debugging issues, or when real-time updates must be visible. Disable it after finishing development work to restore the performance benefits of caching.
 
 ### Example
 
 ```typescript
 import {
     HostingCacheApi,
-    Configuration
+    Configuration,
+    HostingV1CacheToggleCachelessModeRequest
 } from 'hostinger-api-sdk';
 
 const configuration = new Configuration();
@@ -87,10 +86,12 @@ const apiInstance = new HostingCacheApi(configuration);
 
 let username: string; // (default to undefined)
 let domain: string; //Domain name (default to undefined)
+let hostingV1CacheToggleCachelessModeRequest: HostingV1CacheToggleCachelessModeRequest; //
 
-const { status, data } = await apiInstance.disableCachelessModeV1(
+const { status, data } = await apiInstance.toggleCachelessModeV1(
     username,
-    domain
+    domain,
+    hostingV1CacheToggleCachelessModeRequest
 );
 ```
 
@@ -98,6 +99,7 @@ const { status, data } = await apiInstance.disableCachelessModeV1(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
+| **hostingV1CacheToggleCachelessModeRequest** | **HostingV1CacheToggleCachelessModeRequest**|  | |
 | **username** | [**string**] |  | defaults to undefined|
 | **domain** | [**string**] | Domain name | defaults to undefined|
 
@@ -112,7 +114,7 @@ const { status, data } = await apiInstance.disableCachelessModeV1(
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -120,22 +122,24 @@ const { status, data } = await apiInstance.disableCachelessModeV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success empty response |  -  |
+|**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **disableWebsiteCacheV1**
-> CommonSuccessEmptyResource disableWebsiteCacheV1()
+# **toggleWebsiteCacheV1**
+> CommonSuccessEmptyResource toggleWebsiteCacheV1(hostingV1CacheToggleCacheRequest)
 
-Turns off server-side caching for the website until it is enabled again. May impact performance. Use it when experiencing cache-related issues; to temporarily bypass caching while developing or debugging, prefer enabling cacheless mode instead.  Does nothing if caching is already disabled.
+Turns server-side caching for the website on or off, based on the enabled flag. Enable it for faster page loads, reduced server load, and improved user experience; recommended for production websites. Disabling may impact performance; to temporarily bypass caching while developing or debugging, prefer toggling cacheless mode instead.  Does nothing if caching is already in the requested state.
 
 ### Example
 
 ```typescript
 import {
     HostingCacheApi,
-    Configuration
+    Configuration,
+    HostingV1CacheToggleCacheRequest
 } from 'hostinger-api-sdk';
 
 const configuration = new Configuration();
@@ -143,10 +147,12 @@ const apiInstance = new HostingCacheApi(configuration);
 
 let username: string; // (default to undefined)
 let domain: string; //Domain name (default to undefined)
+let hostingV1CacheToggleCacheRequest: HostingV1CacheToggleCacheRequest; //
 
-const { status, data } = await apiInstance.disableWebsiteCacheV1(
+const { status, data } = await apiInstance.toggleWebsiteCacheV1(
     username,
-    domain
+    domain,
+    hostingV1CacheToggleCacheRequest
 );
 ```
 
@@ -154,6 +160,7 @@ const { status, data } = await apiInstance.disableWebsiteCacheV1(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
+| **hostingV1CacheToggleCacheRequest** | **HostingV1CacheToggleCacheRequest**|  | |
 | **username** | [**string**] |  | defaults to undefined|
 | **domain** | [**string**] | Domain name | defaults to undefined|
 
@@ -168,7 +175,7 @@ const { status, data } = await apiInstance.disableWebsiteCacheV1(
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -176,118 +183,7 @@ const { status, data } = await apiInstance.disableWebsiteCacheV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success empty response |  -  |
-|**401** | Unauthenticated response |  -  |
-|**500** | Error response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **enableCachelessModeV1**
-> CommonSuccessEmptyResource enableCachelessModeV1()
-
-Enables development (cacheless) mode where nothing is cached, effectively turning off all caching for the website. Use it while actively developing, testing changes, debugging issues, or when real-time updates must be visible. Disable cacheless mode afterwards to restore normal caching.
-
-### Example
-
-```typescript
-import {
-    HostingCacheApi,
-    Configuration
-} from 'hostinger-api-sdk';
-
-const configuration = new Configuration();
-const apiInstance = new HostingCacheApi(configuration);
-
-let username: string; // (default to undefined)
-let domain: string; //Domain name (default to undefined)
-
-const { status, data } = await apiInstance.enableCachelessModeV1(
-    username,
-    domain
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **username** | [**string**] |  | defaults to undefined|
-| **domain** | [**string**] | Domain name | defaults to undefined|
-
-
-### Return type
-
-**CommonSuccessEmptyResource**
-
-### Authorization
-
-[apiToken](../README.md#apiToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Success empty response |  -  |
-|**401** | Unauthenticated response |  -  |
-|**500** | Error response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **enableWebsiteCacheV1**
-> CommonSuccessEmptyResource enableWebsiteCacheV1()
-
-Turns on server-side caching for the website for better performance. Use it for faster page loads, reduced server load, or improved user experience. Recommended for production websites.  Does nothing if caching is already enabled.
-
-### Example
-
-```typescript
-import {
-    HostingCacheApi,
-    Configuration
-} from 'hostinger-api-sdk';
-
-const configuration = new Configuration();
-const apiInstance = new HostingCacheApi(configuration);
-
-let username: string; // (default to undefined)
-let domain: string; //Domain name (default to undefined)
-
-const { status, data } = await apiInstance.enableWebsiteCacheV1(
-    username,
-    domain
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **username** | [**string**] |  | defaults to undefined|
-| **domain** | [**string**] | Domain name | defaults to undefined|
-
-
-### Return type
-
-**CommonSuccessEmptyResource**
-
-### Authorization
-
-[apiToken](../README.md#apiToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Success empty response |  -  |
+|**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
 
