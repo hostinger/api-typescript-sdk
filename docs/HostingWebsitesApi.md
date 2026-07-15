@@ -5,6 +5,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
 |[**createWebsiteV1**](#createwebsitev1) | **POST** /api/hosting/v1/websites | Create website|
+|[**deleteWebsiteV1**](#deletewebsitev1) | **DELETE** /api/hosting/v1/websites/{domain} | Delete website|
 |[**listWebsitesV1**](#listwebsitesv1) | **GET** /api/hosting/v1/websites | List websites|
 
 # **createWebsiteV1**
@@ -36,6 +37,64 @@ const { status, data } = await apiInstance.createWebsiteV1(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **hostingV1WebsitesCreateWebsiteRequest** | **HostingV1WebsitesCreateWebsiteRequest**|  | |
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success empty response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteWebsiteV1**
+> CommonSuccessEmptyResource deleteWebsiteV1(hostingV1WebsitesDeleteWebsiteRequest)
+
+Permanently deletes a website and all of its data. This action is destructive and cannot be undone. Always ask the user for explicit confirmation before calling this endpoint.  All website files, databases and related configuration will be removed. The hosting plan itself is kept, so a new website can be created on it afterwards.  The confirm field must be boolean true, otherwise the request is rejected.  Supported websites: main and addon domain websites on web hosting plans, and Website Builder websites. Parked domains and subdomains cannot be deleted with this endpoint. The domain must be the exact website domain, not a preview domain or an alias.  Returns 404 when the domain does not exist or does not belong to the authenticated client.  Website removal is processed asynchronously and can take a few minutes to complete. The response returns before the removal finishes.
+
+### Example
+
+```typescript
+import {
+    HostingWebsitesApi,
+    Configuration,
+    HostingV1WebsitesDeleteWebsiteRequest
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingWebsitesApi(configuration);
+
+let domain: string; //Domain name (default to undefined)
+let hostingV1WebsitesDeleteWebsiteRequest: HostingV1WebsitesDeleteWebsiteRequest; //
+
+const { status, data } = await apiInstance.deleteWebsiteV1(
+    domain,
+    hostingV1WebsitesDeleteWebsiteRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **hostingV1WebsitesDeleteWebsiteRequest** | **HostingV1WebsitesDeleteWebsiteRequest**|  | |
+| **domain** | [**string**] | Domain name | defaults to undefined|
 
 
 ### Return type
