@@ -7,6 +7,8 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**createNodeJSBuildFromArchiveV1**](#createnodejsbuildfromarchivev1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/from-archive | Create NodeJS build from archive|
 |[**getNodeJSBuildLogsV1**](#getnodejsbuildlogsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/{uuid}/logs | Get NodeJS build logs|
 |[**listNodeJSBuildsV1**](#listnodejsbuildsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds | List NodeJS builds|
+|[**listNodeJsVulnerabilitiesV1**](#listnodejsvulnerabilitiesv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/vulnerabilities | List Node.js vulnerabilities|
+|[**patchNodeJsVulnerabilitiesV1**](#patchnodejsvulnerabilitiesv1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/vulnerabilities/patch | Patch Node.js vulnerabilities|
 |[**restartNodeJsApplicationV1**](#restartnodejsapplicationv1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/server/restart | Restart Node.js application|
 
 # **createNodeJSBuildFromArchiveV1**
@@ -193,6 +195,126 @@ const { status, data } = await apiInstance.listNodeJSBuildsV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **listNodeJsVulnerabilitiesV1**
+> Array<HostingV1NodeJsVulnerabilityResource> listNodeJsVulnerabilitiesV1()
+
+Lists known npm package vulnerabilities detected on a Node.js website, enriched with advisory metadata (severity, CVSS score, CVE, advisory URL). Results are sorted from the most severe to the least severe, then by publish date (newest first). Use the `severities` query parameter to filter.  Vulnerabilities with `is_patchable` set to `true` can be auto-fixed via the `Patch Node.js Vulnerabilities` endpoint, which opens a GitHub pull request with updated package versions. Auto-fix is only available for websites deployed from a connected GitHub repository. Vulnerabilities with `is_patching_in_progress` set to `true` are already included in an open patch pull request; while any patch pull request is open, new patch requests for this website are rejected until it is merged or closed.  Data comes from periodic dependency scans, so it may lag behind the latest deployment. An empty list means the most recent scan found no vulnerabilities; it does not guarantee the current deployment is vulnerability-free. Available on Business and Cloud Hosting plans.
+
+### Example
+
+```typescript
+import {
+    HostingNodeJSApi,
+    Configuration
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingNodeJSApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+let severities: Array<'low' | 'moderate' | 'high' | 'critical' | 'unknown'>; //Severities to filter by (optional) (default to undefined)
+
+const { status, data } = await apiInstance.listNodeJsVulnerabilitiesV1(
+    username,
+    domain,
+    severities
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+| **severities** | **Array<&#39;low&#39; &#124; &#39;moderate&#39; &#124; &#39;high&#39; &#124; &#39;critical&#39; &#124; &#39;unknown&#39;>** | Severities to filter by | (optional) defaults to undefined|
+
+
+### Return type
+
+**Array<HostingV1NodeJsVulnerabilityResource>**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patchNodeJsVulnerabilitiesV1**
+> HostingV1NodeJsPatchResultResource patchNodeJsVulnerabilitiesV1(hostingV1NodeJsPatchVulnerabilitiesRequest)
+
+Patches the selected Node.js vulnerabilities by updating the affected package versions in `package.json` and opening a GitHub pull request in the connected repository. The customer reviews and merges the pull request; merging triggers the automatic deployment.  Auto-fix is only available for websites deployed from a connected GitHub repository. Websites deployed from an archive have no auto-fix path and return a 404. The Hostinger GitHub App needs write access to the repository; without it the request fails with a 403 explaining the missing permission.  Only vulnerabilities with `is_patchable` set to `true` can be patched. Non-patchable IDs in the selection are skipped; the pull request covers the patchable subset, listed in `patched_vulnerability_ids`. Selections without any patchable vulnerability are rejected with a 422. Only one patch pull request can be open at a time per website; close or merge it before patching again. Available on Business and Cloud Hosting plans.
+
+### Example
+
+```typescript
+import {
+    HostingNodeJSApi,
+    Configuration,
+    HostingV1NodeJsPatchVulnerabilitiesRequest
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingNodeJSApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+let hostingV1NodeJsPatchVulnerabilitiesRequest: HostingV1NodeJsPatchVulnerabilitiesRequest; //
+
+const { status, data } = await apiInstance.patchNodeJsVulnerabilitiesV1(
+    username,
+    domain,
+    hostingV1NodeJsPatchVulnerabilitiesRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **hostingV1NodeJsPatchVulnerabilitiesRequest** | **HostingV1NodeJsPatchVulnerabilitiesRequest**|  | |
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**HostingV1NodeJsPatchResultResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**201** | Created response |  -  |
+|**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
 
