@@ -10,6 +10,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**enablePrivacyProtectionV1**](#enableprivacyprotectionv1) | **PUT** /api/domains/v1/portfolio/{domain}/privacy-protection | Enable privacy protection|
 |[**getDomainDetailsV1**](#getdomaindetailsv1) | **GET** /api/domains/v1/portfolio/{domain} | Get domain details|
 |[**getDomainListV1**](#getdomainlistv1) | **GET** /api/domains/v1/portfolio | Get domain list|
+|[**getDomainRenewalInformationV1**](#getdomainrenewalinformationv1) | **GET** /api/domains/v1/portfolio/{domain}/renewal | Get domain renewal information|
 |[**purchaseNewDomainV1**](#purchasenewdomainv1) | **POST** /api/domains/v1/portfolio | Purchase new domain|
 |[**updateDomainNameserversV1**](#updatedomainnameserversv1) | **PUT** /api/domains/v1/portfolio/{domain}/nameservers | Update domain nameservers|
 
@@ -304,6 +305,59 @@ This endpoint does not have any parameters.
 ### Return type
 
 **Array<DomainsV1DomainDomainResource>**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getDomainRenewalInformationV1**
+> DomainsV1PortfolioRenewalRenewalInformationResource getDomainRenewalInformationV1()
+
+Retrieve renewal information for a specified domain, including its status and current expiration date.  Use this endpoint to build renewal automation and expiry monitoring for a single domain.
+
+### Example
+
+```typescript
+import {
+    DomainsPortfolioApi,
+    Configuration
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new DomainsPortfolioApi(configuration);
+
+let domain: string; //Domain name (default to undefined)
+
+const { status, data } = await apiInstance.getDomainRenewalInformationV1(
+    domain
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**DomainsV1PortfolioRenewalRenewalInformationResource**
 
 ### Authorization
 
