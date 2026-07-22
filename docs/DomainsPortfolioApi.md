@@ -8,6 +8,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**disablePrivacyProtectionV1**](#disableprivacyprotectionv1) | **DELETE** /api/domains/v1/portfolio/{domain}/privacy-protection | Disable privacy protection|
 |[**enableDomainLockV1**](#enabledomainlockv1) | **PUT** /api/domains/v1/portfolio/{domain}/domain-lock | Enable domain lock|
 |[**enablePrivacyProtectionV1**](#enableprivacyprotectionv1) | **PUT** /api/domains/v1/portfolio/{domain}/privacy-protection | Enable privacy protection|
+|[**getDomainAuthorizationCodeV1**](#getdomainauthorizationcodev1) | **GET** /api/domains/v1/portfolio/{domain}/auth-code | Get domain authorization code|
 |[**getDomainDetailsV1**](#getdomaindetailsv1) | **GET** /api/domains/v1/portfolio/{domain} | Get domain details|
 |[**getDomainListV1**](#getdomainlistv1) | **GET** /api/domains/v1/portfolio | Get domain list|
 |[**getDomainRenewalInformationV1**](#getdomainrenewalinformationv1) | **GET** /api/domains/v1/portfolio/{domain}/renewal | Get domain renewal information|
@@ -221,6 +222,59 @@ const { status, data } = await apiInstance.enablePrivacyProtectionV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success empty response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getDomainAuthorizationCodeV1**
+> DomainsV1PortfolioAuthCodeAuthCodeResource getDomainAuthorizationCodeV1()
+
+Retrieve the authorization (EPP) code for a specified domain so it can be transferred away from Hostinger to another registrar.  Requesting a new code invalidates any code retrieved previously.  Use this endpoint to obtain the code required to transfer a domain to another registrar.
+
+### Example
+
+```typescript
+import {
+    DomainsPortfolioApi,
+    Configuration
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new DomainsPortfolioApi(configuration);
+
+let domain: string; //Domain name (default to undefined)
+
+const { status, data } = await apiInstance.getDomainAuthorizationCodeV1(
+    domain
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**DomainsV1PortfolioAuthCodeAuthCodeResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
 
