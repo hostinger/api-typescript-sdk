@@ -1,0 +1,34 @@
+# WordPressV1InstallationsWordPressMcpInstallationResource
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **string** | WordPress installation (software) id | [optional] [default to undefined]
+**username** | **string** | Hosting account username | [optional] [default to undefined]
+**domain** | **string** | Domain the installation belongs to | [optional] [default to undefined]
+**directory** | **string** | Installation directory on the server | [optional] [default to undefined]
+**token** | **string** | JWT used to authenticate against the installation MCP server | [optional] [default to undefined]
+**mcp_url** | **string** | MCP (Model Context Protocol) endpoint URL for the WordPress installation | [optional] [default to undefined]
+**expires_in** | **number** | Token lifetime in seconds from the moment it was issued | [optional] [default to undefined]
+**expires_at** | **string** | Date-time at which the token expires | [optional] [default to undefined]
+
+## Example
+
+```typescript
+import { WordPressV1InstallationsWordPressMcpInstallationResource } from 'hostinger-api-sdk';
+
+const instance: WordPressV1InstallationsWordPressMcpInstallationResource = {
+    id,
+    username,
+    domain,
+    directory,
+    token,
+    mcp_url,
+    expires_in,
+    expires_at,
+};
+```
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
