@@ -7,6 +7,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**createDomainForwardingV1**](#createdomainforwardingv1) | **POST** /api/domains/v1/forwarding | Create domain forwarding|
 |[**deleteDomainForwardingV1**](#deletedomainforwardingv1) | **DELETE** /api/domains/v1/forwarding/{domain} | Delete domain forwarding|
 |[**getDomainForwardingV1**](#getdomainforwardingv1) | **GET** /api/domains/v1/forwarding/{domain} | Get domain forwarding|
+|[**updateDomainForwardingV1**](#updatedomainforwardingv1) | **PUT** /api/domains/v1/forwarding/{domain} | Update domain forwarding|
 
 # **createDomainForwardingV1**
 > DomainsV1ForwardingForwardingResource createDomainForwardingV1(domainsV1ForwardingStoreRequest)
@@ -164,6 +165,64 @@ const { status, data } = await apiInstance.getDomainForwardingV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateDomainForwardingV1**
+> DomainsV1ForwardingForwardingResource updateDomainForwardingV1(domainsV1ForwardingUpdateRequest)
+
+Update domain forwarding configuration.  Use this endpoint to modify existing redirect configuration for domains.
+
+### Example
+
+```typescript
+import {
+    DomainsForwardingApi,
+    Configuration,
+    DomainsV1ForwardingUpdateRequest
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new DomainsForwardingApi(configuration);
+
+let domain: string; //Domain name (default to undefined)
+let domainsV1ForwardingUpdateRequest: DomainsV1ForwardingUpdateRequest; //
+
+const { status, data } = await apiInstance.updateDomainForwardingV1(
+    domain,
+    domainsV1ForwardingUpdateRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domainsV1ForwardingUpdateRequest** | **DomainsV1ForwardingUpdateRequest**|  | |
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**DomainsV1ForwardingForwardingResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
 
