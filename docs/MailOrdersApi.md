@@ -4,7 +4,62 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
+|[**getOrderPlanV1**](#getorderplanv1) | **GET** /api/mail/v1/orders/{orderId}/plan | Get order plan|
 |[**listOrdersV1**](#listordersv1) | **GET** /api/mail/v1/orders | List orders|
+
+# **getOrderPlanV1**
+> MailV1OrdersPlanResource getOrderPlanV1()
+
+Retrieve the plan the given mail order was purchased with, including domain-level and mailbox-level quotas, limits, and protocol availability.
+
+### Example
+
+```typescript
+import {
+    MailOrdersApi,
+    Configuration
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new MailOrdersApi(configuration);
+
+let orderId: string; //Order resource ID (default to undefined)
+
+const { status, data } = await apiInstance.getOrderPlanV1(
+    orderId
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **orderId** | [**string**] | Order resource ID | defaults to undefined|
+
+
+### Return type
+
+**MailV1OrdersPlanResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**404** | Error response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **listOrdersV1**
 > MailListOrdersV1200Response listOrdersV1()
