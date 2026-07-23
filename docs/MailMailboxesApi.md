@@ -4,7 +4,68 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
+|[**createMailboxV1**](#createmailboxv1) | **POST** /api/mail/v1/orders/{orderId}/mailboxes | Create mailbox|
 |[**getMailboxListV1**](#getmailboxlistv1) | **GET** /api/mail/v1/orders/{orderId}/mailboxes | Get mailbox list|
+
+# **createMailboxV1**
+> MailV1MailboxesMailboxResource createMailboxV1(mailV1SchemaCreateMailboxRequestSchema)
+
+Create a mailbox under the given mail order. The full email address is composed from the given local part and the domain of the order.
+
+### Example
+
+```typescript
+import {
+    MailMailboxesApi,
+    Configuration,
+    MailV1SchemaCreateMailboxRequestSchema
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new MailMailboxesApi(configuration);
+
+let orderId: string; //Order resource ID (default to undefined)
+let mailV1SchemaCreateMailboxRequestSchema: MailV1SchemaCreateMailboxRequestSchema; //
+
+const { status, data } = await apiInstance.createMailboxV1(
+    orderId,
+    mailV1SchemaCreateMailboxRequestSchema
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **mailV1SchemaCreateMailboxRequestSchema** | **MailV1SchemaCreateMailboxRequestSchema**|  | |
+| **orderId** | [**string**] | Order resource ID | defaults to undefined|
+
+
+### Return type
+
+**MailV1MailboxesMailboxResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**201** | Created response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**404** | Error response |  -  |
+|**409** | Error response |  -  |
+|**422** | Error response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getMailboxListV1**
 > MailGetMailboxListV1200Response getMailboxListV1()
