@@ -7,7 +7,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**changeMailboxPasswordV1**](#changemailboxpasswordv1) | **PATCH** /api/mail/v1/mailboxes/{mailboxId}/password | Change mailbox password|
 |[**createMailboxV1**](#createmailboxv1) | **POST** /api/mail/v1/orders/{orderId}/mailboxes | Create mailbox|
 |[**deleteMailboxV1**](#deletemailboxv1) | **DELETE** /api/mail/v1/mailboxes/{mailboxId} | Delete mailbox|
-|[**getMailboxListV1**](#getmailboxlistv1) | **GET** /api/mail/v1/orders/{orderId}/mailboxes | Get mailbox list|
+|[**listMailboxesV1**](#listmailboxesv1) | **GET** /api/mail/v1/orders/{orderId}/mailboxes | List mailboxes|
 
 # **changeMailboxPasswordV1**
 > CommonSuccessEmptyResource changeMailboxPasswordV1(mailV1SchemaChangeMailboxPasswordRequestSchema)
@@ -184,8 +184,8 @@ const { status, data } = await apiInstance.deleteMailboxV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getMailboxListV1**
-> MailGetMailboxListV1200Response getMailboxListV1()
+# **listMailboxesV1**
+> MailListMailboxesV1200Response listMailboxesV1()
 
 Retrieve a paginated list of mailboxes belonging to a mail order.  Use this endpoint to monitor mailboxes of your mail service, including their status, enabled protocols, attached resource counts, and periodically synced usage numbers (usage may lag behind live values).
 
@@ -206,7 +206,7 @@ let sort: 'address' | '-address'; //Sort mailboxes by field. Prefix with `-` for
 let page: number; //Page number (optional) (default to undefined)
 let perPage: number; //Number of items per page (optional) (default to 25)
 
-const { status, data } = await apiInstance.getMailboxListV1(
+const { status, data } = await apiInstance.listMailboxesV1(
     orderId,
     search,
     sort,
@@ -228,7 +228,7 @@ const { status, data } = await apiInstance.getMailboxListV1(
 
 ### Return type
 
-**MailGetMailboxListV1200Response**
+**MailListMailboxesV1200Response**
 
 ### Authorization
 

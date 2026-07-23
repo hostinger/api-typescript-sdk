@@ -4,10 +4,10 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**getMailOrderListV1**](#getmailorderlistv1) | **GET** /api/mail/v1/orders | Get mail order list|
+|[**listOrdersV1**](#listordersv1) | **GET** /api/mail/v1/orders | List orders|
 
-# **getMailOrderListV1**
-> MailGetMailOrderListV1200Response getMailOrderListV1()
+# **listOrdersV1**
+> MailListOrdersV1200Response listOrdersV1()
 
 Retrieve a paginated list of mail orders associated with your account.  Use this endpoint to monitor your mail services, including their status, plan, attached domain, and expiration details.
 
@@ -29,7 +29,7 @@ let sort: 'created_at' | '-created_at' | 'expires_at' | '-expires_at'; //Sort or
 let page: number; //Page number (optional) (default to undefined)
 let perPage: number; //Number of items per page (optional) (default to 25)
 
-const { status, data } = await apiInstance.getMailOrderListV1(
+const { status, data } = await apiInstance.listOrdersV1(
     domain,
     status,
     isTrial,
@@ -53,7 +53,7 @@ const { status, data } = await apiInstance.getMailOrderListV1(
 
 ### Return type
 
-**MailGetMailOrderListV1200Response**
+**MailListOrdersV1200Response**
 
 ### Authorization
 

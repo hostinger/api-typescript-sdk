@@ -1,19 +1,19 @@
-# MailGetMailOrderListV1200Response
+# MailListActionLogsV1200Response
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**Array&lt;MailV1OrdersOrderResource&gt;**](MailV1OrdersOrderResource.md) | Array of [&#x60;Mail.V1.Orders.OrderResource&#x60;](#model/mailv1ordersorderresource) | [optional] [default to undefined]
+**data** | [**Array&lt;MailV1LogsActionActionLogResource&gt;**](MailV1LogsActionActionLogResource.md) | Array of [&#x60;Mail.V1.Logs.Action.ActionLogResource&#x60;](#model/mailv1logsactionactionlogresource) | [optional] [default to undefined]
 **meta** | [**CommonSchemaPaginationMetaSchema**](CommonSchemaPaginationMetaSchema.md) |  | [optional] [default to undefined]
 
 ## Example
 
 ```typescript
-import { MailGetMailOrderListV1200Response } from 'hostinger-api-sdk';
+import { MailListActionLogsV1200Response } from 'hostinger-api-sdk';
 
-const instance: MailGetMailOrderListV1200Response = {
+const instance: MailListActionLogsV1200Response = {
     data,
     meta,
 };

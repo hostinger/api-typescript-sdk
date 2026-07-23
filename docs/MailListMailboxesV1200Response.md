@@ -1,4 +1,4 @@
-# MailGetMailboxListV1200Response
+# MailListMailboxesV1200Response
 
 
 ## Properties
@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailGetMailboxListV1200Response } from 'hostinger-api-sdk';
+import { MailListMailboxesV1200Response } from 'hostinger-api-sdk';
 
-const instance: MailGetMailboxListV1200Response = {
+const instance: MailListMailboxesV1200Response = {
     data,
     meta,
 };
