@@ -1,4 +1,4 @@
-# MailV1WebhooksWebhookResource
+# MailV1WebhooksWebhookSecretResource
 
 
 ## Properties
@@ -12,15 +12,16 @@ Name | Type | Description | Notes
 **events** | **Array&lt;string&gt;** | Events that trigger this webhook | [optional] [default to undefined]
 **status** | **string** | Current status of the webhook | [optional] [default to undefined]
 **url** | **string** | URL that receives webhook POST requests | [optional] [default to undefined]
+**secret** | **string** | New webhook secret, sent as &#x60;Authorization: Bearer &lt;secret&gt;&#x60; with every delivery. The previous secret is immediately invalidated and the new one is not returned again. | [optional] [default to undefined]
 **created_at** | **string** |  | [optional] [default to undefined]
 **updated_at** | **string** |  | [optional] [default to undefined]
 
 ## Example
 
 ```typescript
-import { MailV1WebhooksWebhookResource } from 'hostinger-api-sdk';
+import { MailV1WebhooksWebhookSecretResource } from 'hostinger-api-sdk';
 
-const instance: MailV1WebhooksWebhookResource = {
+const instance: MailV1WebhooksWebhookSecretResource = {
     id,
     mailbox,
     name,
@@ -28,6 +29,7 @@ const instance: MailV1WebhooksWebhookResource = {
     events,
     status,
     url,
+    secret,
     created_at,
     updated_at,
 };
