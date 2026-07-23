@@ -4,8 +4,70 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
+|[**changeMailboxPasswordV1**](#changemailboxpasswordv1) | **PATCH** /api/mail/v1/mailboxes/{mailboxId}/password | Change mailbox password|
 |[**createMailboxV1**](#createmailboxv1) | **POST** /api/mail/v1/orders/{orderId}/mailboxes | Create mailbox|
+|[**deleteMailboxV1**](#deletemailboxv1) | **DELETE** /api/mail/v1/mailboxes/{mailboxId} | Delete mailbox|
 |[**getMailboxListV1**](#getmailboxlistv1) | **GET** /api/mail/v1/orders/{orderId}/mailboxes | Get mailbox list|
+
+# **changeMailboxPasswordV1**
+> CommonSuccessEmptyResource changeMailboxPasswordV1(mailV1SchemaChangeMailboxPasswordRequestSchema)
+
+Change the password of a mailbox.
+
+### Example
+
+```typescript
+import {
+    MailMailboxesApi,
+    Configuration,
+    MailV1SchemaChangeMailboxPasswordRequestSchema
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new MailMailboxesApi(configuration);
+
+let mailboxId: string; //Mailbox resource ID (default to undefined)
+let mailV1SchemaChangeMailboxPasswordRequestSchema: MailV1SchemaChangeMailboxPasswordRequestSchema; //
+
+const { status, data } = await apiInstance.changeMailboxPasswordV1(
+    mailboxId,
+    mailV1SchemaChangeMailboxPasswordRequestSchema
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **mailV1SchemaChangeMailboxPasswordRequestSchema** | **MailV1SchemaChangeMailboxPasswordRequestSchema**|  | |
+| **mailboxId** | [**string**] | Mailbox resource ID | defaults to undefined|
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**400** | Error response |  -  |
+|**404** | Error response |  -  |
+|**422** | Error response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createMailboxV1**
 > MailV1MailboxesMailboxResource createMailboxV1(mailV1SchemaCreateMailboxRequestSchema)
@@ -63,6 +125,61 @@ const { status, data } = await apiInstance.createMailboxV1(
 |**404** | Error response |  -  |
 |**409** | Error response |  -  |
 |**422** | Error response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteMailboxV1**
+> CommonSuccessEmptyResource deleteMailboxV1()
+
+Delete a mailbox. The mailbox is soft-deleted and stays restorable for a limited period before it is permanently removed.
+
+### Example
+
+```typescript
+import {
+    MailMailboxesApi,
+    Configuration
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new MailMailboxesApi(configuration);
+
+let mailboxId: string; //Mailbox resource ID (default to undefined)
+
+const { status, data } = await apiInstance.deleteMailboxV1(
+    mailboxId
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **mailboxId** | [**string**] | Mailbox resource ID | defaults to undefined|
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**404** | Error response |  -  |
+|**409** | Error response |  -  |
 |**500** | Error response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
