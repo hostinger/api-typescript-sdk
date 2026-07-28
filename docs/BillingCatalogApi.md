@@ -22,7 +22,7 @@ import {
 const configuration = new Configuration();
 const apiInstance = new BillingCatalogApi(configuration);
 
-let category: 'DOMAIN' | 'VPS'; //Filter catalog items by category (optional) (default to undefined)
+let category: 'DOMAIN' | 'VPS' | 'EMAIL'; //Filter catalog items by category (optional) (default to undefined)
 let name: string; //Filter catalog items by name. Use `*` for wildcard search, e.g. `.COM*` to find .com domain (optional) (default to undefined)
 
 const { status, data } = await apiInstance.getCatalogItemListV1(
@@ -35,7 +35,7 @@ const { status, data } = await apiInstance.getCatalogItemListV1(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **category** | [**&#39;DOMAIN&#39; | &#39;VPS&#39;**]**Array<&#39;DOMAIN&#39; &#124; &#39;VPS&#39;>** | Filter catalog items by category | (optional) defaults to undefined|
+| **category** | [**&#39;DOMAIN&#39; | &#39;VPS&#39; | &#39;EMAIL&#39;**]**Array<&#39;DOMAIN&#39; &#124; &#39;VPS&#39; &#124; &#39;EMAIL&#39;>** | Filter catalog items by category | (optional) defaults to undefined|
 | **name** | [**string**] | Filter catalog items by name. Use &#x60;*&#x60; for wildcard search, e.g. &#x60;.COM*&#x60; to find .com domain | (optional) defaults to undefined|
 
 
