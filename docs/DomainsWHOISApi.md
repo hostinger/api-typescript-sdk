@@ -9,6 +9,8 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**getWHOISProfileListV1**](#getwhoisprofilelistv1) | **GET** /api/domains/v1/whois | Get WHOIS profile list|
 |[**getWHOISProfileUsageV1**](#getwhoisprofileusagev1) | **GET** /api/domains/v1/whois/{whoisId}/usage | Get WHOIS profile usage|
 |[**getWHOISProfileV1**](#getwhoisprofilev1) | **GET** /api/domains/v1/whois/{whoisId} | Get WHOIS profile|
+|[**setWHOISProfileAsDefaultV1**](#setwhoisprofileasdefaultv1) | **PATCH** /api/domains/v1/whois/default/{whoisId} | Set WHOIS profile as default|
+|[**unsetDefaultWHOISProfileV1**](#unsetdefaultwhoisprofilev1) | **DELETE** /api/domains/v1/whois/default/{whoisId} | Unset default WHOIS profile|
 
 # **createWHOISProfileV1**
 > DomainsV1WHOISProfileResource createWHOISProfileV1(domainsV1WHOISStoreRequest)
@@ -272,6 +274,112 @@ const { status, data } = await apiInstance.getWHOISProfileV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **setWHOISProfileAsDefaultV1**
+> CommonSuccessEmptyResource setWHOISProfileAsDefaultV1()
+
+Set WHOIS contact profile as default.  The default profile is pre-selected for the TLD it belongs to when registering new domains.  Use this endpoint to avoid picking contact information for every registration.
+
+### Example
+
+```typescript
+import {
+    DomainsWHOISApi,
+    Configuration
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new DomainsWHOISApi(configuration);
+
+let whoisId: number; //WHOIS ID (default to undefined)
+
+const { status, data } = await apiInstance.setWHOISProfileAsDefaultV1(
+    whoisId
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **whoisId** | [**number**] | WHOIS ID | defaults to undefined|
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success empty response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **unsetDefaultWHOISProfileV1**
+> CommonSuccessEmptyResource unsetDefaultWHOISProfileV1()
+
+Unset WHOIS contact profile as default.  The profile itself is kept, it is only no longer pre-selected for its TLD.  Use this endpoint to stop reusing contact information for new registrations.
+
+### Example
+
+```typescript
+import {
+    DomainsWHOISApi,
+    Configuration
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new DomainsWHOISApi(configuration);
+
+let whoisId: number; //WHOIS ID (default to undefined)
+
+const { status, data } = await apiInstance.unsetDefaultWHOISProfileV1(
+    whoisId
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **whoisId** | [**number**] | WHOIS ID | defaults to undefined|
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success empty response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
 

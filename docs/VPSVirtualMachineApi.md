@@ -800,7 +800,7 @@ const { status, data } = await apiInstance.startVirtualMachineV1(
 # **stopVirtualMachineV1**
 > VPSV1ActionActionResource stopVirtualMachineV1()
 
-Stop a specified virtual machine.  If the virtual machine is already stopped, the request will still be processed without any effect.  Use this endpoint to power off running VPS instances.
+Stop a specified virtual machine.  If the virtual machine is already stopped, the request will still be processed without any effect.  This is a compute-only power state change and does not affect billing. To stop future charges, disable auto-renewal on the owning subscription.  Use this endpoint to power off running VPS instances.
 
 ### Example
 
