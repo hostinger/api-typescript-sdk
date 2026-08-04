@@ -4,13 +4,124 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
+|[**cancelPendingIRTPVerificationV1**](#cancelpendingirtpverificationv1) | **DELETE** /api/domains/v1/irtp/{domain} | Cancel pending IRTP verification|
+|[**changeWHOISProfileForDomainV1**](#changewhoisprofilefordomainv1) | **PUT** /api/domains/v1/whois/change | Change WHOIS profile for domain|
 |[**createWHOISProfileV1**](#createwhoisprofilev1) | **POST** /api/domains/v1/whois | Create WHOIS profile|
 |[**deleteWHOISProfileV1**](#deletewhoisprofilev1) | **DELETE** /api/domains/v1/whois/{whoisId} | Delete WHOIS profile|
+|[**getPendingIRTPVerificationV1**](#getpendingirtpverificationv1) | **GET** /api/domains/v1/irtp/{domain} | Get pending IRTP verification|
 |[**getWHOISProfileListV1**](#getwhoisprofilelistv1) | **GET** /api/domains/v1/whois | Get WHOIS profile list|
 |[**getWHOISProfileUsageV1**](#getwhoisprofileusagev1) | **GET** /api/domains/v1/whois/{whoisId}/usage | Get WHOIS profile usage|
 |[**getWHOISProfileV1**](#getwhoisprofilev1) | **GET** /api/domains/v1/whois/{whoisId} | Get WHOIS profile|
-|[**setWHOISProfileAsDefaultV1**](#setwhoisprofileasdefaultv1) | **PATCH** /api/domains/v1/whois/default/{whoisId} | Set WHOIS profile as default|
+|[**setWHOISProfileAsDefaultV1**](#setwhoisprofileasdefaultv1) | **PUT** /api/domains/v1/whois/default/{whoisId} | Set WHOIS profile as default|
 |[**unsetDefaultWHOISProfileV1**](#unsetdefaultwhoisprofilev1) | **DELETE** /api/domains/v1/whois/default/{whoisId} | Unset default WHOIS profile|
+
+# **cancelPendingIRTPVerificationV1**
+> CommonSuccessEmptyResource cancelPendingIRTPVerificationV1()
+
+Cancel a pending IRTP verification.  Use this endpoint to back out of a WHOIS change that is stuck waiting on registrant confirmation, for example when the confirmation email cannot be received, without waiting out the 5-day expiry.
+
+### Example
+
+```typescript
+import {
+    DomainsWHOISApi,
+    Configuration
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new DomainsWHOISApi(configuration);
+
+let domain: string; //Domain name (default to undefined)
+
+const { status, data } = await apiInstance.cancelPendingIRTPVerificationV1(
+    domain
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success empty response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **changeWHOISProfileForDomainV1**
+> CommonSuccessEmptyResource changeWHOISProfileForDomainV1(domainsV1WHOISChangeUpdateRequest)
+
+Change WHOIS contact profile for a domain.  Repoints the given contact roles to a new WHOIS profile and submits the change to the registry. The profile currently assigned to those roles is resolved automatically; the request fails if the given roles are not all on the same profile today.  Changing transfer sensitive fields on the owner contact starts an IRTP verification.  The change is processed asynchronously.  Use this endpoint to move a registered domain onto different contact information.
+
+### Example
+
+```typescript
+import {
+    DomainsWHOISApi,
+    Configuration,
+    DomainsV1WHOISChangeUpdateRequest
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new DomainsWHOISApi(configuration);
+
+let domainsV1WHOISChangeUpdateRequest: DomainsV1WHOISChangeUpdateRequest; //
+
+const { status, data } = await apiInstance.changeWHOISProfileForDomainV1(
+    domainsV1WHOISChangeUpdateRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domainsV1WHOISChangeUpdateRequest** | **DomainsV1WHOISChangeUpdateRequest**|  | |
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success empty response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createWHOISProfileV1**
 > DomainsV1WHOISProfileResource createWHOISProfileV1(domainsV1WHOISStoreRequest)
@@ -100,6 +211,59 @@ const { status, data } = await apiInstance.deleteWHOISProfileV1(
 ### Return type
 
 **CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getPendingIRTPVerificationV1**
+> DomainsV1IRTPVerificationResource getPendingIRTPVerificationV1()
+
+Retrieve a pending IRTP verification for a domain.  Both the old and new registrant must confirm it before the WHOIS change takes effect.  Use this endpoint to check the status of a WHOIS change awaiting registrant confirmation.
+
+### Example
+
+```typescript
+import {
+    DomainsWHOISApi,
+    Configuration
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new DomainsWHOISApi(configuration);
+
+let domain: string; //Domain name (default to undefined)
+
+const { status, data } = await apiInstance.getPendingIRTPVerificationV1(
+    domain
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**DomainsV1IRTPVerificationResource**
 
 ### Authorization
 
