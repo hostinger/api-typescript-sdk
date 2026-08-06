@@ -1,4 +1,4 @@
-# DomainsV1PortfolioPurchaseRequestDomainContacts
+# DomainsV1PortfolioClaimRequestDomainContacts
 
 Domain contact information
 
@@ -14,9 +14,9 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainsV1PortfolioPurchaseRequestDomainContacts } from 'hostinger-api-sdk';
+import { DomainsV1PortfolioClaimRequestDomainContacts } from 'hostinger-api-sdk';
 
-const instance: DomainsV1PortfolioPurchaseRequestDomainContacts = {
+const instance: DomainsV1PortfolioClaimRequestDomainContacts = {
     owner_id,
     admin_id,
     billing_id,

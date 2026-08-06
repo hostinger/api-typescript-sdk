@@ -4,6 +4,7 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
+|[**claimFreeDomainV1**](#claimfreedomainv1) | **POST** /api/domains/v1/portfolio/claim | Claim free domain|
 |[**disableDomainLockV1**](#disabledomainlockv1) | **DELETE** /api/domains/v1/portfolio/{domain}/domain-lock | Disable domain lock|
 |[**disablePrivacyProtectionV1**](#disableprivacyprotectionv1) | **DELETE** /api/domains/v1/portfolio/{domain}/privacy-protection | Disable privacy protection|
 |[**enableDomainLockV1**](#enabledomainlockv1) | **PUT** /api/domains/v1/portfolio/{domain}/domain-lock | Enable domain lock|
@@ -14,6 +15,61 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**getDomainRenewalInformationV1**](#getdomainrenewalinformationv1) | **GET** /api/domains/v1/portfolio/{domain}/renewal | Get domain renewal information|
 |[**purchaseNewDomainV1**](#purchasenewdomainv1) | **POST** /api/domains/v1/portfolio | Purchase new domain|
 |[**updateDomainNameserversV1**](#updatedomainnameserversv1) | **PUT** /api/domains/v1/portfolio/{domain}/nameservers | Update domain nameservers|
+
+# **claimFreeDomainV1**
+> DomainsV1PortfolioClaimResource claimFreeDomainV1(domainsV1PortfolioClaimRequest)
+
+Claim a free domain available on your account and register it.  Unlike purchasing a domain, this consumes a free domain you already have, so no payment method is required.  A successful response means the domain is registered. If registration fails, login to [hPanel](https://hpanel.hostinger.com/) and check domain registration status.  If no WHOIS information is provided, default contact information for that TLD will be used. Before making request, ensure WHOIS information for desired TLD exists in your account.  Some TLDs require `additional_details` to be provided and these will be validated before claiming.  Requests which cannot be fulfilled are rejected with an error code in the response body, for example `2037` when no free domain is available.  Use this endpoint to register a domain using a free domain from your account.
+
+### Example
+
+```typescript
+import {
+    DomainsPortfolioApi,
+    Configuration,
+    DomainsV1PortfolioClaimRequest
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new DomainsPortfolioApi(configuration);
+
+let domainsV1PortfolioClaimRequest: DomainsV1PortfolioClaimRequest; //
+
+const { status, data } = await apiInstance.claimFreeDomainV1(
+    domainsV1PortfolioClaimRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domainsV1PortfolioClaimRequest** | **DomainsV1PortfolioClaimRequest**|  | |
+
+
+### Return type
+
+**DomainsV1PortfolioClaimResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **disableDomainLockV1**
 > CommonSuccessEmptyResource disableDomainLockV1()
