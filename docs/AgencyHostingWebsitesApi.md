@@ -68,9 +68,9 @@ const { status, data } = await apiInstance.buildAgencyPlanWebsiteNodeJSAssetsV1(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteAgencyPlanWebsiteV1**
-> AgencyHostingV1WebsitesWebsiteDeletionResource deleteAgencyPlanWebsiteV1()
+> CommonSuccessEmptyResource deleteAgencyPlanWebsiteV1()
 
-Deletes an Agency Plan website and schedules cleanup of its resources.  This action is irreversible. Website files, databases, and linked domains are removed.
+Permanently deletes an Agency Plan website. Deletion is processed asynchronously: the website is immediately transitioned to a deleting state and the underlying server resources are removed in the background.
 
 ### Example
 
@@ -99,7 +99,7 @@ const { status, data } = await apiInstance.deleteAgencyPlanWebsiteV1(
 
 ### Return type
 
-**AgencyHostingV1WebsitesWebsiteDeletionResource**
+**CommonSuccessEmptyResource**
 
 ### Authorization
 
@@ -114,7 +114,7 @@ const { status, data } = await apiInstance.deleteAgencyPlanWebsiteV1(
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-|**200** | Success response |  -  |
+|**200** | Success empty response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
 
