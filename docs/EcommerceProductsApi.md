@@ -6,6 +6,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |------------- | ------------- | -------------|
 |[**createDigitalProductV1**](#createdigitalproductv1) | **POST** /api/ecommerce/v1/stores/{store_id}/products/digital | Create digital product|
 |[**createPhysicalProductV1**](#createphysicalproductv1) | **POST** /api/ecommerce/v1/stores/{store_id}/products/physical | Create physical product|
+|[**uploadAndAttachAProductImageV1**](#uploadandattachaproductimagev1) | **POST** /api/ecommerce/v1/stores/{store_id}/products/{product_id}/images | Upload and attach a product image|
 
 # **createDigitalProductV1**
 > EcommerceV1ProductProductCreationResource createDigitalProductV1(ecommerceV1ProductCreateDigitalProductRequest)
@@ -117,6 +118,67 @@ const { status, data } = await apiInstance.createPhysicalProductV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**201** | Created response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **uploadAndAttachAProductImageV1**
+> EcommerceV1ProductProductImageUploadResource uploadAndAttachAProductImageV1(ecommerceV1ProductUploadProductImageRequest)
+
+Upload a raster image (JPEG, PNG, GIF or WebP, max 15MB) and attach it to a product in a single call. The image is virus-scanned and validated by content, then stored on the CDN. Set is_thumbnail to make it the product\'s primary image.
+
+### Example
+
+```typescript
+import {
+    EcommerceProductsApi,
+    Configuration,
+    EcommerceV1ProductUploadProductImageRequest
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new EcommerceProductsApi(configuration);
+
+let storeId: string; //The ID of the store the product belongs to. (default to undefined)
+let productId: string; //The ID of the product to attach the image to. (default to undefined)
+let ecommerceV1ProductUploadProductImageRequest: EcommerceV1ProductUploadProductImageRequest; //
+
+const { status, data } = await apiInstance.uploadAndAttachAProductImageV1(
+    storeId,
+    productId,
+    ecommerceV1ProductUploadProductImageRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **ecommerceV1ProductUploadProductImageRequest** | **EcommerceV1ProductUploadProductImageRequest**|  | |
+| **storeId** | [**string**] | The ID of the store the product belongs to. | defaults to undefined|
+| **productId** | [**string**] | The ID of the product to attach the image to. | defaults to undefined|
+
+
+### Return type
+
+**EcommerceV1ProductProductImageUploadResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
 |**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
