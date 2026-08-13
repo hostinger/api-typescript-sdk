@@ -64,28 +64,25 @@ const { status, data } = await apiInstance.createWebsiteV1(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteWebsiteV1**
-> CommonSuccessEmptyResource deleteWebsiteV1(hostingV1WebsitesDeleteWebsiteRequest)
+> CommonSuccessEmptyResource deleteWebsiteV1()
 
-Permanently deletes a website and all of its data. This action is destructive and cannot be undone. Always ask the user for explicit confirmation before calling this endpoint.  All website files, databases and related configuration will be removed. The hosting plan itself is kept, so a new website can be created on it afterwards.  The confirm field must be boolean true, otherwise the request is rejected.  Supported websites: main and addon domain websites on web hosting plans, and Website Builder websites. Parked domains and subdomains cannot be deleted with this endpoint. The domain must be the exact website domain, not a preview domain or an alias.  Returns 404 when the domain does not exist or does not belong to the authenticated client.  Website removal is processed asynchronously and can take a few minutes to complete. The response returns before the removal finishes.
+This endpoint permanently removes a website and all of its data. This action cannot be undone. Before calling it, make sure the user understands the consequences and explicitly confirms that they want to proceed.  All website files, databases and related configuration will be removed. The hosting plan itself is kept, so a new website can be created on it afterwards.  Supported websites: main and addon domain websites on web hosting plans, and Website Builder websites. Parked domains and subdomains cannot be deleted with this endpoint. The domain must be the exact website domain, not a preview domain or an alias.  Returns 404 when the domain does not exist or does not belong to the authenticated client.  Website removal is processed asynchronously and can take a few minutes to complete. The response returns before the removal finishes.
 
 ### Example
 
 ```typescript
 import {
     HostingWebsitesApi,
-    Configuration,
-    HostingV1WebsitesDeleteWebsiteRequest
+    Configuration
 } from 'hostinger-api-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingWebsitesApi(configuration);
 
 let domain: string; //Domain name (default to undefined)
-let hostingV1WebsitesDeleteWebsiteRequest: HostingV1WebsitesDeleteWebsiteRequest; //
 
 const { status, data } = await apiInstance.deleteWebsiteV1(
-    domain,
-    hostingV1WebsitesDeleteWebsiteRequest
+    domain
 );
 ```
 
@@ -93,7 +90,6 @@ const { status, data } = await apiInstance.deleteWebsiteV1(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **hostingV1WebsitesDeleteWebsiteRequest** | **HostingV1WebsitesDeleteWebsiteRequest**|  | |
 | **domain** | [**string**] | Domain name | defaults to undefined|
 
 
@@ -107,7 +103,7 @@ const { status, data } = await apiInstance.deleteWebsiteV1(
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

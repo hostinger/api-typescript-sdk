@@ -1,19 +1,17 @@
-# HostingV1WebsitesDeleteWebsiteRequest
+# HostingListWebsiteFilesAndDirectoriesV1FileTypesParameter
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**confirm** | **boolean** | Must be boolean true to confirm the permanent deletion of the website. | [default to undefined]
 
 ## Example
 
 ```typescript
-import { HostingV1WebsitesDeleteWebsiteRequest } from 'hostinger-api-sdk';
+import { HostingListWebsiteFilesAndDirectoriesV1FileTypesParameter } from 'hostinger-api-sdk';
 
-const instance: HostingV1WebsitesDeleteWebsiteRequest = {
-    confirm,
+const instance: HostingListWebsiteFilesAndDirectoriesV1FileTypesParameter = {
 };
 ```
 
