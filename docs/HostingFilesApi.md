@@ -83,8 +83,7 @@ List files and directories under a website\'s document root.  Use `directory` to
 ```typescript
 import {
     HostingFilesApi,
-    Configuration,
-    HostingListWebsiteFilesAndDirectoriesV1FileTypesParameter
+    Configuration
 } from 'hostinger-api-sdk';
 
 const configuration = new Configuration();
@@ -96,7 +95,7 @@ let directory: string; //Directory path to check (optional) (default to '')
 let maxDepth: number; //How many directory levels deep to recurse. (optional) (default to 5)
 let maxItems: number; //Max number of entries to return in this page. (optional) (default to 1000)
 let offset: number; //Number of entries to skip. Page with offset + item count until reaching total_items. (optional) (default to 0)
-let fileTypes: HostingListWebsiteFilesAndDirectoriesV1FileTypesParameter; //Filter by entry type, e.g. file,directory. Array or comma-separated. Omit for all types. (optional) (default to undefined)
+let fileTypes: Array<'file' | 'directory' | 'symlink' | 'other'>; //Filter by entry type, e.g. file,directory. Omit for all types. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.listWebsiteFilesAndDirectoriesV1(
     username,
@@ -119,7 +118,7 @@ const { status, data } = await apiInstance.listWebsiteFilesAndDirectoriesV1(
 | **maxDepth** | [**number**] | How many directory levels deep to recurse. | (optional) defaults to 5|
 | **maxItems** | [**number**] | Max number of entries to return in this page. | (optional) defaults to 1000|
 | **offset** | [**number**] | Number of entries to skip. Page with offset + item count until reaching total_items. | (optional) defaults to 0|
-| **fileTypes** | **HostingListWebsiteFilesAndDirectoriesV1FileTypesParameter** | Filter by entry type, e.g. file,directory. Array or comma-separated. Omit for all types. | (optional) defaults to undefined|
+| **fileTypes** | **Array<&#39;file&#39; &#124; &#39;directory&#39; &#124; &#39;symlink&#39; &#124; &#39;other&#39;>** | Filter by entry type, e.g. file,directory. Omit for all types. | (optional) defaults to undefined|
 
 
 ### Return type
