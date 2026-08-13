@@ -4,10 +4,10 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**importAgencyPlanWebsiteFromArchiveV1**](#importagencyplanwebsitefromarchivev1) | **POST** /api/agency-hosting/v1/websites/{website_uid}/files/import-archive | Import Agency Plan website from archive|
+|[**importWebsiteFromArchiveV1**](#importwebsitefromarchivev1) | **POST** /api/agency-hosting/v1/websites/{website_uid}/files/import-archive | Import website from archive|
 
-# **importAgencyPlanWebsiteFromArchiveV1**
-> CommonSuccessEmptyResource importAgencyPlanWebsiteFromArchiveV1(agencyHostingV1FilesImportArchiveRequest)
+# **importWebsiteFromArchiveV1**
+> CommonSuccessEmptyResource importWebsiteFromArchiveV1(agencyHostingV1FilesImportArchiveRequest)
 
 Imports an Agency Plan website from an already-uploaded archive.  Upload the archive to the website\'s root directory via file browser first, then provide its filename in this request. Website contents are overwritten by the archive contents. Supported archive types: .zip, .tar, .tar.gz, .tgz.
 
@@ -26,7 +26,7 @@ const apiInstance = new AgencyHostingFilesApi(configuration);
 let websiteUid: string; //Agency Plan website UID (default to undefined)
 let agencyHostingV1FilesImportArchiveRequest: AgencyHostingV1FilesImportArchiveRequest; //
 
-const { status, data } = await apiInstance.importAgencyPlanWebsiteFromArchiveV1(
+const { status, data } = await apiInstance.importWebsiteFromArchiveV1(
     websiteUid,
     agencyHostingV1FilesImportArchiveRequest
 );

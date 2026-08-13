@@ -4,10 +4,10 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**listAvailableDatacentersForAnAgencyPlanOrderV1**](#listavailabledatacentersforanagencyplanorderv1) | **GET** /api/agency-hosting/v1/orders/{order_id}/datacenters | List available datacenters for an Agency Plan order|
+|[**listAvailableDatacentersV1**](#listavailabledatacentersv1) | **GET** /api/agency-hosting/v1/orders/{order_id}/datacenters | List available datacenters|
 
-# **listAvailableDatacentersForAnAgencyPlanOrderV1**
-> Array<AgencyHostingV1DatacentersDatacenterResource> listAvailableDatacentersForAnAgencyPlanOrderV1()
+# **listAvailableDatacentersV1**
+> Array<AgencyHostingV1DatacentersDatacenterResource> listAvailableDatacentersV1()
 
 Lists the datacenters available for provisioning a new website on the given Agency Plan hosting order.  Each datacenter includes a `pinger_url` you can ping from the client to measure round-trip latency; comparing the results across datacenters lets you pick the nearest one (lowest ping) before choosing its `code` as the `datacenter_code` when creating a website setup.
 
@@ -24,7 +24,7 @@ const apiInstance = new AgencyHostingDatacentersApi(configuration);
 
 let orderId: number; //Agency Plan order ID (default to undefined)
 
-const { status, data } = await apiInstance.listAvailableDatacentersForAnAgencyPlanOrderV1(
+const { status, data } = await apiInstance.listAvailableDatacentersV1(
     orderId
 );
 ```

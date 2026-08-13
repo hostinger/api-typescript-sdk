@@ -1,4 +1,4 @@
-# AgencyHostingListAgencyPlanDomainsV1200Response
+# AgencyHostingListDomainsV1200Response
 
 
 ## Properties
@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AgencyHostingListAgencyPlanDomainsV1200Response } from 'hostinger-api-sdk';
+import { AgencyHostingListDomainsV1200Response } from 'hostinger-api-sdk';
 
-const instance: AgencyHostingListAgencyPlanDomainsV1200Response = {
+const instance: AgencyHostingListDomainsV1200Response = {
     data,
     meta,
 };

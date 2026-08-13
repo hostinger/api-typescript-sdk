@@ -4,12 +4,12 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**changeAgencyPlanWebsiteWordPressCoreVersionV1**](#changeagencyplanwebsitewordpresscoreversionv1) | **PATCH** /api/agency-hosting/v1/websites/{website_uid}/wordpress/settings/version | Change Agency Plan website WordPress core version|
-|[**getAgencyPlanWebsiteWordPressSettingsV1**](#getagencyplanwebsitewordpresssettingsv1) | **GET** /api/agency-hosting/v1/websites/{website_uid}/wordpress/settings | Get Agency Plan website WordPress settings|
-|[**listAvailableWordPressVersionsForAnAgencyPlanWebsiteV1**](#listavailablewordpressversionsforanagencyplanwebsitev1) | **GET** /api/agency-hosting/v1/websites/{website_uid}/wordpress/settings/versions | List available WordPress versions for an Agency Plan website|
+|[**changeWordPressVersionV1**](#changewordpressversionv1) | **PATCH** /api/agency-hosting/v1/websites/{website_uid}/wordpress/settings/version | Change WordPress version|
+|[**getWordPressSettingsV1**](#getwordpresssettingsv1) | **GET** /api/agency-hosting/v1/websites/{website_uid}/wordpress/settings | Get WordPress settings|
+|[**listAvailableWordPressVersionsV1**](#listavailablewordpressversionsv1) | **GET** /api/agency-hosting/v1/websites/{website_uid}/wordpress/settings/versions | List available WordPress versions|
 
-# **changeAgencyPlanWebsiteWordPressCoreVersionV1**
-> CommonSuccessEmptyResource changeAgencyPlanWebsiteWordPressCoreVersionV1(agencyHostingV1WordPressChangeVersionRequest)
+# **changeWordPressVersionV1**
+> CommonSuccessEmptyResource changeWordPressVersionV1(agencyHostingV1WordPressChangeVersionRequest)
 
 Changes the installed WordPress core version on an Agency Plan website to one of the versions available for installation.
 
@@ -28,7 +28,7 @@ const apiInstance = new AgencyHostingWordPressApi(configuration);
 let websiteUid: string; //Agency Plan website UID (default to undefined)
 let agencyHostingV1WordPressChangeVersionRequest: AgencyHostingV1WordPressChangeVersionRequest; //
 
-const { status, data } = await apiInstance.changeAgencyPlanWebsiteWordPressCoreVersionV1(
+const { status, data } = await apiInstance.changeWordPressVersionV1(
     websiteUid,
     agencyHostingV1WordPressChangeVersionRequest
 );
@@ -66,8 +66,8 @@ const { status, data } = await apiInstance.changeAgencyPlanWebsiteWordPressCoreV
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getAgencyPlanWebsiteWordPressSettingsV1**
-> AgencyHostingV1WordPressSettingsResource getAgencyPlanWebsiteWordPressSettingsV1()
+# **getWordPressSettingsV1**
+> AgencyHostingV1WordPressSettingsResource getWordPressSettingsV1()
 
 Returns the current WordPress settings for an Agency Plan website: installed core version, LiteSpeed Cache plugin status, object cache status, and maintenance mode status.
 
@@ -84,7 +84,7 @@ const apiInstance = new AgencyHostingWordPressApi(configuration);
 
 let websiteUid: string; //Agency Plan website UID (default to undefined)
 
-const { status, data } = await apiInstance.getAgencyPlanWebsiteWordPressSettingsV1(
+const { status, data } = await apiInstance.getWordPressSettingsV1(
     websiteUid
 );
 ```
@@ -119,8 +119,8 @@ const { status, data } = await apiInstance.getAgencyPlanWebsiteWordPressSettings
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **listAvailableWordPressVersionsForAnAgencyPlanWebsiteV1**
-> Array<AgencyHostingV1WordPressVersionResource> listAvailableWordPressVersionsForAnAgencyPlanWebsiteV1()
+# **listAvailableWordPressVersionsV1**
+> Array<AgencyHostingV1WordPressVersionResource> listAvailableWordPressVersionsV1()
 
 Lists the WordPress core versions available for installation on an Agency Plan website.
 
@@ -137,7 +137,7 @@ const apiInstance = new AgencyHostingWordPressApi(configuration);
 
 let websiteUid: string; //Agency Plan website UID (default to undefined)
 
-const { status, data } = await apiInstance.listAvailableWordPressVersionsForAnAgencyPlanWebsiteV1(
+const { status, data } = await apiInstance.listAvailableWordPressVersionsV1(
     websiteUid
 );
 ```

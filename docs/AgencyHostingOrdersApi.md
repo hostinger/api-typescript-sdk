@@ -4,10 +4,10 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**listAgencyPlanOrdersV1**](#listagencyplanordersv1) | **GET** /api/agency-hosting/v1/orders | List Agency Plan orders|
+|[**listOrdersV1**](#listordersv1) | **GET** /api/agency-hosting/v1/orders | List orders|
 
-# **listAgencyPlanOrdersV1**
-> AgencyHostingListAgencyPlanOrdersV1200Response listAgencyPlanOrdersV1()
+# **listOrdersV1**
+> AgencyHostingListOrdersV1200Response listOrdersV1()
 
 Returns a paginated list of Agency Plan orders accessible to the authenticated client.
 
@@ -25,7 +25,7 @@ const apiInstance = new AgencyHostingOrdersApi(configuration);
 let page: number; //Page number (optional) (default to undefined)
 let perPage: number; //Number of items per page (optional) (default to 25)
 
-const { status, data } = await apiInstance.listAgencyPlanOrdersV1(
+const { status, data } = await apiInstance.listOrdersV1(
     page,
     perPage
 );
@@ -41,7 +41,7 @@ const { status, data } = await apiInstance.listAgencyPlanOrdersV1(
 
 ### Return type
 
-**AgencyHostingListAgencyPlanOrdersV1200Response**
+**AgencyHostingListOrdersV1200Response**
 
 ### Authorization
 

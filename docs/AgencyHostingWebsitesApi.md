@@ -4,13 +4,13 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**buildAgencyPlanWebsiteNodeJSAssetsV1**](#buildagencyplanwebsitenodejsassetsv1) | **POST** /api/agency-hosting/v1/websites/{website_uid}/build-assets | Build Agency Plan website NodeJS assets|
-|[**deleteAgencyPlanWebsiteV1**](#deleteagencyplanwebsitev1) | **DELETE** /api/agency-hosting/v1/websites/{website_uid} | Delete Agency Plan website|
-|[**getAgencyPlanWebsiteDetailsV1**](#getagencyplanwebsitedetailsv1) | **GET** /api/agency-hosting/v1/websites/{website_uid} | Get Agency Plan website details|
-|[**listRunningAgencyPlanWebsiteProcessesV1**](#listrunningagencyplanwebsiteprocessesv1) | **GET** /api/agency-hosting/v1/websites/{website_uid}/processes | List running Agency Plan website processes|
+|[**buildWebsiteNodeJSAssetsV1**](#buildwebsitenodejsassetsv1) | **POST** /api/agency-hosting/v1/websites/{website_uid}/build-assets | Build website NodeJS assets|
+|[**deleteWebsiteV1**](#deletewebsitev1) | **DELETE** /api/agency-hosting/v1/websites/{website_uid} | Delete website|
+|[**getWebsiteDetailsV1**](#getwebsitedetailsv1) | **GET** /api/agency-hosting/v1/websites/{website_uid} | Get website details|
+|[**listWebsiteProcessesV1**](#listwebsiteprocessesv1) | **GET** /api/agency-hosting/v1/websites/{website_uid}/processes | List website processes|
 
-# **buildAgencyPlanWebsiteNodeJSAssetsV1**
-> CommonSuccessEmptyResource buildAgencyPlanWebsiteNodeJSAssetsV1(agencyHostingV1WebsitesBuildAssetsRequest)
+# **buildWebsiteNodeJSAssetsV1**
+> CommonSuccessEmptyResource buildWebsiteNodeJSAssetsV1(agencyHostingV1WebsitesBuildAssetsRequest)
 
 Builds and deploys a Node.js application for an Agency Plan website from an already-uploaded archive.  Upload the archive to file browser first, then provide its relative path from document root in this request. Website contents are overwritten by the build result, which is deployed to public_html.
 
@@ -29,7 +29,7 @@ const apiInstance = new AgencyHostingWebsitesApi(configuration);
 let websiteUid: string; //Agency Plan website UID (default to undefined)
 let agencyHostingV1WebsitesBuildAssetsRequest: AgencyHostingV1WebsitesBuildAssetsRequest; //
 
-const { status, data } = await apiInstance.buildAgencyPlanWebsiteNodeJSAssetsV1(
+const { status, data } = await apiInstance.buildWebsiteNodeJSAssetsV1(
     websiteUid,
     agencyHostingV1WebsitesBuildAssetsRequest
 );
@@ -67,8 +67,8 @@ const { status, data } = await apiInstance.buildAgencyPlanWebsiteNodeJSAssetsV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deleteAgencyPlanWebsiteV1**
-> CommonSuccessEmptyResource deleteAgencyPlanWebsiteV1()
+# **deleteWebsiteV1**
+> CommonSuccessEmptyResource deleteWebsiteV1()
 
 Permanently deletes an Agency Plan website. Deletion is processed asynchronously: the website is immediately transitioned to a deleting state and the underlying server resources are removed in the background.
 
@@ -85,7 +85,7 @@ const apiInstance = new AgencyHostingWebsitesApi(configuration);
 
 let websiteUid: string; //Agency Plan website UID (default to undefined)
 
-const { status, data } = await apiInstance.deleteAgencyPlanWebsiteV1(
+const { status, data } = await apiInstance.deleteWebsiteV1(
     websiteUid
 );
 ```
@@ -120,8 +120,8 @@ const { status, data } = await apiInstance.deleteAgencyPlanWebsiteV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getAgencyPlanWebsiteDetailsV1**
-> AgencyHostingV1WebsitesWebsiteResource getAgencyPlanWebsiteDetailsV1()
+# **getWebsiteDetailsV1**
+> AgencyHostingV1WebsitesWebsiteResource getWebsiteDetailsV1()
 
 Retrieves detailed information about a specific Agency Plan website, including configuration, status, metadata, hosting plan details, and resource quotas.
 
@@ -138,7 +138,7 @@ const apiInstance = new AgencyHostingWebsitesApi(configuration);
 
 let websiteUid: string; //Agency Plan website UID (default to undefined)
 
-const { status, data } = await apiInstance.getAgencyPlanWebsiteDetailsV1(
+const { status, data } = await apiInstance.getWebsiteDetailsV1(
     websiteUid
 );
 ```
@@ -173,8 +173,8 @@ const { status, data } = await apiInstance.getAgencyPlanWebsiteDetailsV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **listRunningAgencyPlanWebsiteProcessesV1**
-> Array<AgencyHostingV1WebsitesWebsiteProcessResource> listRunningAgencyPlanWebsiteProcessesV1()
+# **listWebsiteProcessesV1**
+> Array<AgencyHostingV1WebsitesWebsiteProcessResource> listWebsiteProcessesV1()
 
 Lists active and recently completed asynchronous processes for an Agency Plan website.  Each process has a unique ID (for tracking), a type, and a status (running, completed, failed). Poll this endpoint after initiating async operations (SSL setup, backups, cloning) to track progress.
 
@@ -191,7 +191,7 @@ const apiInstance = new AgencyHostingWebsitesApi(configuration);
 
 let websiteUid: string; //Agency Plan website UID (default to undefined)
 
-const { status, data } = await apiInstance.listRunningAgencyPlanWebsiteProcessesV1(
+const { status, data } = await apiInstance.listWebsiteProcessesV1(
     websiteUid
 );
 ```

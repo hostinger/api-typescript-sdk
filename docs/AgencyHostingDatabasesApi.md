@@ -4,14 +4,14 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**createAgencyPlanWebsiteDatabaseUserV1**](#createagencyplanwebsitedatabaseuserv1) | **POST** /api/agency-hosting/v1/websites/{website_uid}/databases/{database_name}/users | Create Agency Plan website database user|
-|[**createAgencyPlanWebsiteDatabaseV1**](#createagencyplanwebsitedatabasev1) | **POST** /api/agency-hosting/v1/websites/{website_uid}/databases | Create Agency Plan website database|
-|[**deleteAgencyPlanWebsiteDatabaseUserV1**](#deleteagencyplanwebsitedatabaseuserv1) | **DELETE** /api/agency-hosting/v1/websites/{website_uid}/databases/{database_name}/users/{database_user_name} | Delete Agency Plan website database user|
-|[**deleteAgencyPlanWebsiteDatabaseV1**](#deleteagencyplanwebsitedatabasev1) | **DELETE** /api/agency-hosting/v1/websites/{website_uid}/databases/{database_name} | Delete Agency Plan website database|
-|[**listAgencyPlanWebsiteDatabasesV1**](#listagencyplanwebsitedatabasesv1) | **GET** /api/agency-hosting/v1/websites/{website_uid}/databases | List Agency Plan website databases|
+|[**createWebsiteDatabaseUserV1**](#createwebsitedatabaseuserv1) | **POST** /api/agency-hosting/v1/websites/{website_uid}/databases/{database_name}/users | Create website database user|
+|[**createWebsiteDatabaseV1**](#createwebsitedatabasev1) | **POST** /api/agency-hosting/v1/websites/{website_uid}/databases | Create website database|
+|[**deleteWebsiteDatabaseUserV1**](#deletewebsitedatabaseuserv1) | **DELETE** /api/agency-hosting/v1/websites/{website_uid}/databases/{database_name}/users/{database_user_name} | Delete website database user|
+|[**deleteWebsiteDatabaseV1**](#deletewebsitedatabasev1) | **DELETE** /api/agency-hosting/v1/websites/{website_uid}/databases/{database_name} | Delete website database|
+|[**listWebsiteDatabasesV1**](#listwebsitedatabasesv1) | **GET** /api/agency-hosting/v1/websites/{website_uid}/databases | List website databases|
 
-# **createAgencyPlanWebsiteDatabaseUserV1**
-> AgencyHostingV1WebsitesDatabasesDatabaseUserResource createAgencyPlanWebsiteDatabaseUserV1(agencyHostingV1WebsitesDatabasesUsersCreateDatabaseUserRequest)
+# **createWebsiteDatabaseUserV1**
+> AgencyHostingV1WebsitesDatabasesDatabaseUserResource createWebsiteDatabaseUserV1(agencyHostingV1WebsitesDatabasesUsersCreateDatabaseUserRequest)
 
 Creates a user for an existing database on an Agency Plan website.  Each database supports a single non-system user; creating a user for a database that already has one fails.
 
@@ -31,7 +31,7 @@ let websiteUid: string; //Agency Plan website UID (default to undefined)
 let databaseName: string; //Full database name as returned by the list databases endpoint. (default to undefined)
 let agencyHostingV1WebsitesDatabasesUsersCreateDatabaseUserRequest: AgencyHostingV1WebsitesDatabasesUsersCreateDatabaseUserRequest; //
 
-const { status, data } = await apiInstance.createAgencyPlanWebsiteDatabaseUserV1(
+const { status, data } = await apiInstance.createWebsiteDatabaseUserV1(
     websiteUid,
     databaseName,
     agencyHostingV1WebsitesDatabasesUsersCreateDatabaseUserRequest
@@ -71,8 +71,8 @@ const { status, data } = await apiInstance.createAgencyPlanWebsiteDatabaseUserV1
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **createAgencyPlanWebsiteDatabaseV1**
-> AgencyHostingV1WebsitesDatabasesDatabaseResource createAgencyPlanWebsiteDatabaseV1(agencyHostingV1WebsitesDatabasesCreateDatabaseRequest)
+# **createWebsiteDatabaseV1**
+> AgencyHostingV1WebsitesDatabasesDatabaseResource createWebsiteDatabaseV1(agencyHostingV1WebsitesDatabasesCreateDatabaseRequest)
 
 Creates a MySQL database with a dedicated user for an Agency Plan website.  The database name, username, and password must all be provided by the caller.
 
@@ -91,7 +91,7 @@ const apiInstance = new AgencyHostingDatabasesApi(configuration);
 let websiteUid: string; //Agency Plan website UID (default to undefined)
 let agencyHostingV1WebsitesDatabasesCreateDatabaseRequest: AgencyHostingV1WebsitesDatabasesCreateDatabaseRequest; //
 
-const { status, data } = await apiInstance.createAgencyPlanWebsiteDatabaseV1(
+const { status, data } = await apiInstance.createWebsiteDatabaseV1(
     websiteUid,
     agencyHostingV1WebsitesDatabasesCreateDatabaseRequest
 );
@@ -129,8 +129,8 @@ const { status, data } = await apiInstance.createAgencyPlanWebsiteDatabaseV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deleteAgencyPlanWebsiteDatabaseUserV1**
-> CommonSuccessEmptyResource deleteAgencyPlanWebsiteDatabaseUserV1()
+# **deleteWebsiteDatabaseUserV1**
+> CommonSuccessEmptyResource deleteWebsiteDatabaseUserV1()
 
 Permanently deletes a database user from an Agency Plan website database, revoking all access it had.  The operation is idempotent: deleting a user that does not exist succeeds without error.
 
@@ -149,7 +149,7 @@ let websiteUid: string; //Agency Plan website UID (default to undefined)
 let databaseName: string; //Full database name as returned by the list databases endpoint. (default to undefined)
 let databaseUserName: string; //Database username as returned by the list databases endpoint. (default to undefined)
 
-const { status, data } = await apiInstance.deleteAgencyPlanWebsiteDatabaseUserV1(
+const { status, data } = await apiInstance.deleteWebsiteDatabaseUserV1(
     websiteUid,
     databaseName,
     databaseUserName
@@ -188,8 +188,8 @@ const { status, data } = await apiInstance.deleteAgencyPlanWebsiteDatabaseUserV1
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deleteAgencyPlanWebsiteDatabaseV1**
-> CommonSuccessEmptyResource deleteAgencyPlanWebsiteDatabaseV1()
+# **deleteWebsiteDatabaseV1**
+> CommonSuccessEmptyResource deleteWebsiteDatabaseV1()
 
 Permanently deletes a MySQL database and all its data from an Agency Plan website, including its users.  The operation is idempotent: deleting a database that does not exist succeeds without error.
 
@@ -207,7 +207,7 @@ const apiInstance = new AgencyHostingDatabasesApi(configuration);
 let websiteUid: string; //Agency Plan website UID (default to undefined)
 let databaseName: string; //Full database name as returned by the list databases endpoint. (default to undefined)
 
-const { status, data } = await apiInstance.deleteAgencyPlanWebsiteDatabaseV1(
+const { status, data } = await apiInstance.deleteWebsiteDatabaseV1(
     websiteUid,
     databaseName
 );
@@ -244,8 +244,8 @@ const { status, data } = await apiInstance.deleteAgencyPlanWebsiteDatabaseV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **listAgencyPlanWebsiteDatabasesV1**
-> AgencyHostingListAgencyPlanWebsiteDatabasesV1200Response listAgencyPlanWebsiteDatabasesV1()
+# **listWebsiteDatabasesV1**
+> AgencyHostingListWebsiteDatabasesV1200Response listWebsiteDatabasesV1()
 
 Returns a paginated list of MySQL databases created for an Agency Plan website.  Each entry includes the database\'s non-system users.
 
@@ -264,7 +264,7 @@ let websiteUid: string; //Agency Plan website UID (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
 let perPage: number; //Number of items per page (optional) (default to 25)
 
-const { status, data } = await apiInstance.listAgencyPlanWebsiteDatabasesV1(
+const { status, data } = await apiInstance.listWebsiteDatabasesV1(
     websiteUid,
     page,
     perPage
@@ -282,7 +282,7 @@ const { status, data } = await apiInstance.listAgencyPlanWebsiteDatabasesV1(
 
 ### Return type
 
-**AgencyHostingListAgencyPlanWebsiteDatabasesV1200Response**
+**AgencyHostingListWebsiteDatabasesV1200Response**
 
 ### Authorization
 

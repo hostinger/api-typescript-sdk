@@ -4,10 +4,10 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**clearAgencyPlanWebsiteCacheV1**](#clearagencyplanwebsitecachev1) | **DELETE** /api/agency-hosting/v1/websites/{website_uid}/cache | Clear Agency Plan website cache|
+|[**clearWebsiteCacheV1**](#clearwebsitecachev1) | **DELETE** /api/agency-hosting/v1/websites/{website_uid}/cache | Clear website cache|
 
-# **clearAgencyPlanWebsiteCacheV1**
-> CommonSuccessEmptyResource clearAgencyPlanWebsiteCacheV1()
+# **clearWebsiteCacheV1**
+> CommonSuccessEmptyResource clearWebsiteCacheV1()
 
 Clears cache for all domains associated with an Agency Plan website, including its preview domain.  This operation clears all cache types for the website.
 
@@ -24,7 +24,7 @@ const apiInstance = new AgencyHostingCacheApi(configuration);
 
 let websiteUid: string; //Agency Plan website UID (default to undefined)
 
-const { status, data } = await apiInstance.clearAgencyPlanWebsiteCacheV1(
+const { status, data } = await apiInstance.clearWebsiteCacheV1(
     websiteUid
 );
 ```
