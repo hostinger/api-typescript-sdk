@@ -127,7 +127,7 @@ const { status, data } = await apiInstance.createPhysicalProductV1(
 # **uploadAndAttachAProductImageV1**
 > EcommerceV1ProductProductImageUploadResource uploadAndAttachAProductImageV1(ecommerceV1ProductUploadProductImageRequest)
 
-Upload a raster image (JPEG, PNG, GIF or WebP, max 15MB) and attach it to a product in a single call. The image is virus-scanned and validated by content, then stored on the CDN. Set is_thumbnail to make it the product\'s primary image.
+Fetch a raster image (JPEG, PNG, GIF or WebP, max 15MB) from a URL and attach it to a product in a single call. The image is virus-scanned and validated by content, then stored on the CDN. Set is_thumbnail to make it the product\'s primary image.
 
 ### Example
 
