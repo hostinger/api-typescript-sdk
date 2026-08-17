@@ -1,33 +1,35 @@
-# ReachProfilesApi
+# ReachFormsApi
 
 All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**getProfileDomainDNSStatusV1**](#getprofiledomaindnsstatusv1) | **GET** /api/reach/v1/profiles/{profileUuid}/domains/dns-status | Get profile domain DNS status|
-|[**getRemainingPlanLimitsV1**](#getremainingplanlimitsv1) | **GET** /api/reach/v1/profiles/{profileUuid}/limits | Get remaining plan limits|
-|[**listProfilesV1**](#listprofilesv1) | **GET** /api/reach/v1/profiles | List Profiles|
+|[**deleteFormV1**](#deleteformv1) | **DELETE** /api/reach/v1/profiles/{profileUuid}/forms/{formUuid} | Delete form|
+|[**getFormDetailsV1**](#getformdetailsv1) | **GET** /api/reach/v1/profiles/{profileUuid}/forms/{formUuid} | Get form details|
+|[**listFormsV1**](#listformsv1) | **GET** /api/reach/v1/profiles/{profileUuid}/forms | List forms|
 
-# **getProfileDomainDNSStatusV1**
-> ReachV1ProfilesDomainsDnsStatusResource getProfileDomainDNSStatusV1()
+# **deleteFormV1**
+> CommonSuccessEmptyResource deleteFormV1()
 
-Retrieve the DNS configuration status for a profile\'s domain.  This endpoint reports the state of MX, SPF, DKIM and DMARC records, including the actual records found and the suggested records required for correct email delivery.
+Permanently delete a form together with its template.  A form that has already captured submissions cannot be deleted, so that the contacts it collected are never silently discarded - pause the form instead to stop it collecting new ones. Views alone do not block deletion.
 
 ### Example
 
 ```typescript
 import {
-    ReachProfilesApi,
+    ReachFormsApi,
     Configuration
 } from 'hostinger-api-sdk';
 
 const configuration = new Configuration();
-const apiInstance = new ReachProfilesApi(configuration);
+const apiInstance = new ReachFormsApi(configuration);
 
 let profileUuid: string; //Profile uuid parameter (default to undefined)
+let formUuid: string; //Form uuid parameter (default to undefined)
 
-const { status, data } = await apiInstance.getProfileDomainDNSStatusV1(
-    profileUuid
+const { status, data } = await apiInstance.deleteFormV1(
+    profileUuid,
+    formUuid
 );
 ```
 
@@ -36,11 +38,69 @@ const { status, data } = await apiInstance.getProfileDomainDNSStatusV1(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **profileUuid** | [**string**] | Profile uuid parameter | defaults to undefined|
+| **formUuid** | [**string**] | Form uuid parameter | defaults to undefined|
 
 
 ### Return type
 
-**ReachV1ProfilesDomainsDnsStatusResource**
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success empty response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**409** | Error response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getFormDetailsV1**
+> ReachV1FormsFormDetailsResource getFormDetailsV1()
+
+Get a single form with the URL of its hosted template and the tags it applies to the contacts it captures.  There is no ready-made embed snippet in the response - either serve the template HTML yourself or build your own embed around the form uuid.
+
+### Example
+
+```typescript
+import {
+    ReachFormsApi,
+    Configuration
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new ReachFormsApi(configuration);
+
+let profileUuid: string; //Profile uuid parameter (default to undefined)
+let formUuid: string; //Form uuid parameter (default to undefined)
+
+const { status, data } = await apiInstance.getFormDetailsV1(
+    profileUuid,
+    formUuid
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **profileUuid** | [**string**] | Profile uuid parameter | defaults to undefined|
+| **formUuid** | [**string**] | Form uuid parameter | defaults to undefined|
+
+
+### Return type
+
+**ReachV1FormsFormDetailsResource**
 
 ### Authorization
 
@@ -61,26 +121,30 @@ const { status, data } = await apiInstance.getProfileDomainDNSStatusV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getRemainingPlanLimitsV1**
-> ReachV1ProfilesPlanLimitsResource getRemainingPlanLimitsV1()
+# **listFormsV1**
+> ReachListFormsV1200Response listFormsV1()
 
-Get how much of the plan is left for the current period.  Two things to keep in mind before you build alerting on this. The period is a calendar month rather than a billing anniversary, so the counters reset on the 1st no matter when the subscription started. And usage is tracked per order, so every profile on the same order shares one pool and reports the same numbers here. Only the current period is available, past usage is not kept.
+Get a paginated list of the signup forms in a profile.  Each form carries a reference to the template that renders it. Get the form details for a directly usable template URL and for the tags the form puts on the contacts it captures.
 
 ### Example
 
 ```typescript
 import {
-    ReachProfilesApi,
+    ReachFormsApi,
     Configuration
 } from 'hostinger-api-sdk';
 
 const configuration = new Configuration();
-const apiInstance = new ReachProfilesApi(configuration);
+const apiInstance = new ReachFormsApi(configuration);
 
 let profileUuid: string; //Profile uuid parameter (default to undefined)
+let page: number; //Page number (optional) (default to undefined)
+let perPage: number; //Number of items per page (optional) (default to 25)
 
-const { status, data } = await apiInstance.getRemainingPlanLimitsV1(
-    profileUuid
+const { status, data } = await apiInstance.listFormsV1(
+    profileUuid,
+    page,
+    perPage
 );
 ```
 
@@ -89,57 +153,13 @@ const { status, data } = await apiInstance.getRemainingPlanLimitsV1(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **profileUuid** | [**string**] | Profile uuid parameter | defaults to undefined|
+| **page** | [**number**] | Page number | (optional) defaults to undefined|
+| **perPage** | [**number**] | Number of items per page | (optional) defaults to 25|
 
 
 ### Return type
 
-**ReachV1ProfilesPlanLimitsResource**
-
-### Authorization
-
-[apiToken](../README.md#apiToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Success response |  -  |
-|**401** | Unauthenticated response |  -  |
-|**500** | Error response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **listProfilesV1**
-> Array<ReachV1ProfilesProfileResource> listProfilesV1()
-
-This endpoint returns all profiles available to the client, including their basic information.
-
-### Example
-
-```typescript
-import {
-    ReachProfilesApi,
-    Configuration
-} from 'hostinger-api-sdk';
-
-const configuration = new Configuration();
-const apiInstance = new ReachProfilesApi(configuration);
-
-const { status, data } = await apiInstance.listProfilesV1();
-```
-
-### Parameters
-This endpoint does not have any parameters.
-
-
-### Return type
-
-**Array<ReachV1ProfilesProfileResource>**
+**ReachListFormsV1200Response**
 
 ### Authorization
 
