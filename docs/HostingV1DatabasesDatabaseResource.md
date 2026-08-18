@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **updated_at** | **string** | Database last update date in ISO 8601 format. | [optional] [default to undefined]
 **disk_usage_mb** | **number** | Current database disk usage in megabytes. | [optional] [default to undefined]
 **max_size_mb** | **number** | Maximum allowed database size in megabytes. | [optional] [default to undefined]
+**host** | **string** | MySQL hostname for remote connections. Same value as hPanel Remote MySQL. Identical for every database on this account. Not the database user grant host. | [optional] [default to undefined]
+**port** | **number** | MySQL port for remote connections. Always 3306. | [optional] [default to undefined]
 
 ## Example
 
@@ -28,6 +30,8 @@ const instance: HostingV1DatabasesDatabaseResource = {
     updated_at,
     disk_usage_mb,
     max_size_mb,
+    host,
+    port,
 };
 ```
 
