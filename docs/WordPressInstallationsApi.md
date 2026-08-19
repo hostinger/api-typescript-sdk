@@ -8,6 +8,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**deleteWordPressInstallationV1**](#deletewordpressinstallationv1) | **DELETE** /api/hosting/v1/accounts/{username}/wordpress/{software} | Delete WordPress installation|
 |[**detectWordPressInstallationsV1**](#detectwordpressinstallationsv1) | **POST** /api/hosting/v1/accounts/{username}/wordpress/installations/detect | Detect WordPress installations|
 |[**getInstallationJWTTokenV1**](#getinstallationjwttokenv1) | **GET** /api/hosting/v1/accounts/{username}/wordpress/{software}/jwt-token | Get installation JWT token|
+|[**importWordPressWebsiteV1**](#importwordpresswebsitev1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/wordpress/import | Import WordPress website|
 |[**installWordPressV1**](#installwordpressv1) | **POST** /api/hosting/v1/accounts/{username}/wordpress/installations | Install WordPress|
 |[**listAvailableWordPressCoreUpdatesV1**](#listavailablewordpresscoreupdatesv1) | **GET** /api/hosting/v1/accounts/{username}/wordpress/{software}/updates | List available WordPress core updates|
 |[**listWordPressInstallationsV1**](#listwordpressinstallationsv1) | **GET** /api/hosting/v1/wordpress/installations | List WordPress installations|
@@ -237,6 +238,67 @@ const { status, data } = await apiInstance.getInstallationJWTTokenV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **importWordPressWebsiteV1**
+> CommonSuccessEmptyResource importWordPressWebsiteV1(wordPressV1InstallationsImportWordPressRequest)
+
+Import WordPress website to the specified domain.  WARNING: this overwrites the website\'s existing contents and cannot be undone — verify this is intended before calling this endpoint.  This endpoint allows you to import a WordPress website from archive and database files that have been uploaded to the website\'s directory.
+
+### Example
+
+```typescript
+import {
+    WordPressInstallationsApi,
+    Configuration,
+    WordPressV1InstallationsImportWordPressRequest
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new WordPressInstallationsApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+let wordPressV1InstallationsImportWordPressRequest: WordPressV1InstallationsImportWordPressRequest; //
+
+const { status, data } = await apiInstance.importWordPressWebsiteV1(
+    username,
+    domain,
+    wordPressV1InstallationsImportWordPressRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **wordPressV1InstallationsImportWordPressRequest** | **WordPressV1InstallationsImportWordPressRequest**|  | |
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
 

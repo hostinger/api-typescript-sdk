@@ -6,6 +6,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |------------- | ------------- | -------------|
 |[**createWebsiteV1**](#createwebsitev1) | **POST** /api/hosting/v1/websites | Create website|
 |[**deleteWebsiteV1**](#deletewebsitev1) | **DELETE** /api/hosting/v1/websites/{domain} | Delete website|
+|[**deployStaticSiteArchiveV1**](#deploystaticsitearchivev1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/deploy | Deploy static site archive|
 |[**listWebsitesV1**](#listwebsitesv1) | **GET** /api/hosting/v1/websites | List websites|
 
 # **createWebsiteV1**
@@ -111,6 +112,67 @@ const { status, data } = await apiInstance.deleteWebsiteV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success empty response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deployStaticSiteArchiveV1**
+> CommonSuccessEmptyResource deployStaticSiteArchiveV1(hostingV1WebsitesDeployArchiveRequest)
+
+Deploy a static application from an archive file.  WARNING: this overwrites the website\'s existing contents and cannot be undone — verify this is intended before calling this endpoint.  This endpoint allows you to deploy a static application from an archive file that has been uploaded to the website\'s directory.  This only works for static sites (pre-built HTML/CSS/JS with no build step). For Node.js applications, use `Create NodeJS build from archive` instead, or `Start Node.js build` if the archive is already uploaded. For WordPress sites, use `Import WordPress website`.
+
+### Example
+
+```typescript
+import {
+    HostingWebsitesApi,
+    Configuration,
+    HostingV1WebsitesDeployArchiveRequest
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingWebsitesApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+let hostingV1WebsitesDeployArchiveRequest: HostingV1WebsitesDeployArchiveRequest; //
+
+const { status, data } = await apiInstance.deployStaticSiteArchiveV1(
+    username,
+    domain,
+    hostingV1WebsitesDeployArchiveRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **hostingV1WebsitesDeployArchiveRequest** | **HostingV1WebsitesDeployArchiveRequest**|  | |
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
 |**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |

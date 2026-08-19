@@ -5,6 +5,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
 |[**activateWordPressThemeV1**](#activatewordpressthemev1) | **POST** /api/hosting/v1/accounts/{username}/wordpress/{software}/themes/activate | Activate WordPress theme|
+|[**deployWordPressThemeV1**](#deploywordpressthemev1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/wordpress/themes/deploy | Deploy WordPress theme|
 |[**installWordPressThemeV1**](#installwordpressthemev1) | **POST** /api/hosting/v1/accounts/{username}/wordpress/{software}/themes/install | Install WordPress theme|
 |[**listInstalledWordPressThemesV1**](#listinstalledwordpressthemesv1) | **GET** /api/hosting/v1/accounts/{username}/wordpress/{software}/themes | List installed WordPress themes|
 |[**listWordPressThemesV1**](#listwordpressthemesv1) | **GET** /api/hosting/v1/wordpress/themes | List WordPress themes|
@@ -66,6 +67,67 @@ const { status, data } = await apiInstance.activateWordPressThemeV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success empty response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deployWordPressThemeV1**
+> CommonSuccessEmptyResource deployWordPressThemeV1(wordPressV1ThemesDeployThemeRequest)
+
+Deploy a WordPress theme from an already uploaded directory.  This endpoint allows you to deploy a WordPress theme that has been uploaded to the website\'s directory. The theme can be optionally activated after deployment.
+
+### Example
+
+```typescript
+import {
+    WordPressThemesApi,
+    Configuration,
+    WordPressV1ThemesDeployThemeRequest
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new WordPressThemesApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+let wordPressV1ThemesDeployThemeRequest: WordPressV1ThemesDeployThemeRequest; //
+
+const { status, data } = await apiInstance.deployWordPressThemeV1(
+    username,
+    domain,
+    wordPressV1ThemesDeployThemeRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **wordPressV1ThemesDeployThemeRequest** | **WordPressV1ThemesDeployThemeRequest**|  | |
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
 |**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |

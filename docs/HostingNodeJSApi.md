@@ -6,15 +6,17 @@ All URIs are relative to *https://developers.hostinger.com*
 |------------- | ------------- | -------------|
 |[**createNodeJSBuildFromArchiveV1**](#createnodejsbuildfromarchivev1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/from-archive | Create NodeJS build from archive|
 |[**getNodeJSBuildLogsV1**](#getnodejsbuildlogsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/{uuid}/logs | Get NodeJS build logs|
+|[**getNodeJsBuildSettingsFromArchiveV1**](#getnodejsbuildsettingsfromarchivev1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/settings/from-archive | Get Node.js build settings from archive|
 |[**listNodeJSBuildsV1**](#listnodejsbuildsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds | List NodeJS builds|
 |[**listNodeJsVulnerabilitiesV1**](#listnodejsvulnerabilitiesv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/vulnerabilities | List Node.js vulnerabilities|
 |[**patchNodeJsVulnerabilitiesV1**](#patchnodejsvulnerabilitiesv1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/vulnerabilities/patch | Patch Node.js vulnerabilities|
 |[**restartNodeJsApplicationV1**](#restartnodejsapplicationv1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/server/restart | Restart Node.js application|
+|[**startNodeJsBuildV1**](#startnodejsbuildv1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds | Start Node.js build|
 
 # **createNodeJSBuildFromArchiveV1**
 > HostingV1NodeJsBuildResource createNodeJSBuildFromArchiveV1(hostingV1NodeJsCreateFromArchiveRequest)
 
-Upload a project archive, auto-detect build settings, and immediately start a Node.js build.  This is the recommended single-step approach for deploying a Node.js application. The archive is uploaded to the website\'s file storage, build settings are auto-detected from the package.json inside the archive, and the build process starts automatically. Optional override fields take precedence over auto-detected values. Maximum archive size is 50MB.  Before archiving, exclude `node_modules/` and any build output directories (e.g. `dist/`, `.next/`, `build/`) — they are not needed because the build process runs the install step automatically, and including them unnecessarily increases the archive size. This also helps keep the archive well under the 50MB limit.  Example (zip): ``` zip -r archive.zip . --exclude \"node_modules/_*\" --exclude \"dist/_*\" ```  The returned build `uuid` can be used to poll progress and retrieve logs via the `Get Node.js Build Logs` endpoint.
+Upload a project archive, auto-detect build settings, and immediately start a Node.js build.  WARNING: on success this overwrites the website\'s existing contents and cannot be undone — verify this is intended before calling this endpoint.  This is the recommended single-step approach for deploying a Node.js application. The archive is uploaded to the website\'s file storage, build settings are auto-detected from the package.json inside the archive, and the build process starts automatically. Optional override fields take precedence over auto-detected values. Maximum archive size is 50MB.  Before archiving, exclude `node_modules/` and any build output directories (e.g. `dist/`, `.next/`, `build/`) — they are not needed because the build process runs the install step automatically, and including them unnecessarily increases the archive size. This also helps keep the archive well under the 50MB limit.  Example (zip): ``` zip -r archive.zip . --exclude \"node_modules/_*\" --exclude \"dist/_*\" ```  The returned build `uuid` can be used to poll progress and retrieve logs via the `Get Node.js Build Logs` endpoint.
 
 ### Example
 
@@ -114,6 +116,66 @@ const { status, data } = await apiInstance.getNodeJSBuildLogsV1(
 ### Return type
 
 **HostingV1NodeJsBuildLogsResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getNodeJsBuildSettingsFromArchiveV1**
+> HostingV1NodeJsBuildSettingsResource getNodeJsBuildSettingsFromArchiveV1()
+
+Auto-detect Node.js build settings from a package.json inside an archive already on the server.  Use this before calling `Start Node.js Build` to preview what settings will be used, or to let the user review and override values (framework, node version, root directory, output directory, build script) before committing to a build.  The archive must already be present on the website\'s file storage. Use the `Generate Upload URL` endpoint to obtain credentials and upload the archive first. To upload an archive and start a build in one step without inspecting settings first, use the `Create Node.js Build from Archive` endpoint instead.
+
+### Example
+
+```typescript
+import {
+    HostingNodeJSApi,
+    Configuration
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingNodeJSApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+let archivePath: string; //The path to the archive file relative to the document root of the vhost (default to undefined)
+
+const { status, data } = await apiInstance.getNodeJsBuildSettingsFromArchiveV1(
+    username,
+    domain,
+    archivePath
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+| **archivePath** | [**string**] | The path to the archive file relative to the document root of the vhost | defaults to undefined|
+
+
+### Return type
+
+**HostingV1NodeJsBuildSettingsResource**
 
 ### Authorization
 
@@ -371,6 +433,67 @@ const { status, data } = await apiInstance.restartNodeJsApplicationV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success empty response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **startNodeJsBuildV1**
+> HostingV1NodeJsBuildResource startNodeJsBuildV1(hostingV1NodeJsStartBuildRequest)
+
+Start a Node.js build process using files already present on the website\'s file storage.  WARNING: on success this overwrites the website\'s existing contents and cannot be undone — verify this is intended before calling this endpoint.  The `source_type` must be `archive` and `source_options.archive_path` must point to an existing archive file on the server (relative to the website document root). Use the `Generate Upload URL` endpoint to obtain credentials and upload the archive first.  To auto-detect build settings from an archive before starting, first call the `Get Node.js Build Settings from Archive` endpoint. To upload an archive and start a build in one step, use the `Create Node.js Build from Archive` endpoint instead.  The returned build `uuid` can be used to poll progress and retrieve logs via the `Get Node.js Build Logs` endpoint.
+
+### Example
+
+```typescript
+import {
+    HostingNodeJSApi,
+    Configuration,
+    HostingV1NodeJsStartBuildRequest
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingNodeJSApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+let hostingV1NodeJsStartBuildRequest: HostingV1NodeJsStartBuildRequest; //
+
+const { status, data } = await apiInstance.startNodeJsBuildV1(
+    username,
+    domain,
+    hostingV1NodeJsStartBuildRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **hostingV1NodeJsStartBuildRequest** | **HostingV1NodeJsStartBuildRequest**|  | |
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**HostingV1NodeJsBuildResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
 

@@ -7,6 +7,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**activateWordPressPluginV1**](#activatewordpresspluginv1) | **POST** /api/hosting/v1/accounts/{username}/wordpress/{software}/plugins/activate | Activate WordPress plugin|
 |[**checkIfWooCommerceIsInstalledV1**](#checkifwoocommerceisinstalledv1) | **GET** /api/hosting/v1/wordpress/plugins/is-woocommerce-installed | Check if WooCommerce is installed|
 |[**deactivateWordPressPluginV1**](#deactivatewordpresspluginv1) | **POST** /api/hosting/v1/accounts/{username}/wordpress/{software}/plugins/deactivate | Deactivate WordPress plugin|
+|[**deployWordPressPluginV1**](#deploywordpresspluginv1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/wordpress/plugins/deploy | Deploy WordPress plugin|
 |[**installWordPressPluginsV1**](#installwordpresspluginsv1) | **POST** /api/hosting/v1/accounts/{username}/wordpress/{software}/plugins/install | Install WordPress plugins|
 |[**listAvailableWordPressPluginsV1**](#listavailablewordpresspluginsv1) | **GET** /api/hosting/v1/accounts/{username}/wordpress/{software}/plugins/available | List available WordPress plugins|
 |[**listInstalledWordPressPluginsV1**](#listinstalledwordpresspluginsv1) | **GET** /api/hosting/v1/accounts/{username}/wordpress/{software}/plugins | List installed WordPress plugins|
@@ -185,6 +186,67 @@ const { status, data } = await apiInstance.deactivateWordPressPluginV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success empty response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deployWordPressPluginV1**
+> CommonSuccessEmptyResource deployWordPressPluginV1(wordPressV1PluginsDeployPluginRequest)
+
+Deploy a WordPress plugin from an already uploaded directory.  This endpoint allows you to deploy a WordPress plugin that has been uploaded to the website\'s directory. The plugin will be activated and made available in the WordPress admin panel.
+
+### Example
+
+```typescript
+import {
+    WordPressPluginsApi,
+    Configuration,
+    WordPressV1PluginsDeployPluginRequest
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new WordPressPluginsApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+let wordPressV1PluginsDeployPluginRequest: WordPressV1PluginsDeployPluginRequest; //
+
+const { status, data } = await apiInstance.deployWordPressPluginV1(
+    username,
+    domain,
+    wordPressV1PluginsDeployPluginRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **wordPressV1PluginsDeployPluginRequest** | **WordPressV1PluginsDeployPluginRequest**|  | |
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
 |**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
