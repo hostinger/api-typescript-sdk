@@ -435,7 +435,7 @@ const configuration = new Configuration();
 const apiInstance = new WordPressInstallationsApi(configuration);
 
 let username: string; //Filter by specific username (optional) (default to undefined)
-let domain: string; //Filter by domain name (exact match) (optional) (default to undefined)
+let domain: string; //Filter by domain name (case-insensitive substring match) (optional) (default to undefined)
 let ownership: 'owned' | 'managed' | 'all'; //Filter by ownership type. Defaults to \"owned\". Use \"all\" to include both owned and managed installations. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.listWordPressInstallationsV1(
@@ -450,7 +450,7 @@ const { status, data } = await apiInstance.listWordPressInstallationsV1(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **username** | [**string**] | Filter by specific username | (optional) defaults to undefined|
-| **domain** | [**string**] | Filter by domain name (exact match) | (optional) defaults to undefined|
+| **domain** | [**string**] | Filter by domain name (case-insensitive substring match) | (optional) defaults to undefined|
 | **ownership** | [**&#39;owned&#39; | &#39;managed&#39; | &#39;all&#39;**]**Array<&#39;owned&#39; &#124; &#39;managed&#39; &#124; &#39;all&#39;>** | Filter by ownership type. Defaults to \&quot;owned\&quot;. Use \&quot;all\&quot; to include both owned and managed installations. | (optional) defaults to undefined|
 
 

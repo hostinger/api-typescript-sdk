@@ -94,7 +94,7 @@ import {
 const configuration = new Configuration();
 const apiInstance = new WordPressPluginsApi(configuration);
 
-let domain: string; //Filter by domain name (exact match) (optional) (default to undefined)
+let domain: string; //Filter by domain name (case-insensitive substring match) (optional) (default to undefined)
 
 const { status, data } = await apiInstance.checkIfWooCommerceIsInstalledV1(
     domain
@@ -105,7 +105,7 @@ const { status, data } = await apiInstance.checkIfWooCommerceIsInstalledV1(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **domain** | [**string**] | Filter by domain name (exact match) | (optional) defaults to undefined|
+| **domain** | [**string**] | Filter by domain name (case-insensitive substring match) | (optional) defaults to undefined|
 
 
 ### Return type

@@ -182,7 +182,7 @@ const { status, data } = await apiInstance.deployStaticSiteArchiveV1(
 # **listWebsitesV1**
 > HostingListWebsitesV1200Response listWebsitesV1()
 
-Retrieve a paginated list of websites (CloudLinux, Builder, and Horizons) accessible to the authenticated client.  This endpoint returns websites from your hosting accounts as well as websites from other client hosting accounts that have shared access with you.  Each website includes a `website_type` field describing the type of website detected on the underlying platform (`wordpress`, `builder`, `horizons`, `nodejs`, or `other`). Some fields, such as `vhost_type`, `username`, and `root_directory`, only apply to CloudLinux websites and are null for other platforms.  Use the available query parameters to filter results by username, order ID, enabled status, or domain name for more targeted results.
+Retrieve a paginated list of websites (CloudLinux, Builder, and Horizons) accessible to the authenticated client.  This endpoint returns websites from your hosting accounts as well as websites from other client hosting accounts that have shared access with you.  Each website includes a `website_type` field describing the type of website detected on the underlying platform (`wordpress`, `builder`, `horizons`, `nodejs`, or `other`). Some fields, such as `vhost_type`, `username`, and `root_directory`, only apply to CloudLinux websites and are null for other platforms.  Use `website_types` to list only websites of a given detected type, e.g. only WordPress websites (`website_types=wordpress`) or only Node.js websites (`website_types=nodejs`). Combine with the other available query parameters to filter by username, order ID, enabled status, or domain name for more targeted results.
 
 ### Example
 
@@ -200,7 +200,8 @@ let perPage: number; //Number of items per page (optional) (default to 25)
 let username: string; //Filter by specific username (optional) (default to undefined)
 let orderId: number; //Order ID (optional) (default to undefined)
 let isEnabled: boolean; //Filter by enabled status (optional) (default to undefined)
-let domain: string; //Filter by domain name (exact match) (optional) (default to undefined)
+let domain: string; //Filter by domain name (case-insensitive substring match) (optional) (default to undefined)
+let websiteTypes: Array<'wordpress' | 'builder' | 'horizons' | 'nodejs' | 'other'>; //Filter by detected website type, e.g. wordpress,nodejs. Accepts a comma-separated list. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.listWebsitesV1(
     page,
@@ -208,7 +209,8 @@ const { status, data } = await apiInstance.listWebsitesV1(
     username,
     orderId,
     isEnabled,
-    domain
+    domain,
+    websiteTypes
 );
 ```
 
@@ -221,7 +223,8 @@ const { status, data } = await apiInstance.listWebsitesV1(
 | **username** | [**string**] | Filter by specific username | (optional) defaults to undefined|
 | **orderId** | [**number**] | Order ID | (optional) defaults to undefined|
 | **isEnabled** | [**boolean**] | Filter by enabled status | (optional) defaults to undefined|
-| **domain** | [**string**] | Filter by domain name (exact match) | (optional) defaults to undefined|
+| **domain** | [**string**] | Filter by domain name (case-insensitive substring match) | (optional) defaults to undefined|
+| **websiteTypes** | **Array<&#39;wordpress&#39; &#124; &#39;builder&#39; &#124; &#39;horizons&#39; &#124; &#39;nodejs&#39; &#124; &#39;other&#39;>** | Filter by detected website type, e.g. wordpress,nodejs. Accepts a comma-separated list. | (optional) defaults to undefined|
 
 
 ### Return type

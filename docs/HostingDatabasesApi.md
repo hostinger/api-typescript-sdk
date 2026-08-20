@@ -384,7 +384,7 @@ const apiInstance = new HostingDatabasesApi(configuration);
 let username: string; // (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
 let perPage: number; //Number of items per page (optional) (default to 25)
-let domain: string; //Filter by domain name (exact match) (optional) (default to undefined)
+let domain: string; //Filter by domain name (case-insensitive substring match) (optional) (default to undefined)
 let isAssigned: boolean; //When used with domain, return only databases assigned to that domain. (optional) (default to undefined)
 let search: string; //Search databases by name, user, or creation date. (optional) (default to undefined)
 
@@ -405,7 +405,7 @@ const { status, data } = await apiInstance.listAccountDatabasesV1(
 | **username** | [**string**] |  | defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
 | **perPage** | [**number**] | Number of items per page | (optional) defaults to 25|
-| **domain** | [**string**] | Filter by domain name (exact match) | (optional) defaults to undefined|
+| **domain** | [**string**] | Filter by domain name (case-insensitive substring match) | (optional) defaults to undefined|
 | **isAssigned** | [**boolean**] | When used with domain, return only databases assigned to that domain. | (optional) defaults to undefined|
 | **search** | [**string**] | Search databases by name, user, or creation date. | (optional) defaults to undefined|
 
