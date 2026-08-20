@@ -4,7 +4,6 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**createNodeJSBuildFromArchiveV1**](#createnodejsbuildfromarchivev1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/from-archive | Create NodeJS build from archive|
 |[**getNodeJSBuildLogsV1**](#getnodejsbuildlogsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/{uuid}/logs | Get NodeJS build logs|
 |[**getNodeJsBuildSettingsFromArchiveV1**](#getnodejsbuildsettingsfromarchivev1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/settings/from-archive | Get Node.js build settings from archive|
 |[**listNodeJSBuildsV1**](#listnodejsbuildsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds | List NodeJS builds|
@@ -12,67 +11,6 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**patchNodeJsVulnerabilitiesV1**](#patchnodejsvulnerabilitiesv1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/vulnerabilities/patch | Patch Node.js vulnerabilities|
 |[**restartNodeJsApplicationV1**](#restartnodejsapplicationv1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/server/restart | Restart Node.js application|
 |[**startNodeJsBuildV1**](#startnodejsbuildv1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds | Start Node.js build|
-
-# **createNodeJSBuildFromArchiveV1**
-> HostingV1NodeJsBuildResource createNodeJSBuildFromArchiveV1(hostingV1NodeJsCreateFromArchiveRequest)
-
-Upload a project archive, auto-detect build settings, and immediately start a Node.js build.  WARNING: on success this overwrites the website\'s existing contents and cannot be undone — verify this is intended before calling this endpoint.  This is the recommended single-step approach for deploying a Node.js application. The archive is uploaded to the website\'s file storage, build settings are auto-detected from the package.json inside the archive, and the build process starts automatically. Optional override fields take precedence over auto-detected values. Maximum archive size is 50MB.  Before archiving, exclude `node_modules/` and any build output directories (e.g. `dist/`, `.next/`, `build/`) — they are not needed because the build process runs the install step automatically, and including them unnecessarily increases the archive size. This also helps keep the archive well under the 50MB limit.  Example (zip): ``` zip -r archive.zip . --exclude \"node_modules/_*\" --exclude \"dist/_*\" ```  The returned build `uuid` can be used to poll progress and retrieve logs via the `Get Node.js Build Logs` endpoint.
-
-### Example
-
-```typescript
-import {
-    HostingNodeJSApi,
-    Configuration,
-    HostingV1NodeJsCreateFromArchiveRequest
-} from 'hostinger-api-sdk';
-
-const configuration = new Configuration();
-const apiInstance = new HostingNodeJSApi(configuration);
-
-let username: string; // (default to undefined)
-let domain: string; //Domain name (default to undefined)
-let hostingV1NodeJsCreateFromArchiveRequest: HostingV1NodeJsCreateFromArchiveRequest; //
-
-const { status, data } = await apiInstance.createNodeJSBuildFromArchiveV1(
-    username,
-    domain,
-    hostingV1NodeJsCreateFromArchiveRequest
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **hostingV1NodeJsCreateFromArchiveRequest** | **HostingV1NodeJsCreateFromArchiveRequest**|  | |
-| **username** | [**string**] |  | defaults to undefined|
-| **domain** | [**string**] | Domain name | defaults to undefined|
-
-
-### Return type
-
-**HostingV1NodeJsBuildResource**
-
-### Authorization
-
-[apiToken](../README.md#apiToken)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Success response |  -  |
-|**422** | Validation error response |  -  |
-|**401** | Unauthenticated response |  -  |
-|**500** | Error response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getNodeJSBuildLogsV1**
 > HostingV1NodeJsBuildLogsResource getNodeJSBuildLogsV1()
