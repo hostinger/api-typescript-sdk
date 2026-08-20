@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Sales channel type. Only \&quot;custom\&quot; channels can be created via the API. | [default to undefined]
-**name** | **string** | Merchant-facing custom name shown in the sales channels list. | [default to undefined]
-**url** | **string** | Optional public address where the custom sales channel lives. | [optional] [default to undefined]
+**type** | **string** | Sales channel type. \&quot;custom\&quot; is a headless channel: it requires a name and takes an optional public url. \&quot;quick-link\&quot; is a one-page store whose handle is auto-generated; it supports neither name nor url. | [default to undefined]
+**name** | **string** | Merchant-facing custom name. Required for custom channels; not supported for quick-link. | [optional] [default to undefined]
+**url** | **string** | Optional public url for the channel. Custom channels only; not supported for quick-link. | [optional] [default to undefined]
 
 ## Example
 

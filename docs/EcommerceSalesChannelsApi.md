@@ -4,14 +4,14 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**createCustomSalesChannelV1**](#createcustomsaleschannelv1) | **POST** /api/ecommerce/v1/stores/{store_id}/sales-channels | Create custom sales channel|
+|[**createASalesChannelV1**](#createasaleschannelv1) | **POST** /api/ecommerce/v1/stores/{store_id}/sales-channels | Create a sales channel|
 |[**listSalesChannelsV1**](#listsaleschannelsv1) | **GET** /api/ecommerce/v1/stores/{store_id}/sales-channels | List sales channels|
 |[**updateSalesChannelV1**](#updatesaleschannelv1) | **PATCH** /api/ecommerce/v1/stores/{store_id}/sales-channels/{sales_channel_id} | Update sales channel|
 
-# **createCustomSalesChannelV1**
-> EcommerceV1SalesChannelSalesChannelCreationResource createCustomSalesChannelV1(ecommerceV1SalesChannelStoreRequest)
+# **createASalesChannelV1**
+> EcommerceV1SalesChannelSalesChannelCreationResource createASalesChannelV1(ecommerceV1SalesChannelStoreRequest)
 
-Create a custom sales channel for a store. Build your own frontend and keep your catalog, orders, shipping and payments in sync through the Ecommerce API.
+Create a sales channel for a store. A \"custom\" channel is headless: build your own frontend and keep your catalog, orders, shipping and payments in sync through the Ecommerce API. A \"quick-link\" channel is a hosted one-page store whose handle is auto-generated.
 
 ### Example
 
@@ -28,7 +28,7 @@ const apiInstance = new EcommerceSalesChannelsApi(configuration);
 let storeId: string; //The ID of the store to create the sales channel for. (default to undefined)
 let ecommerceV1SalesChannelStoreRequest: EcommerceV1SalesChannelStoreRequest; //
 
-const { status, data } = await apiInstance.createCustomSalesChannelV1(
+const { status, data } = await apiInstance.createASalesChannelV1(
     storeId,
     ecommerceV1SalesChannelStoreRequest
 );
