@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **surname** | **string** |  | [optional] [default to undefined]
 **phone** | **string** | Phone number in E.164 format (leading \&quot;+\&quot; then 7-15 digits) | [optional] [default to undefined]
 **note** | **string** |  | [optional] [default to undefined]
+**tag_uuids** | **Array&lt;string&gt;** | Existing tags to attach to the created contact | [optional] [default to undefined]
 
 ## Example
 
@@ -22,6 +23,7 @@ const instance: ReachV1ContactsStoreRequest = {
     surname,
     phone,
     note,
+    tag_uuids,
 };
 ```
 
