@@ -76,7 +76,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: '26.x'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@hostinger'
 
@@ -96,7 +96,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Notify Slack on release failure
-        uses: slackapi/slack-github-action@v2.1.0
+        uses: slackapi/slack-github-action@v4.0.0
         with:
           errors: true
           webhook: ${{ secrets.PLATFORM_INCIDENT_SLACK_CHANNEL_WEBHOOK }}
