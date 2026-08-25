@@ -1,4 +1,4 @@
-# EcommerceListOrdersV1200Response
+# EcommerceListStoreOrdersV1200Response
 
 
 ## Properties
@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EcommerceListOrdersV1200Response } from 'hostinger-api-sdk';
+import { EcommerceListStoreOrdersV1200Response } from 'hostinger-api-sdk';
 
-const instance: EcommerceListOrdersV1200Response = {
+const instance: EcommerceListStoreOrdersV1200Response = {
     data,
     meta,
 };

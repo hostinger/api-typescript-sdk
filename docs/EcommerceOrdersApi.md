@@ -6,7 +6,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |------------- | ------------- | -------------|
 |[**cancelAnOrderV1**](#cancelanorderv1) | **POST** /api/ecommerce/v1/stores/{store_id}/orders/{order_id}/cancel | Cancel an order|
 |[**fulfilAnOrderV1**](#fulfilanorderv1) | **POST** /api/ecommerce/v1/stores/{store_id}/orders/{order_id}/fulfill | Fulfil an order|
-|[**listOrdersV1**](#listordersv1) | **GET** /api/ecommerce/v1/stores/{store_id}/orders | List orders|
+|[**listStoreOrdersV1**](#liststoreordersv1) | **GET** /api/ecommerce/v1/stores/{store_id}/orders | List store orders|
 |[**retrieveAnOrderV1**](#retrieveanorderv1) | **GET** /api/ecommerce/v1/stores/{store_id}/orders/{order_id} | Retrieve an order|
 
 # **cancelAnOrderV1**
@@ -131,8 +131,8 @@ const { status, data } = await apiInstance.fulfilAnOrderV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **listOrdersV1**
-> EcommerceListOrdersV1200Response listOrdersV1()
+# **listStoreOrdersV1**
+> EcommerceListStoreOrdersV1200Response listStoreOrdersV1()
 
 List a store\'s orders newest first as summaries. Filter by status, payment or fulfilment status, customer email, order number or a free-text query. Amounts are in the smallest currency unit. Retrieve a single order for its line items, addresses and fulfilments.
 
@@ -158,7 +158,7 @@ let createdAtFrom: string; //Earliest creation time to include, inclusive. Accep
 let createdAtTo: string; //Latest creation time to include, inclusive. A bare date covers that whole day. (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
 
-const { status, data } = await apiInstance.listOrdersV1(
+const { status, data } = await apiInstance.listStoreOrdersV1(
     storeId,
     status,
     paymentStatus,
@@ -190,7 +190,7 @@ const { status, data } = await apiInstance.listOrdersV1(
 
 ### Return type
 
-**EcommerceListOrdersV1200Response**
+**EcommerceListStoreOrdersV1200Response**
 
 ### Authorization
 
