@@ -7,8 +7,10 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**getNodeJSBuildLogsV1**](#getnodejsbuildlogsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/{uuid}/logs | Get NodeJS build logs|
 |[**getNodeJsBuildSettingsFromArchiveV1**](#getnodejsbuildsettingsfromarchivev1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/settings/from-archive | Get Node.js build settings from archive|
 |[**listNodeJSBuildsV1**](#listnodejsbuildsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds | List NodeJS builds|
+|[**listNodeJsEnvironmentVariablesV1**](#listnodejsenvironmentvariablesv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/settings/env | List Node.js environment variables|
 |[**listNodeJsVulnerabilitiesV1**](#listnodejsvulnerabilitiesv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/vulnerabilities | List Node.js vulnerabilities|
 |[**patchNodeJsVulnerabilitiesV1**](#patchnodejsvulnerabilitiesv1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/vulnerabilities/patch | Patch Node.js vulnerabilities|
+|[**replaceNodeJsEnvironmentVariablesV1**](#replacenodejsenvironmentvariablesv1) | **PUT** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/settings/env | Replace Node.js environment variables|
 |[**restartNodeJsApplicationV1**](#restartnodejsapplicationv1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/server/restart | Restart Node.js application|
 |[**startNodeJsBuildV1**](#startnodejsbuildv1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds | Start Node.js build|
 
@@ -200,6 +202,62 @@ const { status, data } = await apiInstance.listNodeJSBuildsV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **listNodeJsEnvironmentVariablesV1**
+> Array<HostingV1NodeJsEnvVarResource> listNodeJsEnvironmentVariablesV1()
+
+Lists the Node.js environment variables currently set for the website. Values are always masked as `********` and cannot be read back through this API. Use this endpoint to see which keys are configured or to verify a change, not to read values.  To change variables, use the `Replace Node.js environment variables` endpoint. It replaces the whole set, so never copy the masked values from this response into that request; send the full desired set with real values taken from the project `.env` file or the user prompt instead.
+
+### Example
+
+```typescript
+import {
+    HostingNodeJSApi,
+    Configuration
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingNodeJSApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+
+const { status, data } = await apiInstance.listNodeJsEnvironmentVariablesV1(
+    username,
+    domain
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**Array<HostingV1NodeJsEnvVarResource>**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **listNodeJsVulnerabilitiesV1**
 > Array<HostingV1NodeJsVulnerabilityResource> listNodeJsVulnerabilitiesV1()
 
@@ -314,6 +372,67 @@ const { status, data } = await apiInstance.patchNodeJsVulnerabilitiesV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**201** | Created response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **replaceNodeJsEnvironmentVariablesV1**
+> CommonSuccessEmptyResource replaceNodeJsEnvironmentVariablesV1(hostingV1NodeJsSetBuildEnvVarsRequest)
+
+Replaces the website\'s Node.js environment variables with the ones provided. This is a full replace: any variable not in the request is deleted, and sending an empty `env_vars` array deletes every variable. Saving writes the values and restarts the running Node.js process.  A restart is enough for apps that read environment variables at process start, such as Express or NestJS. It is not enough for frameworks that bake variables into the build. Next.js standalone is one of those: build-time values (including `NEXT_PUBLIC_*`) need a fresh build. After this call, use the `Start Node.js build` endpoint so those apps pick up the new values.  The `List Node.js environment variables` endpoint returns masked values (`********`), so never copy values from it into this request. Always send the full desired set with real values taken from the project `.env` file or the user prompt.
+
+### Example
+
+```typescript
+import {
+    HostingNodeJSApi,
+    Configuration,
+    HostingV1NodeJsSetBuildEnvVarsRequest
+} from 'hostinger-api-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingNodeJSApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+let hostingV1NodeJsSetBuildEnvVarsRequest: HostingV1NodeJsSetBuildEnvVarsRequest; //
+
+const { status, data } = await apiInstance.replaceNodeJsEnvironmentVariablesV1(
+    username,
+    domain,
+    hostingV1NodeJsSetBuildEnvVarsRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **hostingV1NodeJsSetBuildEnvVarsRequest** | **HostingV1NodeJsSetBuildEnvVarsRequest**|  | |
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success empty response |  -  |
 |**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
