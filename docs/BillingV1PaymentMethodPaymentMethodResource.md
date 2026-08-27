@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **is_suspended** | **boolean** |  | [optional] [default to undefined]
 **created_at** | **string** |  | [optional] [default to undefined]
 **expires_at** | **string** |  | [optional] [default to undefined]
+**suspended_at** | **string** |  | [optional] [default to undefined]
 
 ## Example
 
@@ -30,6 +31,7 @@ const instance: BillingV1PaymentMethodPaymentMethodResource = {
     is_suspended,
     created_at,
     expires_at,
+    suspended_at,
 };
 ```
 
