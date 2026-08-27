@@ -12,6 +12,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**deleteFirewallV1**](#deletefirewallv1) | **DELETE** /api/vps/v1/firewall/{firewallId} | Delete firewall|
 |[**getFirewallDetailsV1**](#getfirewalldetailsv1) | **GET** /api/vps/v1/firewall/{firewallId} | Get firewall details|
 |[**getFirewallListV1**](#getfirewalllistv1) | **GET** /api/vps/v1/firewall | Get firewall list|
+|[**replaceAllFirewallRulesInGroupV1**](#replaceallfirewallrulesingroupv1) | **PUT** /api/vps/v1/firewall/{firewallId}/rules | Replace all firewall rules in group|
 |[**syncFirewallV1**](#syncfirewallv1) | **POST** /api/vps/v1/firewall/{firewallId}/sync/{virtualMachineId} | Sync firewall|
 |[**updateFirewallRuleV1**](#updatefirewallrulev1) | **PUT** /api/vps/v1/firewall/{firewallId}/rules/{ruleId} | Update firewall rule|
 
@@ -452,6 +453,67 @@ const { status, data } = await apiInstance.getFirewallListV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **replaceAllFirewallRulesInGroupV1**
+> VPSV1FirewallFirewallResource replaceAllFirewallRulesInGroupV1(vPSV1FirewallRulesReplaceRequest)
+
+Replaces all firewall rules within a specified firewall group with the provided set of rules in a single atomic operation, instead of creating or deleting rules one by one.  Any virtual machine using this firewall group will need to be synchronized after replacing rules; pass the \"sync\" query parameter to trigger synchronization immediately.
+
+### Example
+
+```typescript
+import {
+    VPSFirewallApi,
+    Configuration,
+    VPSV1FirewallRulesReplaceRequest
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new VPSFirewallApi(configuration);
+
+let firewallId: number; //Firewall ID (default to undefined)
+let vPSV1FirewallRulesReplaceRequest: VPSV1FirewallRulesReplaceRequest; //
+let sync: boolean; //Synchronize the firewall group to all its virtual machines after replacing the rules (optional) (default to undefined)
+
+const { status, data } = await apiInstance.replaceAllFirewallRulesInGroupV1(
+    firewallId,
+    vPSV1FirewallRulesReplaceRequest,
+    sync
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **vPSV1FirewallRulesReplaceRequest** | **VPSV1FirewallRulesReplaceRequest**|  | |
+| **firewallId** | [**number**] | Firewall ID | defaults to undefined|
+| **sync** | [**boolean**] | Synchronize the firewall group to all its virtual machines after replacing the rules | (optional) defaults to undefined|
+
+
+### Return type
+
+**VPSV1FirewallFirewallResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
 
