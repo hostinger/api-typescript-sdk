@@ -461,7 +461,7 @@ const { status, data } = await apiInstance.getFirewallListV1(
 # **replaceAllFirewallRulesInGroupV1**
 > VPSV1FirewallFirewallResource replaceAllFirewallRulesInGroupV1(vPSV1FirewallRulesReplaceRequest)
 
-Replaces all firewall rules within a specified firewall group with the provided set of rules in a single atomic operation, instead of creating or deleting rules one by one.  Any virtual machine using this firewall group will need to be synchronized after replacing rules; pass the \"sync\" query parameter to trigger synchronization immediately.
+Replaces all firewall rules within a specified firewall group with the provided set of rules in a single atomic operation, instead of creating or deleting rules one by one.  Any virtual machine using this firewall group will need to be synchronized after replacing rules; pass the \"sync\" parameter to trigger synchronization immediately.
 
 ### Example
 
@@ -477,12 +477,10 @@ const apiInstance = new VPSFirewallApi(configuration);
 
 let firewallId: number; //Firewall ID (default to undefined)
 let vPSV1FirewallRulesReplaceRequest: VPSV1FirewallRulesReplaceRequest; //
-let sync: boolean; //Synchronize the firewall group to all its virtual machines after replacing the rules (optional) (default to undefined)
 
 const { status, data } = await apiInstance.replaceAllFirewallRulesInGroupV1(
     firewallId,
-    vPSV1FirewallRulesReplaceRequest,
-    sync
+    vPSV1FirewallRulesReplaceRequest
 );
 ```
 
@@ -492,7 +490,6 @@ const { status, data } = await apiInstance.replaceAllFirewallRulesInGroupV1(
 |------------- | ------------- | ------------- | -------------|
 | **vPSV1FirewallRulesReplaceRequest** | **VPSV1FirewallRulesReplaceRequest**|  | |
 | **firewallId** | [**number**] | Firewall ID | defaults to undefined|
-| **sync** | [**boolean**] | Synchronize the firewall group to all its virtual machines after replacing the rules | (optional) defaults to undefined|
 
 
 ### Return type
