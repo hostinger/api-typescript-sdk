@@ -17,7 +17,7 @@ Retrieve step-by-step setup instructions, formatted as Markdown, for connecting 
 import {
     EcommerceMiscellaneousApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceMiscellaneousApi(configuration);

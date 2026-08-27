@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1CampaignsCampaignDeliveryResource } from 'hostinger-api-sdk';
+import { ReachV1CampaignsCampaignDeliveryResource } from '@hostinger/sdk';
 
 const instance: ReachV1CampaignsCampaignDeliveryResource = {
     total_sent,

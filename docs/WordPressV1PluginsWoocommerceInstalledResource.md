@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { WordPressV1PluginsWoocommerceInstalledResource } from 'hostinger-api-sdk';
+import { WordPressV1PluginsWoocommerceInstalledResource } from '@hostinger/sdk';
 
 const instance: WordPressV1PluginsWoocommerceInstalledResource = {
     is_installed,

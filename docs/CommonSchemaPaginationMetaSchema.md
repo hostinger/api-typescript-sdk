@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { CommonSchemaPaginationMetaSchema } from 'hostinger-api-sdk';
+import { CommonSchemaPaginationMetaSchema } from '@hostinger/sdk';
 
 const instance: CommonSchemaPaginationMetaSchema = {
     current_page,

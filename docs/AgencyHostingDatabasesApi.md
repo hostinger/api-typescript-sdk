@@ -22,7 +22,7 @@ import {
     AgencyHostingDatabasesApi,
     Configuration,
     AgencyHostingV1WebsitesDatabasesUsersCreateDatabaseUserRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingDatabasesApi(configuration);
@@ -83,7 +83,7 @@ import {
     AgencyHostingDatabasesApi,
     Configuration,
     AgencyHostingV1WebsitesDatabasesCreateDatabaseRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingDatabasesApi(configuration);
@@ -140,7 +140,7 @@ Permanently deletes a database user from an Agency Plan website database, revoki
 import {
     AgencyHostingDatabasesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingDatabasesApi(configuration);
@@ -199,7 +199,7 @@ Permanently deletes a MySQL database and all its data from an Agency Plan websit
 import {
     AgencyHostingDatabasesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingDatabasesApi(configuration);
@@ -255,7 +255,7 @@ Returns a paginated list of MySQL databases created for an Agency Plan website. 
 import {
     AgencyHostingDatabasesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingDatabasesApi(configuration);

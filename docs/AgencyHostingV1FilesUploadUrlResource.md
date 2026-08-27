@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AgencyHostingV1FilesUploadUrlResource } from 'hostinger-api-sdk';
+import { AgencyHostingV1FilesUploadUrlResource } from '@hostinger/sdk';
 
 const instance: AgencyHostingV1FilesUploadUrlResource = {
     url,

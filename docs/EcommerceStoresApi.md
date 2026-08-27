@@ -21,7 +21,7 @@ import {
     EcommerceStoresApi,
     Configuration,
     EcommerceV1StoreStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceStoresApi(configuration);
@@ -75,7 +75,7 @@ Soft-delete a store owned by your account.  The underlying store data is preserv
 import {
     EcommerceStoresApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceStoresApi(configuration);
@@ -128,7 +128,7 @@ Get a store\'s readiness metadata: whether payment methods and shipping are conf
 import {
     EcommerceStoresApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceStoresApi(configuration);
@@ -181,7 +181,7 @@ Retrieve the stores associated with your account.
 import {
     EcommerceStoresApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceStoresApi(configuration);

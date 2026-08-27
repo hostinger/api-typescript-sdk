@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EcommerceV1ProductProductResponseResource } from 'hostinger-api-sdk';
+import { EcommerceV1ProductProductResponseResource } from '@hostinger/sdk';
 
 const instance: EcommerceV1ProductProductResponseResource = {
     data,

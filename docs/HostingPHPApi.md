@@ -22,7 +22,7 @@ Returns the full PHP configuration for the website: current version, available v
 import {
     HostingPHPApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingPHPApi(configuration);
@@ -78,7 +78,7 @@ Returns the full phpinfo page (HTML) for the website.  Use it to debug PHP issue
 import {
     HostingPHPApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingPHPApi(configuration);
@@ -134,7 +134,7 @@ Resets all PHP extensions of the website to their default state.  Use it to reco
 import {
     HostingPHPApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingPHPApi(configuration);
@@ -191,7 +191,7 @@ import {
     HostingPHPApi,
     Configuration,
     HostingV1PhpUpdatePhpExtensionsRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingPHPApi(configuration);
@@ -252,7 +252,7 @@ import {
     HostingPHPApi,
     Configuration,
     HostingV1PhpUpdatePhpOptionsRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingPHPApi(configuration);
@@ -313,7 +313,7 @@ import {
     HostingPHPApi,
     Configuration,
     HostingV1PhpUpdatePhpVersionRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingPHPApi(configuration);

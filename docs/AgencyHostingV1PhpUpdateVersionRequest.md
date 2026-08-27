@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AgencyHostingV1PhpUpdateVersionRequest } from 'hostinger-api-sdk';
+import { AgencyHostingV1PhpUpdateVersionRequest } from '@hostinger/sdk';
 
 const instance: AgencyHostingV1PhpUpdateVersionRequest = {
     version,

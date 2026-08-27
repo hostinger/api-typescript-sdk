@@ -27,7 +27,7 @@ import {
     WordPressInstallationsApi,
     Configuration,
     WordPressV1InstallationsCheckIsValidRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressInstallationsApi(configuration);
@@ -85,7 +85,7 @@ import {
     WordPressInstallationsApi,
     Configuration,
     WordPressV1InstallationsDeleteInstallationRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressInstallationsApi(configuration);
@@ -145,7 +145,7 @@ Trigger a background scan to detect WordPress installations for the account.  Th
 import {
     WordPressInstallationsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressInstallationsApi(configuration);
@@ -198,7 +198,7 @@ Return a JWT token used to authenticate requests against the specified WordPress
 import {
     WordPressInstallationsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressInstallationsApi(configuration);
@@ -255,7 +255,7 @@ import {
     WordPressInstallationsApi,
     Configuration,
     WordPressV1InstallationsImportWordPressRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressInstallationsApi(configuration);
@@ -316,7 +316,7 @@ import {
     WordPressInstallationsApi,
     Configuration,
     WordPressV1InstallationsInstallWordPressRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressInstallationsApi(configuration);
@@ -373,7 +373,7 @@ List available WordPress core updates for the specified installation.  Provide t
 import {
     WordPressInstallationsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressInstallationsApi(configuration);
@@ -429,7 +429,7 @@ List WordPress installations accessible to the authenticated client.  Use this e
 import {
     WordPressInstallationsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressInstallationsApi(configuration);
@@ -488,7 +488,7 @@ Show the WordPress core version for the specified installation, along with known
 import {
     WordPressInstallationsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressInstallationsApi(configuration);
@@ -545,7 +545,7 @@ import {
     WordPressInstallationsApi,
     Configuration,
     WordPressV1InstallationsUpdateInstallationRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressInstallationsApi(configuration);

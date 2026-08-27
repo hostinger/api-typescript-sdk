@@ -24,7 +24,7 @@ import {
     WordPressThemesApi,
     Configuration,
     WordPressV1ThemesActivateThemeRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressThemesApi(configuration);
@@ -85,7 +85,7 @@ import {
     WordPressThemesApi,
     Configuration,
     WordPressV1ThemesDeployThemeRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressThemesApi(configuration);
@@ -146,7 +146,7 @@ import {
     WordPressThemesApi,
     Configuration,
     WordPressV1ThemesInstallThemeRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressThemesApi(configuration);
@@ -206,7 +206,7 @@ List themes installed on a WordPress installation, including their status, avail
 import {
     WordPressThemesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressThemesApi(configuration);
@@ -262,7 +262,7 @@ List WordPress themes available to install.  Use the returned `slug` values with
 import {
     WordPressThemesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressThemesApi(configuration);
@@ -319,7 +319,7 @@ import {
     WordPressThemesApi,
     Configuration,
     WordPressV1ThemesUninstallThemesRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressThemesApi(configuration);
@@ -380,7 +380,7 @@ import {
     WordPressThemesApi,
     Configuration,
     WordPressV1ThemesUpdateThemesRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressThemesApi(configuration);

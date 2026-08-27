@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1MailboxesMailboxProtocolsResource } from 'hostinger-api-sdk';
+import { MailV1MailboxesMailboxProtocolsResource } from '@hostinger/sdk';
 
 const instance: MailV1MailboxesMailboxProtocolsResource = {
     is_imap_enabled,

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1ProfilesPlanLimitsResource } from 'hostinger-api-sdk';
+import { ReachV1ProfilesPlanLimitsResource } from '@hostinger/sdk';
 
 const instance: ReachV1ProfilesPlanLimitsResource = {
     emails,

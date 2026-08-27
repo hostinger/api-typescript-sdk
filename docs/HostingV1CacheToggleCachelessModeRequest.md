@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1CacheToggleCachelessModeRequest } from 'hostinger-api-sdk';
+import { HostingV1CacheToggleCachelessModeRequest } from '@hostinger/sdk';
 
 const instance: HostingV1CacheToggleCachelessModeRequest = {
     enabled,

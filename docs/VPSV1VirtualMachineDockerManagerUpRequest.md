@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1VirtualMachineDockerManagerUpRequest } from 'hostinger-api-sdk';
+import { VPSV1VirtualMachineDockerManagerUpRequest } from '@hostinger/sdk';
 
 const instance: VPSV1VirtualMachineDockerManagerUpRequest = {
     project_name,

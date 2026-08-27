@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { BillingV1SubscriptionRenewalRenewRequest } from 'hostinger-api-sdk';
+import { BillingV1SubscriptionRenewalRenewRequest } from '@hostinger/sdk';
 
 const instance: BillingV1SubscriptionRenewalRenewRequest = {
     payment_method_id,

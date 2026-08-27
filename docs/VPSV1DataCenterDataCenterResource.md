@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1DataCenterDataCenterResource } from 'hostinger-api-sdk';
+import { VPSV1DataCenterDataCenterResource } from '@hostinger/sdk';
 
 const instance: VPSV1DataCenterDataCenterResource = {
     id,

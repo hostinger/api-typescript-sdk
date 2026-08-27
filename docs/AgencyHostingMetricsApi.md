@@ -18,7 +18,7 @@ Returns aggregated disk and inode usage for the Agency Plan order over the selec
 import {
     AgencyHostingMetricsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingMetricsApi(configuration);
@@ -75,7 +75,7 @@ Returns aggregated CPU, memory, and process usage for the Agency Plan order over
 import {
     AgencyHostingMetricsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingMetricsApi(configuration);

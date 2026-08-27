@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EcommerceV1PaymentManualPaymentResourcePaymentMethod } from 'hostinger-api-sdk';
+import { EcommerceV1PaymentManualPaymentResourcePaymentMethod } from '@hostinger/sdk';
 
 const instance: EcommerceV1PaymentManualPaymentResourcePaymentMethod = {
     id,

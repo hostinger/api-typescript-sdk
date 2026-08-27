@@ -20,7 +20,7 @@ import {
     MailAliasesApi,
     Configuration,
     MailV1SchemaCreateAliasRequestSchema
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailAliasesApi(configuration);
@@ -79,7 +79,7 @@ Delete an alias. Messages sent to the alias address are no longer delivered to t
 import {
     MailAliasesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailAliasesApi(configuration);
@@ -134,7 +134,7 @@ Retrieve a paginated list of aliases across all mailboxes of a mail order.
 import {
     MailAliasesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailAliasesApi(configuration);

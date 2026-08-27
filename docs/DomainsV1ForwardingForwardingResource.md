@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainsV1ForwardingForwardingResource } from 'hostinger-api-sdk';
+import { DomainsV1ForwardingForwardingResource } from '@hostinger/sdk';
 
 const instance: DomainsV1ForwardingForwardingResource = {
     domain,

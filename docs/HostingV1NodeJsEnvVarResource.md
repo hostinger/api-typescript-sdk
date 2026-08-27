@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1NodeJsEnvVarResource } from 'hostinger-api-sdk';
+import { HostingV1NodeJsEnvVarResource } from '@hostinger/sdk';
 
 const instance: HostingV1NodeJsEnvVarResource = {
     key,

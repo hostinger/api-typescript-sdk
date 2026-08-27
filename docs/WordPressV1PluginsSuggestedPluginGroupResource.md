@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { WordPressV1PluginsSuggestedPluginGroupResource } from 'hostinger-api-sdk';
+import { WordPressV1PluginsSuggestedPluginGroupResource } from '@hostinger/sdk';
 
 const instance: WordPressV1PluginsSuggestedPluginGroupResource = {
     website_type,

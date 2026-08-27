@@ -22,7 +22,7 @@ import {
     MailForwardersApi,
     Configuration,
     MailV1SchemaCreateForwarderRequestSchema
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailForwardersApi(configuration);
@@ -82,7 +82,7 @@ Delete a forwarder. The mailbox stops forwarding messages to the destination add
 import {
     MailForwardersApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailForwardersApi(configuration);
@@ -137,7 +137,7 @@ Retrieve a paginated list of forwarders across all mailboxes of a mail order.
 import {
     MailForwardersApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailForwardersApi(configuration);
@@ -198,7 +198,7 @@ Resend the confirmation email to the destination address of an unconfirmed forwa
 import {
     MailForwardersApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailForwardersApi(configuration);
@@ -255,7 +255,7 @@ import {
     MailForwardersApi,
     Configuration,
     MailV1SchemaUpdateForwarderKeepCopyRequestSchema
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailForwardersApi(configuration);

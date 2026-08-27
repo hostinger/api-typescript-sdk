@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1DomainsParkedDomainResource } from 'hostinger-api-sdk';
+import { HostingV1DomainsParkedDomainResource } from '@hostinger/sdk';
 
 const instance: HostingV1DomainsParkedDomainResource = {
     username,

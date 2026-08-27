@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1CronJobsCronJobOutputResource } from 'hostinger-api-sdk';
+import { HostingV1CronJobsCronJobOutputResource } from '@hostinger/sdk';
 
 const instance: HostingV1CronJobsCronJobOutputResource = {
     output,

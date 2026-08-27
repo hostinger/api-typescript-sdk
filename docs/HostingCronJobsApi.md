@@ -21,7 +21,7 @@ import {
     HostingCronJobsApi,
     Configuration,
     HostingV1CronJobsCreateCronJobRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingCronJobsApi(configuration);
@@ -78,7 +78,7 @@ Permanently deletes the cron job identified by its uid.  The uid is returned by 
 import {
     HostingCronJobsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingCronJobsApi(configuration);
@@ -134,7 +134,7 @@ Returns the output captured from the last execution of the cron job identified b
 import {
     HostingCronJobsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingCronJobsApi(configuration);
@@ -190,7 +190,7 @@ Returns the list of cron jobs configured for the specified account, including th
 import {
     HostingCronJobsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingCronJobsApi(configuration);

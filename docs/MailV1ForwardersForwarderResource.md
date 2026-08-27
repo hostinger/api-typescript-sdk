@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1ForwardersForwarderResource } from 'hostinger-api-sdk';
+import { MailV1ForwardersForwarderResource } from '@hostinger/sdk';
 
 const instance: MailV1ForwardersForwarderResource = {
     id,

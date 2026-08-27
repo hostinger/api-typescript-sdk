@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EcommerceV1ProductProductImageUploadUrlResource } from 'hostinger-api-sdk';
+import { EcommerceV1ProductProductImageUploadUrlResource } from '@hostinger/sdk';
 
 const instance: EcommerceV1ProductProductImageUploadUrlResource = {
     upload_url,

@@ -25,7 +25,7 @@ import {
     HostingDomainsApi,
     Configuration,
     HostingV1DomainsCreateParkedDomainRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDomainsApi(configuration);
@@ -86,7 +86,7 @@ import {
     HostingDomainsApi,
     Configuration,
     HostingV1DomainsCreateSubdomainRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDomainsApi(configuration);
@@ -146,7 +146,7 @@ Delete an existing parked or alias domain from the selected website.  Use this e
 import {
     HostingDomainsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDomainsApi(configuration);
@@ -205,7 +205,7 @@ Delete an existing subdomain from the selected website.  Use this endpoint to re
 import {
     HostingDomainsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDomainsApi(configuration);
@@ -264,7 +264,7 @@ Generate a unique free subdomain that can be used for hosting services without p
 import {
     HostingDomainsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDomainsApi(configuration);
@@ -310,7 +310,7 @@ Retrieve all parked or alias domains created under the selected website.  Use th
 import {
     HostingDomainsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDomainsApi(configuration);
@@ -366,7 +366,7 @@ Retrieve all subdomains created under the selected website.  Use this endpoint t
 import {
     HostingDomainsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDomainsApi(configuration);
@@ -423,7 +423,7 @@ import {
     HostingDomainsApi,
     Configuration,
     HostingV1DomainsVerifyOwnershipRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDomainsApi(configuration);

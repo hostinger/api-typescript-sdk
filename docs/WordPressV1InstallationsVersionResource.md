@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { WordPressV1InstallationsVersionResource } from 'hostinger-api-sdk';
+import { WordPressV1InstallationsVersionResource } from '@hostinger/sdk';
 
 const instance: WordPressV1InstallationsVersionResource = {
     version,

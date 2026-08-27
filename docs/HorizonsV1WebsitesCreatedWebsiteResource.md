@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HorizonsV1WebsitesCreatedWebsiteResource } from 'hostinger-api-sdk';
+import { HorizonsV1WebsitesCreatedWebsiteResource } from '@hostinger/sdk';
 
 const instance: HorizonsV1WebsitesCreatedWebsiteResource = {
     website_url,

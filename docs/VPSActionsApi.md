@@ -18,7 +18,7 @@ Retrieve detailed information about a specific action performed on a specified v
 import {
     VPSActionsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSActionsApi(configuration);
@@ -74,7 +74,7 @@ Retrieve actions performed on a specified virtual machine.  Actions are operatio
 import {
     VPSActionsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSActionsApi(configuration);

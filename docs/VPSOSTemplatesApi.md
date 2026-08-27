@@ -18,7 +18,7 @@ Retrieve detailed information about a specific OS template for virtual machines.
 import {
     VPSOSTemplatesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSOSTemplatesApi(configuration);
@@ -71,7 +71,7 @@ Retrieve available OS templates for virtual machines.  Use this endpoint to view
 import {
     VPSOSTemplatesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSOSTemplatesApi(configuration);

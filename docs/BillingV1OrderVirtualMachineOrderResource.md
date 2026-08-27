@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { BillingV1OrderVirtualMachineOrderResource } from 'hostinger-api-sdk';
+import { BillingV1OrderVirtualMachineOrderResource } from '@hostinger/sdk';
 
 const instance: BillingV1OrderVirtualMachineOrderResource = {
     order,

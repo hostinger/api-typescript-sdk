@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainsV1PortfolioClaimRequestDomainContacts } from 'hostinger-api-sdk';
+import { DomainsV1PortfolioClaimRequestDomainContacts } from '@hostinger/sdk';
 
 const instance: DomainsV1PortfolioClaimRequestDomainContacts = {
     owner_id,

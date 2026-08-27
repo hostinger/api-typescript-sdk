@@ -22,7 +22,7 @@ import {
     AgencyHostingWebsitesApi,
     Configuration,
     AgencyHostingV1WebsitesBuildAssetsRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingWebsitesApi(configuration);
@@ -79,7 +79,7 @@ Permanently deletes an Agency Plan website. Deletion is processed asynchronously
 import {
     AgencyHostingWebsitesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingWebsitesApi(configuration);
@@ -132,7 +132,7 @@ Retrieves detailed information about a specific Agency Plan website, including c
 import {
     AgencyHostingWebsitesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingWebsitesApi(configuration);
@@ -185,7 +185,7 @@ Retrieve a paginated list of Agency Plan websites (H5G, Builder, and Horizons) a
 import {
     AgencyHostingWebsitesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingWebsitesApi(configuration);
@@ -253,7 +253,7 @@ Lists active and recently completed asynchronous processes for an Agency Plan we
 import {
     AgencyHostingWebsitesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingWebsitesApi(configuration);

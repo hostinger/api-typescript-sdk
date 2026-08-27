@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AgencyHostingV1FilesImportArchiveRequest } from 'hostinger-api-sdk';
+import { AgencyHostingV1FilesImportArchiveRequest } from '@hostinger/sdk';
 
 const instance: AgencyHostingV1FilesImportArchiveRequest = {
     archive_name,

@@ -20,7 +20,7 @@ import {
     MailAPITokensApi,
     Configuration,
     MailV1SchemaCreateApiTokenRequestSchema
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailAPITokensApi(configuration);
@@ -79,7 +79,7 @@ Retrieve a paginated list of [Hostinger Email API](https://api.mail.hostinger.co
 import {
     MailAPITokensApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailAPITokensApi(configuration);
@@ -139,7 +139,7 @@ Revoke an API token. The token immediately loses access to the [Hostinger Email 
 import {
     MailAPITokensApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailAPITokensApi(configuration);

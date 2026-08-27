@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AgencyHostingV1WebsitesCronJobsCreateCronJobRequest } from 'hostinger-api-sdk';
+import { AgencyHostingV1WebsitesCronJobsCreateCronJobRequest } from '@hostinger/sdk';
 
 const instance: AgencyHostingV1WebsitesCronJobsCreateCronJobRequest = {
     time,

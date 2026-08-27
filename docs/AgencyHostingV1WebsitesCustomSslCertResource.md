@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AgencyHostingV1WebsitesCustomSslCertResource } from 'hostinger-api-sdk';
+import { AgencyHostingV1WebsitesCustomSslCertResource } from '@hostinger/sdk';
 
 const instance: AgencyHostingV1WebsitesCustomSslCertResource = {
     is_expired,

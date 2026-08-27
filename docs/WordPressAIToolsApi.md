@@ -19,7 +19,7 @@ import {
     WordPressAIToolsApi,
     Configuration,
     WordPressV1HostingerPluginsUpdateAiOptionStatusRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressAIToolsApi(configuration);
@@ -79,7 +79,7 @@ Show the current AI option status for the Hostinger Tools plugin on the specifie
 import {
     WordPressAIToolsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressAIToolsApi(configuration);

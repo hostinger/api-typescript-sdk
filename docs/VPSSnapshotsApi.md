@@ -20,7 +20,7 @@ Create a snapshot of a specified virtual machine.  A snapshot captures the state
 import {
     VPSSnapshotsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSSnapshotsApi(configuration);
@@ -73,7 +73,7 @@ Delete a snapshot of a specified virtual machine.  Use this endpoint to remove V
 import {
     VPSSnapshotsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSSnapshotsApi(configuration);
@@ -126,7 +126,7 @@ Retrieve snapshot for a specified virtual machine.  Use this endpoint to view cu
 import {
     VPSSnapshotsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSSnapshotsApi(configuration);
@@ -179,7 +179,7 @@ Restore a specified virtual machine to a previous state using a snapshot.  Resto
 import {
     VPSSnapshotsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSSnapshotsApi(configuration);

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1NodeJsGetBuildSettingsRequest } from 'hostinger-api-sdk';
+import { HostingV1NodeJsGetBuildSettingsRequest } from '@hostinger/sdk';
 
 const instance: HostingV1NodeJsGetBuildSettingsRequest = {
     archive_path,

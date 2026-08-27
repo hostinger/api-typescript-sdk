@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AgencyHostingListOrdersV1200Response } from 'hostinger-api-sdk';
+import { AgencyHostingListOrdersV1200Response } from '@hostinger/sdk';
 
 const instance: AgencyHostingListOrdersV1200Response = {
     data,

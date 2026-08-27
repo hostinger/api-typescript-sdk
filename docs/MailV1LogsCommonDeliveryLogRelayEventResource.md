@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1LogsCommonDeliveryLogRelayEventResource } from 'hostinger-api-sdk';
+import { MailV1LogsCommonDeliveryLogRelayEventResource } from '@hostinger/sdk';
 
 const instance: MailV1LogsCommonDeliveryLogRelayEventResource = {
     address_to,

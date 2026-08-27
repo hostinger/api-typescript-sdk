@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { BillingV1OrderPurchaseRequest } from 'hostinger-api-sdk';
+import { BillingV1OrderPurchaseRequest } from '@hostinger/sdk';
 
 const instance: BillingV1OrderPurchaseRequest = {
     payment_method_id,

@@ -19,7 +19,7 @@ import {
     EcommerceDiscountsApi,
     Configuration,
     EcommerceV1DiscountCreateDiscountRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceDiscountsApi(configuration);
@@ -76,7 +76,7 @@ List a store\'s discounts. Filter by free text over code and name, or by disable
 import {
     EcommerceDiscountsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceDiscountsApi(configuration);

@@ -21,7 +21,7 @@ import {
     MailMailboxesApi,
     Configuration,
     MailV1SchemaChangeMailboxPasswordRequestSchema
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailMailboxesApi(configuration);
@@ -81,7 +81,7 @@ import {
     MailMailboxesApi,
     Configuration,
     MailV1SchemaCreateMailboxRequestSchema
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailMailboxesApi(configuration);
@@ -140,7 +140,7 @@ Delete a mailbox. The mailbox is soft-deleted and stays restorable for a limited
 import {
     MailMailboxesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailMailboxesApi(configuration);
@@ -195,7 +195,7 @@ Retrieve a paginated list of mailboxes belonging to a mail order.  Use this endp
 import {
     MailMailboxesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailMailboxesApi(configuration);

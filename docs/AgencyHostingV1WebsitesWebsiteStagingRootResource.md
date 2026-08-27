@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AgencyHostingV1WebsitesWebsiteStagingRootResource } from 'hostinger-api-sdk';
+import { AgencyHostingV1WebsitesWebsiteStagingRootResource } from '@hostinger/sdk';
 
 const instance: AgencyHostingV1WebsitesWebsiteStagingRootResource = {
     uid,

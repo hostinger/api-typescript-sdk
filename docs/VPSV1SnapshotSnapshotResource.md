@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1SnapshotSnapshotResource } from 'hostinger-api-sdk';
+import { VPSV1SnapshotSnapshotResource } from '@hostinger/sdk';
 
 const instance: VPSV1SnapshotSnapshotResource = {
     id,

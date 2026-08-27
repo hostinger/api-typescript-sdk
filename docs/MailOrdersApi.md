@@ -18,7 +18,7 @@ Retrieve the plan the given mail order was purchased with, including domain-leve
 import {
     MailOrdersApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailOrdersApi(configuration);
@@ -72,7 +72,7 @@ Retrieve a paginated list of mail orders associated with your account.  Use this
 import {
     MailOrdersApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailOrdersApi(configuration);

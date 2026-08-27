@@ -17,7 +17,7 @@ Lists the datacenters available for provisioning a new website on the given Agen
 import {
     AgencyHostingDatacentersApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingDatacentersApi(configuration);

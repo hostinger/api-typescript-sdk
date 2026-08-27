@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1PostInstallScriptStoreRequest } from 'hostinger-api-sdk';
+import { VPSV1PostInstallScriptStoreRequest } from '@hostinger/sdk';
 
 const instance: VPSV1PostInstallScriptStoreRequest = {
     name,

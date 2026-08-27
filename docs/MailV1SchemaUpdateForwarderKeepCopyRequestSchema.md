@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1SchemaUpdateForwarderKeepCopyRequestSchema } from 'hostinger-api-sdk';
+import { MailV1SchemaUpdateForwarderKeepCopyRequestSchema } from '@hostinger/sdk';
 
 const instance: MailV1SchemaUpdateForwarderKeepCopyRequestSchema = {
     is_keep_copy_enabled,

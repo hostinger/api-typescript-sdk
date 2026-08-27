@@ -18,7 +18,7 @@ import {
     BillingOrdersApi,
     Configuration,
     BillingV1OrderPurchaseRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new BillingOrdersApi(configuration);

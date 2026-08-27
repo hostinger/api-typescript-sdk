@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EcommerceV1OrderOrderDetailResourceBillingAddress } from 'hostinger-api-sdk';
+import { EcommerceV1OrderOrderDetailResourceBillingAddress } from '@hostinger/sdk';
 
 const instance: EcommerceV1OrderOrderDetailResourceBillingAddress = {
     name,

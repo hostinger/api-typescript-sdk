@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1ApiTokensApiTokenCreatedResource } from 'hostinger-api-sdk';
+import { MailV1ApiTokensApiTokenCreatedResource } from '@hostinger/sdk';
 
 const instance: MailV1ApiTokensApiTokenCreatedResource = {
     id,

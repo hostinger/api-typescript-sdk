@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EcommerceV1OrderFulfillRequest } from 'hostinger-api-sdk';
+import { EcommerceV1OrderFulfillRequest } from '@hostinger/sdk';
 
 const instance: EcommerceV1OrderFulfillRequest = {
     items,

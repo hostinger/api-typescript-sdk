@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainsV1DomainDomainExtendedResourceNameServers } from 'hostinger-api-sdk';
+import { DomainsV1DomainDomainExtendedResourceNameServers } from '@hostinger/sdk';
 
 const instance: DomainsV1DomainDomainExtendedResourceNameServers = {
     ns1,

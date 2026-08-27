@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1VirtualMachineRootPasswordUpdateRequest } from 'hostinger-api-sdk';
+import { VPSV1VirtualMachineRootPasswordUpdateRequest } from '@hostinger/sdk';
 
 const instance: VPSV1VirtualMachineRootPasswordUpdateRequest = {
     password,

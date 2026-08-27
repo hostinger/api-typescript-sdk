@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { BillingV1PaymentMethodPaymentMethodResource } from 'hostinger-api-sdk';
+import { BillingV1PaymentMethodPaymentMethodResource } from '@hostinger/sdk';
 
 const instance: BillingV1PaymentMethodPaymentMethodResource = {
     id,

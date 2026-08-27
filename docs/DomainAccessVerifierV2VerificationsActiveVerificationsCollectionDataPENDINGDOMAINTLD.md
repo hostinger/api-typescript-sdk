@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainAccessVerifierV2VerificationsActiveVerificationsCollectionDataPENDINGDOMAINTLD } from 'hostinger-api-sdk';
+import { DomainAccessVerifierV2VerificationsActiveVerificationsCollectionDataPENDINGDOMAINTLD } from '@hostinger/sdk';
 
 const instance: DomainAccessVerifierV2VerificationsActiveVerificationsCollectionDataPENDINGDOMAINTLD = {
     VERIFICATION_TYPE,

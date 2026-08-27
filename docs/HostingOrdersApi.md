@@ -17,7 +17,7 @@ Retrieve a paginated list of orders accessible to the authenticated client.  Thi
 import {
     HostingOrdersApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingOrdersApi(configuration);

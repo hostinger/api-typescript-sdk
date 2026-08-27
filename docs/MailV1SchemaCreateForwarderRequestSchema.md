@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1SchemaCreateForwarderRequestSchema } from 'hostinger-api-sdk';
+import { MailV1SchemaCreateForwarderRequestSchema } from '@hostinger/sdk';
 
 const instance: MailV1SchemaCreateForwarderRequestSchema = {
     destination,

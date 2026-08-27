@@ -29,7 +29,7 @@ Count the contacts currently matching a segment without listing them.  Cheaper t
 import {
     ReachSegmentsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachSegmentsApi(configuration);
@@ -86,7 +86,7 @@ import {
     ReachSegmentsApi,
     Configuration,
     ReachV1ContactsSegmentsStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachSegmentsApi(configuration);
@@ -141,7 +141,7 @@ import {
     ReachSegmentsApi,
     Configuration,
     ReachV1ContactsSegmentsProfileStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachSegmentsApi(configuration);
@@ -198,7 +198,7 @@ Delete a segment.  Only the segment definition is removed. The contacts that mat
 import {
     ReachSegmentsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachSegmentsApi(configuration);
@@ -254,7 +254,7 @@ Get a single segment of a profile, including the conditions that define it.  To 
 import {
     ReachSegmentsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachSegmentsApi(configuration);
@@ -310,7 +310,7 @@ Get details of a specific segment.  This endpoint retrieves information about a 
 import {
     ReachSegmentsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachSegmentsApi(configuration);
@@ -363,7 +363,7 @@ Retrieve contacts associated with a specific segment for a given profile.  This 
 import {
     ReachSegmentsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachSegmentsApi(configuration);
@@ -425,7 +425,7 @@ Get a paginated list of the segments defined in a profile.  Each entry carries t
 import {
     ReachSegmentsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachSegmentsApi(configuration);
@@ -487,7 +487,7 @@ Retrieve contacts associated with a specific segment.  This endpoint allows you 
 import {
     ReachSegmentsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachSegmentsApi(configuration);
@@ -546,7 +546,7 @@ List every attribute a segment condition can filter on, with the operators each 
 import {
     ReachSegmentsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachSegmentsApi(configuration);
@@ -599,7 +599,7 @@ Get a list of all contact segments.  This endpoint returns a list of contact seg
 import {
     ReachSegmentsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachSegmentsApi(configuration);
@@ -646,7 +646,7 @@ import {
     ReachSegmentsApi,
     Configuration,
     ReachV1ContactsSegmentsProfileFilterContactsRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachSegmentsApi(configuration);
@@ -704,7 +704,7 @@ import {
     ReachSegmentsApi,
     Configuration,
     ReachV1ContactsSegmentsProfileUpdateRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachSegmentsApi(configuration);

@@ -20,7 +20,7 @@ import {
     HostingFilesApi,
     Configuration,
     HostingV1FilesGenerateUploadUrlRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingFilesApi(configuration);
@@ -74,7 +74,7 @@ Get a single file\'s content, relative to a website\'s document root.  Read-only
 import {
     HostingFilesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingFilesApi(configuration);
@@ -140,7 +140,7 @@ List files and directories under a website\'s document root.  Use `directory` to
 import {
     HostingFilesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingFilesApi(configuration);

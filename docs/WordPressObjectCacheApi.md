@@ -18,7 +18,7 @@ Show the Memcached object cache status for the specified WordPress installation.
 import {
     WordPressObjectCacheApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressObjectCacheApi(configuration);
@@ -75,7 +75,7 @@ import {
     WordPressObjectCacheApi,
     Configuration,
     WordPressV1MemcachedToggleMemcachedRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressObjectCacheApi(configuration);

@@ -20,7 +20,7 @@ import {
     DomainsAvailabilityApi,
     Configuration,
     DomainsV1AvailabilityAvailabilityRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsAvailabilityApi(configuration);
@@ -75,7 +75,7 @@ import {
     DomainsAvailabilityApi,
     Configuration,
     DomainsV1AvailabilityAlternativesFromDescriptionRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsAvailabilityApi(configuration);
@@ -130,7 +130,7 @@ import {
     DomainsAvailabilityApi,
     Configuration,
     DomainsV1AvailabilityAlternativesFromDomainRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsAvailabilityApi(configuration);

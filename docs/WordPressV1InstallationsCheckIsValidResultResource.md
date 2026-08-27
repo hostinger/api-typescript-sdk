@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { WordPressV1InstallationsCheckIsValidResultResource } from 'hostinger-api-sdk';
+import { WordPressV1InstallationsCheckIsValidResultResource } from '@hostinger/sdk';
 
 const instance: WordPressV1InstallationsCheckIsValidResultResource = {
     software_id,

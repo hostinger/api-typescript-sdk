@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DNSV1ZoneUpdateRequest } from 'hostinger-api-sdk';
+import { DNSV1ZoneUpdateRequest } from '@hostinger/sdk';
 
 const instance: DNSV1ZoneUpdateRequest = {
     overwrite,

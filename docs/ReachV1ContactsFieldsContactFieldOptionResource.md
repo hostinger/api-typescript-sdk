@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1ContactsFieldsContactFieldOptionResource } from 'hostinger-api-sdk';
+import { ReachV1ContactsFieldsContactFieldOptionResource } from '@hostinger/sdk';
 
 const instance: ReachV1ContactsFieldsContactFieldOptionResource = {
     uuid,

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1TemplateTemplateResource } from 'hostinger-api-sdk';
+import { VPSV1TemplateTemplateResource } from '@hostinger/sdk';
 
 const instance: VPSV1TemplateTemplateResource = {
     id,

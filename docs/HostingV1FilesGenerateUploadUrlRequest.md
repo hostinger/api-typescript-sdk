@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1FilesGenerateUploadUrlRequest } from 'hostinger-api-sdk';
+import { HostingV1FilesGenerateUploadUrlRequest } from '@hostinger/sdk';
 
 const instance: HostingV1FilesGenerateUploadUrlRequest = {
     username,

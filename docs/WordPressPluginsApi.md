@@ -29,7 +29,7 @@ import {
     WordPressPluginsApi,
     Configuration,
     WordPressV1PluginsActivatePluginRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressPluginsApi(configuration);
@@ -89,7 +89,7 @@ Check whether WooCommerce is installed on any WordPress installation of a domain
 import {
     WordPressPluginsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressPluginsApi(configuration);
@@ -143,7 +143,7 @@ import {
     WordPressPluginsApi,
     Configuration,
     WordPressV1PluginsDeactivatePluginRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressPluginsApi(configuration);
@@ -204,7 +204,7 @@ import {
     WordPressPluginsApi,
     Configuration,
     WordPressV1PluginsDeployPluginRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressPluginsApi(configuration);
@@ -265,7 +265,7 @@ import {
     WordPressPluginsApi,
     Configuration,
     WordPressV1PluginsInstallPluginsRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressPluginsApi(configuration);
@@ -325,7 +325,7 @@ List plugins recommended for installation on a WordPress installation that are n
 import {
     WordPressPluginsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressPluginsApi(configuration);
@@ -381,7 +381,7 @@ List plugins installed on a WordPress installation, including their status, avai
 import {
     WordPressPluginsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressPluginsApi(configuration);
@@ -440,7 +440,7 @@ List curated plugin suggestions grouped by website type.  Use the returned `slug
 import {
     WordPressPluginsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressPluginsApi(configuration);
@@ -493,7 +493,7 @@ Search the WordPress.org plugin directory for plugins available to install.  Use
 import {
     WordPressPluginsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressPluginsApi(configuration);
@@ -547,7 +547,7 @@ import {
     WordPressPluginsApi,
     Configuration,
     WordPressV1PluginsUninstallPluginsRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressPluginsApi(configuration);
@@ -608,7 +608,7 @@ import {
     WordPressPluginsApi,
     Configuration,
     WordPressV1PluginsUpdateHostingerPluginRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressPluginsApi(configuration);
@@ -669,7 +669,7 @@ import {
     WordPressPluginsApi,
     Configuration,
     WordPressV1PluginsUpdatePluginsRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressPluginsApi(configuration);

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EcommerceV1PaymentProviderPaymentProviderListResourceDataAvailableInner } from 'hostinger-api-sdk';
+import { EcommerceV1PaymentProviderPaymentProviderListResourceDataAvailableInner } from '@hostinger/sdk';
 
 const instance: EcommerceV1PaymentProviderPaymentProviderListResourceDataAvailableInner = {
     id,

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainsV1DomainDomainExtendedResourceDomainContacts } from 'hostinger-api-sdk';
+import { DomainsV1DomainDomainExtendedResourceDomainContacts } from '@hostinger/sdk';
 
 const instance: DomainsV1DomainDomainExtendedResourceDomainContacts = {
     admin_id,

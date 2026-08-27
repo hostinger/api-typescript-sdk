@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1DatacentersListRequest } from 'hostinger-api-sdk';
+import { HostingV1DatacentersListRequest } from '@hostinger/sdk';
 
 const instance: HostingV1DatacentersListRequest = {
     order_id,

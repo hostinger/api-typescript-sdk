@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachListProfileSegmentContactsV1200Response } from 'hostinger-api-sdk';
+import { ReachListProfileSegmentContactsV1200Response } from '@hostinger/sdk';
 
 const instance: ReachListProfileSegmentContactsV1200Response = {
     data,

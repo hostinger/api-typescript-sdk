@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1ProfilesProfileResourceLimits } from 'hostinger-api-sdk';
+import { ReachV1ProfilesProfileResourceLimits } from '@hostinger/sdk';
 
 const instance: ReachV1ProfilesProfileResourceLimits = {
     ai_messages_limit,

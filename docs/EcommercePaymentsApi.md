@@ -19,7 +19,7 @@ Create an onboarding link for connecting a payment gateway to the store. Returns
 import {
     EcommercePaymentsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommercePaymentsApi(configuration);
@@ -76,7 +76,7 @@ import {
     EcommercePaymentsApi,
     Configuration,
     EcommerceV1PaymentEnableManualPaymentRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommercePaymentsApi(configuration);
@@ -133,7 +133,7 @@ List a store\'s payment providers, split into providers already connected to the
 import {
     EcommercePaymentsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommercePaymentsApi(configuration);

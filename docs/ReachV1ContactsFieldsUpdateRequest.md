@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1ContactsFieldsUpdateRequest } from 'hostinger-api-sdk';
+import { ReachV1ContactsFieldsUpdateRequest } from '@hostinger/sdk';
 
 const instance: ReachV1ContactsFieldsUpdateRequest = {
     label,

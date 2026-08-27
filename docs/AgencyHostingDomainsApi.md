@@ -21,7 +21,7 @@ import {
     AgencyHostingDomainsApi,
     Configuration,
     AgencyHostingV1DomainsChangeDomainRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingDomainsApi(configuration);
@@ -82,7 +82,7 @@ import {
     AgencyHostingDomainsApi,
     Configuration,
     AgencyHostingV1DomainsLinkDomainRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingDomainsApi(configuration);
@@ -139,7 +139,7 @@ Returns a paginated list of domains associated with Agency Plan websites accessi
 import {
     AgencyHostingDomainsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingDomainsApi(configuration);
@@ -198,7 +198,7 @@ Unlinks a domain from the specified Agency Plan website.  The website stops serv
 import {
     AgencyHostingDomainsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingDomainsApi(configuration);

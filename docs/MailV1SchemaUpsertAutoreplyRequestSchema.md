@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1SchemaUpsertAutoreplyRequestSchema } from 'hostinger-api-sdk';
+import { MailV1SchemaUpsertAutoreplyRequestSchema } from '@hostinger/sdk';
 
 const instance: MailV1SchemaUpsertAutoreplyRequestSchema = {
     subject,

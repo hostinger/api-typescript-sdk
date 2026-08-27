@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1NodeJsStartBuildRequestSourceOptions } from 'hostinger-api-sdk';
+import { HostingV1NodeJsStartBuildRequestSourceOptions } from '@hostinger/sdk';
 
 const instance: HostingV1NodeJsStartBuildRequestSourceOptions = {
     archive_path,

@@ -18,7 +18,7 @@ import {
     DomainAccessVerifierVerificationsApi,
     Configuration,
     DomainAccessVerifierV2VerificationsListRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainAccessVerifierVerificationsApi(configuration);

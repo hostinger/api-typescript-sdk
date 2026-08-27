@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DNSV1SnapshotSnapshotResource } from 'hostinger-api-sdk';
+import { DNSV1SnapshotSnapshotResource } from '@hostinger/sdk';
 
 const instance: DNSV1SnapshotSnapshotResource = {
     id,

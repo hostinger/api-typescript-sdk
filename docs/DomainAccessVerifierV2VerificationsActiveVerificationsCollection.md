@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainAccessVerifierV2VerificationsActiveVerificationsCollection } from 'hostinger-api-sdk';
+import { DomainAccessVerifierV2VerificationsActiveVerificationsCollection } from '@hostinger/sdk';
 
 const instance: DomainAccessVerifierV2VerificationsActiveVerificationsCollection = {
     data,

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { WordPressV1ThemesActivateThemeRequest } from 'hostinger-api-sdk';
+import { WordPressV1ThemesActivateThemeRequest } from '@hostinger/sdk';
 
 const instance: WordPressV1ThemesActivateThemeRequest = {
     theme,

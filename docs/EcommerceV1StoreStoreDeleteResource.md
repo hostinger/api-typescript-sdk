@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EcommerceV1StoreStoreDeleteResource } from 'hostinger-api-sdk';
+import { EcommerceV1StoreStoreDeleteResource } from '@hostinger/sdk';
 
 const instance: EcommerceV1StoreStoreDeleteResource = {
     id,

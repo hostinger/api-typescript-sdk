@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1WebsitesDeployArchiveRequest } from 'hostinger-api-sdk';
+import { HostingV1WebsitesDeployArchiveRequest } from '@hostinger/sdk';
 
 const instance: HostingV1WebsitesDeployArchiveRequest = {
     archive_path,

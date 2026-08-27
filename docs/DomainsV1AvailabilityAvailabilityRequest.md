@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainsV1AvailabilityAvailabilityRequest } from 'hostinger-api-sdk';
+import { DomainsV1AvailabilityAvailabilityRequest } from '@hostinger/sdk';
 
 const instance: DomainsV1AvailabilityAvailabilityRequest = {
     domain,

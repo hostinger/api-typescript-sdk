@@ -21,7 +21,7 @@ import {
     HostingWebsitesApi,
     Configuration,
     HostingV1WebsitesCreateWebsiteRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingWebsitesApi(configuration);
@@ -75,7 +75,7 @@ This endpoint permanently removes a website and all of its data. This action can
 import {
     HostingWebsitesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingWebsitesApi(configuration);
@@ -130,7 +130,7 @@ import {
     HostingWebsitesApi,
     Configuration,
     HostingV1WebsitesDeployArchiveRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingWebsitesApi(configuration);
@@ -190,7 +190,7 @@ Retrieve a paginated list of websites (CloudLinux, Builder, and Horizons) access
 import {
     HostingWebsitesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingWebsitesApi(configuration);

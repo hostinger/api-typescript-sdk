@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainsV1TransferTransferResource } from 'hostinger-api-sdk';
+import { DomainsV1TransferTransferResource } from '@hostinger/sdk';
 
 const instance: DomainsV1TransferTransferResource = {
     domain,

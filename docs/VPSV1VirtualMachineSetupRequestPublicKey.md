@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1VirtualMachineSetupRequestPublicKey } from 'hostinger-api-sdk';
+import { VPSV1VirtualMachineSetupRequestPublicKey } from '@hostinger/sdk';
 
 const instance: VPSV1VirtualMachineSetupRequestPublicKey = {
     name,

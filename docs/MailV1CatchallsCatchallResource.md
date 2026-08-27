@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1CatchallsCatchallResource } from 'hostinger-api-sdk';
+import { MailV1CatchallsCatchallResource } from '@hostinger/sdk';
 
 const instance: MailV1CatchallsCatchallResource = {
     id,

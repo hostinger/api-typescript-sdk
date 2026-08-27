@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EcommerceV1VariantCreateVariantRequestOptionsInner } from 'hostinger-api-sdk';
+import { EcommerceV1VariantCreateVariantRequestOptionsInner } from '@hostinger/sdk';
 
 const instance: EcommerceV1VariantCreateVariantRequestOptionsInner = {
     name,

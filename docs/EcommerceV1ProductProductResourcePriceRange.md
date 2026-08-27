@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EcommerceV1ProductProductResourcePriceRange } from 'hostinger-api-sdk';
+import { EcommerceV1ProductProductResourcePriceRange } from '@hostinger/sdk';
 
 const instance: EcommerceV1ProductProductResourcePriceRange = {
     min,

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1OrdersPlanResource } from 'hostinger-api-sdk';
+import { MailV1OrdersPlanResource } from '@hostinger/sdk';
 
 const instance: MailV1OrdersPlanResource = {
     name,

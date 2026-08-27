@@ -17,7 +17,7 @@ Returns a paginated list of Agency Plan orders accessible to the authenticated c
 import {
     AgencyHostingOrdersApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingOrdersApi(configuration);

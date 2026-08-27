@@ -21,7 +21,7 @@ Retrieve paginated access logs for the domain attached to the given mail order. 
 import {
     MailLogsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailLogsApi(configuration);
@@ -103,7 +103,7 @@ Retrieve paginated account action logs (administrative and user actions) for the
 import {
     MailLogsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailLogsApi(configuration);
@@ -179,7 +179,7 @@ Retrieve paginated inbound (received mail) delivery logs for the domain attached
 import {
     MailLogsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailLogsApi(configuration);
@@ -261,7 +261,7 @@ Retrieve paginated mailbox action logs (message and mailbox events) for a mailbo
 import {
     MailLogsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailLogsApi(configuration);
@@ -337,7 +337,7 @@ Retrieve paginated outbound (sent mail) delivery logs for the domain attached to
 import {
     MailLogsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailLogsApi(configuration);

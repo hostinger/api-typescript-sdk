@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1VirtualMachineSetupRequest } from 'hostinger-api-sdk';
+import { VPSV1VirtualMachineSetupRequest } from '@hostinger/sdk';
 
 const instance: VPSV1VirtualMachineSetupRequest = {
     template_id,

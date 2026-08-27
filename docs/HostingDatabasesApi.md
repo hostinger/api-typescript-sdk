@@ -26,7 +26,7 @@ import {
     HostingDatabasesApi,
     Configuration,
     HostingV1DatabasesChangeDatabasePasswordRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDatabasesApi(configuration);
@@ -87,7 +87,7 @@ import {
     HostingDatabasesApi,
     Configuration,
     HostingV1DatabasesCreateDatabaseRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDatabasesApi(configuration);
@@ -145,7 +145,7 @@ import {
     HostingDatabasesApi,
     Configuration,
     HostingV1DatabasesRemoteConnectionsCreateRemoteConnectionRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDatabasesApi(configuration);
@@ -205,7 +205,7 @@ Permanently deletes a database and its remote connections.  The database name mu
 import {
     HostingDatabasesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDatabasesApi(configuration);
@@ -261,7 +261,7 @@ Permanently removes a remote-access rule, revoking the given host\'s remote acce
 import {
     HostingDatabasesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDatabasesApi(configuration);
@@ -320,7 +320,7 @@ Returns a direct sign-on link to phpMyAdmin for the specified database.  Use thi
 import {
     HostingDatabasesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDatabasesApi(configuration);
@@ -376,7 +376,7 @@ Returns a paginated list of databases for the specified account.  Use the domain
 import {
     HostingDatabasesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDatabasesApi(configuration);
@@ -444,7 +444,7 @@ Returns the remote-access rules for the specified account: the remote hosts (IPv
 import {
     HostingDatabasesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDatabasesApi(configuration);
@@ -500,7 +500,7 @@ Repairs corrupted database tables asynchronously.  Use when database errors, cra
 import {
     HostingDatabasesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDatabasesApi(configuration);

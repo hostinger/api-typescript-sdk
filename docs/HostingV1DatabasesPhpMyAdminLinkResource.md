@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1DatabasesPhpMyAdminLinkResource } from 'hostinger-api-sdk';
+import { HostingV1DatabasesPhpMyAdminLinkResource } from '@hostinger/sdk';
 
 const instance: HostingV1DatabasesPhpMyAdminLinkResource = {
     link,

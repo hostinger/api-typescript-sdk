@@ -18,7 +18,7 @@ Generate a file browser upload URL with authentication credentials for uploading
 import {
     AgencyHostingFilesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingFilesApi(configuration);
@@ -72,7 +72,7 @@ import {
     AgencyHostingFilesApi,
     Configuration,
     AgencyHostingV1FilesImportArchiveRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingFilesApi(configuration);

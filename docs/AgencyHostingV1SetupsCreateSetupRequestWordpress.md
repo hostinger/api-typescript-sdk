@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AgencyHostingV1SetupsCreateSetupRequestWordpress } from 'hostinger-api-sdk';
+import { AgencyHostingV1SetupsCreateSetupRequestWordpress } from '@hostinger/sdk';
 
 const instance: AgencyHostingV1SetupsCreateSetupRequestWordpress = {
     language,

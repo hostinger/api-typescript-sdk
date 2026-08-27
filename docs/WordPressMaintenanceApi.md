@@ -18,7 +18,7 @@ Show the maintenance mode status for the specified WordPress installation.  Prov
 import {
     WordPressMaintenanceApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressMaintenanceApi(configuration);
@@ -75,7 +75,7 @@ import {
     WordPressMaintenanceApi,
     Configuration,
     WordPressV1MaintenanceToggleMaintenanceRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressMaintenanceApi(configuration);

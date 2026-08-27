@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1SchemaCreateAliasRequestSchema } from 'hostinger-api-sdk';
+import { MailV1SchemaCreateAliasRequestSchema } from '@hostinger/sdk';
 
 const instance: MailV1SchemaCreateAliasRequestSchema = {
     local_part,

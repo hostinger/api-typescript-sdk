@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1AliasesAliasResource } from 'hostinger-api-sdk';
+import { MailV1AliasesAliasResource } from '@hostinger/sdk';
 
 const instance: MailV1AliasesAliasResource = {
     id,

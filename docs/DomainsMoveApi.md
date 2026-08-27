@@ -25,7 +25,7 @@ import {
     DomainsMoveApi,
     Configuration,
     DomainsV1MoveIncomingUpdateRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsMoveApi(configuration);
@@ -82,7 +82,7 @@ Cancel an outgoing move for a specified domain.  The move can only be cancelled 
 import {
     DomainsMoveApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsMoveApi(configuration);
@@ -135,7 +135,7 @@ Retrieve all domains other Hostinger accounts are moving to your account.  Moves
 import {
     DomainsMoveApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsMoveApi(configuration);
@@ -181,7 +181,7 @@ Retrieve the incoming move for a specified domain.  Returns 404 when no account 
 import {
     DomainsMoveApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsMoveApi(configuration);
@@ -237,7 +237,7 @@ Retrieve all domains you are moving to other Hostinger accounts.  Only moves whi
 import {
     DomainsMoveApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsMoveApi(configuration);
@@ -283,7 +283,7 @@ Retrieve the outgoing move for a specified domain.  Returns 404 when the domain 
 import {
     DomainsMoveApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsMoveApi(configuration);
@@ -336,7 +336,7 @@ Reject an incoming move for a specified domain.  The domain stays in the account
 import {
     DomainsMoveApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsMoveApi(configuration);
@@ -390,7 +390,7 @@ import {
     DomainsMoveApi,
     Configuration,
     DomainsV1MoveOutgoingStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsMoveApi(configuration);

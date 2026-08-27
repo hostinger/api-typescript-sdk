@@ -19,7 +19,7 @@ Delete a payment method from your account.  Use this endpoint to remove unused p
 import {
     BillingPaymentMethodsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new BillingPaymentMethodsApi(configuration);
@@ -72,7 +72,7 @@ Retrieve available payment methods that can be used for placing new orders.  If 
 import {
     BillingPaymentMethodsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new BillingPaymentMethodsApi(configuration);
@@ -118,7 +118,7 @@ Set the default payment method for your account.  Use this endpoint to configure
 import {
     BillingPaymentMethodsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new BillingPaymentMethodsApi(configuration);

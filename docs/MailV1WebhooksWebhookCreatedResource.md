@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1WebhooksWebhookCreatedResource } from 'hostinger-api-sdk';
+import { MailV1WebhooksWebhookCreatedResource } from '@hostinger/sdk';
 
 const instance: MailV1WebhooksWebhookCreatedResource = {
     id,

@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EcommerceV1OrderOrderDetailResource } from 'hostinger-api-sdk';
+import { EcommerceV1OrderOrderDetailResource } from '@hostinger/sdk';
 
 const instance: EcommerceV1OrderOrderDetailResource = {
     id,

@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EcommerceV1StoreStoreMetadataResourceMetadataDefaultCurrency } from 'hostinger-api-sdk';
+import { EcommerceV1StoreStoreMetadataResourceMetadataDefaultCurrency } from '@hostinger/sdk';
 
 const instance: EcommerceV1StoreStoreMetadataResourceMetadataDefaultCurrency = {
     code,

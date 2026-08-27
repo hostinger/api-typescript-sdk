@@ -17,7 +17,7 @@ Clears cache for all domains associated with an Agency Plan website, including i
 import {
     AgencyHostingCacheApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingCacheApi(configuration);

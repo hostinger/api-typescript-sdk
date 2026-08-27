@@ -23,7 +23,7 @@ Lists the PHP versions an Agency Plan website can be switched to. The version th
 import {
     AgencyHostingPHPApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingPHPApi(configuration);
@@ -76,7 +76,7 @@ Lists the PHP versions available to websites created under an Agency Plan order,
 import {
     AgencyHostingPHPApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingPHPApi(configuration);
@@ -129,7 +129,7 @@ Lists every PHP extension available to an Agency Plan website and whether it is 
 import {
     AgencyHostingPHPApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingPHPApi(configuration);
@@ -182,7 +182,7 @@ Lists the php.ini directives that can be configured for an Agency Plan website, 
 import {
     AgencyHostingPHPApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingPHPApi(configuration);
@@ -236,7 +236,7 @@ import {
     AgencyHostingPHPApi,
     Configuration,
     AgencyHostingV1PhpUpdateExtensionsRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingPHPApi(configuration);
@@ -294,7 +294,7 @@ import {
     AgencyHostingPHPApi,
     Configuration,
     AgencyHostingV1PhpUpdateOptionsRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingPHPApi(configuration);
@@ -352,7 +352,7 @@ import {
     AgencyHostingPHPApi,
     Configuration,
     AgencyHostingV1PhpUpdateVersionRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingPHPApi(configuration);

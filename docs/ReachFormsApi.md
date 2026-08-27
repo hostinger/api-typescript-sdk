@@ -19,7 +19,7 @@ Permanently delete a form together with its template.  A form that has already c
 import {
     ReachFormsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachFormsApi(configuration);
@@ -76,7 +76,7 @@ Get a single form with the URL of its hosted template and the tags it applies to
 import {
     ReachFormsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachFormsApi(configuration);
@@ -132,7 +132,7 @@ Get a paginated list of the signup forms in a profile.  Each form carries a refe
 import {
     ReachFormsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachFormsApi(configuration);

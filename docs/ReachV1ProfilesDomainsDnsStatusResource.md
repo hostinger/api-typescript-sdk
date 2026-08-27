@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1ProfilesDomainsDnsStatusResource } from 'hostinger-api-sdk';
+import { ReachV1ProfilesDomainsDnsStatusResource } from '@hostinger/sdk';
 
 const instance: ReachV1ProfilesDomainsDnsStatusResource = {
     domain,

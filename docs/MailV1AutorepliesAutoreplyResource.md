@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1AutorepliesAutoreplyResource } from 'hostinger-api-sdk';
+import { MailV1AutorepliesAutoreplyResource } from '@hostinger/sdk';
 
 const instance: MailV1AutorepliesAutoreplyResource = {
     id,

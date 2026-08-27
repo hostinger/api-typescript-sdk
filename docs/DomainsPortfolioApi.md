@@ -28,7 +28,7 @@ import {
     DomainsPortfolioApi,
     Configuration,
     DomainsV1PortfolioClaimRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsPortfolioApi(configuration);
@@ -82,7 +82,7 @@ Disable domain lock for the domain.  Domain lock needs to be disabled before tra
 import {
     DomainsPortfolioApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsPortfolioApi(configuration);
@@ -135,7 +135,7 @@ Disable privacy protection for the domain.  When privacy protection is disabled,
 import {
     DomainsPortfolioApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsPortfolioApi(configuration);
@@ -188,7 +188,7 @@ Enable domain lock for the domain.  When domain lock is enabled, the domain cann
 import {
     DomainsPortfolioApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsPortfolioApi(configuration);
@@ -241,7 +241,7 @@ Enable privacy protection for the domain.  When privacy protection is enabled, d
 import {
     DomainsPortfolioApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsPortfolioApi(configuration);
@@ -294,7 +294,7 @@ Retrieve the authorization (EPP) code for a specified domain so it can be transf
 import {
     DomainsPortfolioApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsPortfolioApi(configuration);
@@ -347,7 +347,7 @@ Retrieve detailed information for specified domain.  Use this endpoint to view c
 import {
     DomainsPortfolioApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsPortfolioApi(configuration);
@@ -400,7 +400,7 @@ Retrieve all domains associated with your account.  Use this endpoint to view us
 import {
     DomainsPortfolioApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsPortfolioApi(configuration);
@@ -446,7 +446,7 @@ Retrieve renewal information for a specified domain, including its status and cu
 import {
     DomainsPortfolioApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsPortfolioApi(configuration);
@@ -500,7 +500,7 @@ import {
     DomainsPortfolioApi,
     Configuration,
     DomainsV1PortfolioPurchaseRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsPortfolioApi(configuration);
@@ -555,7 +555,7 @@ import {
     DomainsPortfolioApi,
     Configuration,
     DomainsV1PortfolioUpdateNameserversRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsPortfolioApi(configuration);

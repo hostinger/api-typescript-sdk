@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1ContactsFieldsUpdateRequestOptionsInner } from 'hostinger-api-sdk';
+import { ReachV1ContactsFieldsUpdateRequestOptionsInner } from '@hostinger/sdk';
 
 const instance: ReachV1ContactsFieldsUpdateRequestOptionsInner = {
     uuid,

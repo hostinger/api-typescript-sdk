@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1AutomationsStepsAutomationStepResource } from 'hostinger-api-sdk';
+import { ReachV1AutomationsStepsAutomationStepResource } from '@hostinger/sdk';
 
 const instance: ReachV1AutomationsStepsAutomationStepResource = {
     uuid,

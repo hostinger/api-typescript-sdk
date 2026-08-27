@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainsV1PortfolioClaimResource } from 'hostinger-api-sdk';
+import { DomainsV1PortfolioClaimResource } from '@hostinger/sdk';
 
 const instance: DomainsV1PortfolioClaimResource = {
     domain,

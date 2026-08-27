@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EcommerceV1StoreStoreMetadataResourceMetadata } from 'hostinger-api-sdk';
+import { EcommerceV1StoreStoreMetadataResourceMetadata } from '@hostinger/sdk';
 
 const instance: EcommerceV1StoreStoreMetadataResourceMetadata = {
     has_payment_methods,

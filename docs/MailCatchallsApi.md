@@ -20,7 +20,7 @@ Create a catch-all that routes all messages sent to unknown addresses of the dom
 import {
     MailCatchallsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailCatchallsApi(configuration);
@@ -76,7 +76,7 @@ Delete a catch-all. Messages sent to unknown addresses of the domain are no long
 import {
     MailCatchallsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailCatchallsApi(configuration);
@@ -131,7 +131,7 @@ Retrieve a paginated list of catch-alls across all mailboxes of a mail order.
 import {
     MailCatchallsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailCatchallsApi(configuration);
@@ -192,7 +192,7 @@ Resend the confirmation email to the mailbox address of an unconfirmed catch-all
 import {
     MailCatchallsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailCatchallsApi(configuration);

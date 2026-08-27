@@ -18,7 +18,7 @@ import {
     EcommerceShippingApi,
     Configuration,
     EcommerceV1ShippingSetShippingRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceShippingApi(configuration);

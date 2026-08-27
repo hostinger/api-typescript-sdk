@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1ContactsSegmentsStoreRequestConditionsInnerValue } from 'hostinger-api-sdk';
+import { ReachV1ContactsSegmentsStoreRequestConditionsInnerValue } from '@hostinger/sdk';
 
 const instance: ReachV1ContactsSegmentsStoreRequestConditionsInnerValue = {
 };

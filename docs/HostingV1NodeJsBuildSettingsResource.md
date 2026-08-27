@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1NodeJsBuildSettingsResource } from 'hostinger-api-sdk';
+import { HostingV1NodeJsBuildSettingsResource } from '@hostinger/sdk';
 
 const instance: HostingV1NodeJsBuildSettingsResource = {
     app_type,

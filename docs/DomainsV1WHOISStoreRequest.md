@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainsV1WHOISStoreRequest } from 'hostinger-api-sdk';
+import { DomainsV1WHOISStoreRequest } from '@hostinger/sdk';
 
 const instance: DomainsV1WHOISStoreRequest = {
     tld,

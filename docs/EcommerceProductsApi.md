@@ -23,7 +23,7 @@ Returns a signed URL to upload a product image to (multipart/form-data POST). Th
 import {
     EcommerceProductsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceProductsApi(configuration);
@@ -80,7 +80,7 @@ import {
     EcommerceProductsApi,
     Configuration,
     EcommerceV1ProductCreateDigitalProductRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceProductsApi(configuration);
@@ -138,7 +138,7 @@ import {
     EcommerceProductsApi,
     Configuration,
     EcommerceV1ProductCreatePhysicalProductRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceProductsApi(configuration);
@@ -195,7 +195,7 @@ Delete a product and its variants from the store. A subscription product with ac
 import {
     EcommerceProductsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceProductsApi(configuration);
@@ -251,7 +251,7 @@ List a store\'s products newest first as lean summaries (name, status, thumbnail
 import {
     EcommerceProductsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceProductsApi(configuration);
@@ -320,7 +320,7 @@ import {
     EcommerceProductsApi,
     Configuration,
     EcommerceV1ProductUpdateRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceProductsApi(configuration);
@@ -381,7 +381,7 @@ import {
     EcommerceProductsApi,
     Configuration,
     EcommerceV1ProductUploadProductImageRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceProductsApi(configuration);

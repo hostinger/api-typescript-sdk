@@ -25,7 +25,7 @@ import {
     MailWebhooksApi,
     Configuration,
     MailV1SchemaCreateWebhookRequestSchema
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailWebhooksApi(configuration);
@@ -85,7 +85,7 @@ Permanently delete a webhook. This action cannot be undone. After deletion the U
 import {
     MailWebhooksApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailWebhooksApi(configuration);
@@ -140,7 +140,7 @@ Retrieve the details of a single webhook. The webhook secret is never included; 
 import {
     MailWebhooksApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailWebhooksApi(configuration);
@@ -195,7 +195,7 @@ Retrieve a paginated list of webhook delivery logs for the given mail order, inc
 import {
     MailWebhooksApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailWebhooksApi(configuration);
@@ -259,7 +259,7 @@ Retrieve a paginated list of webhooks belonging to the given mail order. Support
 import {
     MailWebhooksApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailWebhooksApi(configuration);
@@ -326,7 +326,7 @@ Regenerate the secret of a webhook. The previous secret is immediately invalidat
 import {
     MailWebhooksApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailWebhooksApi(configuration);
@@ -381,7 +381,7 @@ Send a test delivery to the webhook URL and return the result. Test requests are
 import {
     MailWebhooksApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailWebhooksApi(configuration);
@@ -438,7 +438,7 @@ import {
     MailWebhooksApi,
     Configuration,
     MailV1SchemaUpdateWebhookRequestSchema
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailWebhooksApi(configuration);

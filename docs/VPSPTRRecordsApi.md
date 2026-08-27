@@ -19,7 +19,7 @@ import {
     VPSPTRRecordsApi,
     Configuration,
     VPSV1VirtualMachinePTRStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSPTRRecordsApi(configuration);
@@ -79,7 +79,7 @@ Delete a PTR (Pointer) record for a specified virtual machine.  Once deleted, re
 import {
     VPSPTRRecordsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSPTRRecordsApi(configuration);

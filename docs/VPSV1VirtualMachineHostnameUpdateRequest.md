@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1VirtualMachineHostnameUpdateRequest } from 'hostinger-api-sdk';
+import { VPSV1VirtualMachineHostnameUpdateRequest } from '@hostinger/sdk';
 
 const instance: VPSV1VirtualMachineHostnameUpdateRequest = {
     hostname,

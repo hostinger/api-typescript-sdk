@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { WordPressV1InstallationsInstallWordPressRequest } from 'hostinger-api-sdk';
+import { WordPressV1InstallationsInstallWordPressRequest } from '@hostinger/sdk';
 
 const instance: WordPressV1InstallationsInstallWordPressRequest = {
     domain,

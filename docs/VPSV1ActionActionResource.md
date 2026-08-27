@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1ActionActionResource } from 'hostinger-api-sdk';
+import { VPSV1ActionActionResource } from '@hostinger/sdk';
 
 const instance: VPSV1ActionActionResource = {
     id,

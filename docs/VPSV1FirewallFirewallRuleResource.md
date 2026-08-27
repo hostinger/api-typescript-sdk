@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1FirewallFirewallRuleResource } from 'hostinger-api-sdk';
+import { VPSV1FirewallFirewallRuleResource } from '@hostinger/sdk';
 
 const instance: VPSV1FirewallFirewallRuleResource = {
     id,

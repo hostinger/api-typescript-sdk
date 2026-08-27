@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1DatabasesRemoteConnectionsCreateRemoteConnectionRequest } from 'hostinger-api-sdk';
+import { HostingV1DatabasesRemoteConnectionsCreateRemoteConnectionRequest } from '@hostinger/sdk';
 
 const instance: HostingV1DatabasesRemoteConnectionsCreateRemoteConnectionRequest = {
     ip,

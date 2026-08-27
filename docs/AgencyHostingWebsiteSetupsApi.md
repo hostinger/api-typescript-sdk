@@ -19,7 +19,7 @@ import {
     AgencyHostingWebsiteSetupsApi,
     Configuration,
     AgencyHostingV1SetupsCreateSetupRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingWebsiteSetupsApi(configuration);
@@ -76,7 +76,7 @@ Returns the current status of an Agency Plan website setup started via the setup
 import {
     AgencyHostingWebsiteSetupsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingWebsiteSetupsApi(configuration);

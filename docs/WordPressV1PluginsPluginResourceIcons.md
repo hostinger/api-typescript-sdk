@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { WordPressV1PluginsPluginResourceIcons } from 'hostinger-api-sdk';
+import { WordPressV1PluginsPluginResourceIcons } from '@hostinger/sdk';
 
 const instance: WordPressV1PluginsPluginResourceIcons = {
     _1x,

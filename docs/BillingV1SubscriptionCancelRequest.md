@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { BillingV1SubscriptionCancelRequest } from 'hostinger-api-sdk';
+import { BillingV1SubscriptionCancelRequest } from '@hostinger/sdk';
 
 const instance: BillingV1SubscriptionCancelRequest = {
     reason_code,

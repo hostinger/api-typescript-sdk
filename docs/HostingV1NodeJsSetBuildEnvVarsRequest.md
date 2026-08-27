@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1NodeJsSetBuildEnvVarsRequest } from 'hostinger-api-sdk';
+import { HostingV1NodeJsSetBuildEnvVarsRequest } from '@hostinger/sdk';
 
 const instance: HostingV1NodeJsSetBuildEnvVarsRequest = {
     env_vars,

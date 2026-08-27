@@ -20,7 +20,7 @@ import {
     AgencyHostingCronJobsApi,
     Configuration,
     AgencyHostingV1WebsitesCronJobsCreateCronJobRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingCronJobsApi(configuration);
@@ -77,7 +77,7 @@ Permanently deletes the cron job identified by its uuid from an Agency Plan webs
 import {
     AgencyHostingCronJobsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingCronJobsApi(configuration);
@@ -133,7 +133,7 @@ Returns a paginated list of cron jobs configured for an Agency Plan website.  Ea
 import {
     AgencyHostingCronJobsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingCronJobsApi(configuration);

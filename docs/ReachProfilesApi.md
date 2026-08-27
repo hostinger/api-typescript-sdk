@@ -21,7 +21,7 @@ Get the sending domain connected to the profile, its verification status and any
 import {
     ReachProfilesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachProfilesApi(configuration);
@@ -74,7 +74,7 @@ Retrieve the DNS configuration status for a profile\'s domain.  This endpoint re
 import {
     ReachProfilesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachProfilesApi(configuration);
@@ -127,7 +127,7 @@ Get how much of the plan is left for the current period.  Two things to keep in 
 import {
     ReachProfilesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachProfilesApi(configuration);
@@ -180,7 +180,7 @@ List which plan features the profile can use.  This is the feature lock matrix, 
 import {
     ReachProfilesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachProfilesApi(configuration);
@@ -233,7 +233,7 @@ This endpoint returns all profiles available to the client, including their basi
 import {
     ReachProfilesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachProfilesApi(configuration);

@@ -20,7 +20,7 @@ import {
     AgencyHostingWordPressApi,
     Configuration,
     AgencyHostingV1WordPressChangeVersionRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingWordPressApi(configuration);
@@ -77,7 +77,7 @@ Returns the current WordPress settings for an Agency Plan website: installed cor
 import {
     AgencyHostingWordPressApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingWordPressApi(configuration);
@@ -130,7 +130,7 @@ Lists the WordPress core versions available for installation on an Agency Plan w
 import {
     AgencyHostingWordPressApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new AgencyHostingWordPressApi(configuration);

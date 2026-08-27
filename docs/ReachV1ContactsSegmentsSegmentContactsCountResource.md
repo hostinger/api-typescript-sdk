@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1ContactsSegmentsSegmentContactsCountResource } from 'hostinger-api-sdk';
+import { ReachV1ContactsSegmentsSegmentContactsCountResource } from '@hostinger/sdk';
 
 const instance: ReachV1ContactsSegmentsSegmentContactsCountResource = {
     count,

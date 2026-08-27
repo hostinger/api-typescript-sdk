@@ -17,7 +17,7 @@ Create temporary auto-login links for the specified WordPress installation.  Pro
 import {
     WordPressLoginApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressLoginApi(configuration);

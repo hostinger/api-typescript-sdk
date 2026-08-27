@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1MailboxesMailboxResource } from 'hostinger-api-sdk';
+import { MailV1MailboxesMailboxResource } from '@hostinger/sdk';
 
 const instance: MailV1MailboxesMailboxResource = {
     id,

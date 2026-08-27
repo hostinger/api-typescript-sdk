@@ -21,7 +21,7 @@ import {
     EcommerceOrdersApi,
     Configuration,
     EcommerceV1OrderCancelRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceOrdersApi(configuration);
@@ -82,7 +82,7 @@ import {
     EcommerceOrdersApi,
     Configuration,
     EcommerceV1OrderFulfillRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceOrdersApi(configuration);
@@ -142,7 +142,7 @@ List a store\'s orders newest first as summaries. Filter by status, payment or f
 import {
     EcommerceOrdersApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceOrdersApi(configuration);
@@ -222,7 +222,7 @@ Retrieve one order in full: line items (each with the id the fulfil endpoint nee
 import {
     EcommerceOrdersApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceOrdersApi(configuration);

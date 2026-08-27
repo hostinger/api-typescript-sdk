@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1PublicKeyAttachRequest } from 'hostinger-api-sdk';
+import { VPSV1PublicKeyAttachRequest } from '@hostinger/sdk';
 
 const instance: VPSV1PublicKeyAttachRequest = {
     ids,

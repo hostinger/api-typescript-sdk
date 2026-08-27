@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { WordPressV1InstallationsJwtTokenResource } from 'hostinger-api-sdk';
+import { WordPressV1InstallationsJwtTokenResource } from '@hostinger/sdk';
 
 const instance: WordPressV1InstallationsJwtTokenResource = {
     token,

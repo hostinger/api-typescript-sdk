@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { InlineObject1 } from 'hostinger-api-sdk';
+import { InlineObject1 } from '@hostinger/sdk';
 
 const instance: InlineObject1 = {
     message,

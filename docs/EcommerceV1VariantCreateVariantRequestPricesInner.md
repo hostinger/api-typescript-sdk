@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EcommerceV1VariantCreateVariantRequestPricesInner } from 'hostinger-api-sdk';
+import { EcommerceV1VariantCreateVariantRequestPricesInner } from '@hostinger/sdk';
 
 const instance: EcommerceV1VariantCreateVariantRequestPricesInner = {
     amount,

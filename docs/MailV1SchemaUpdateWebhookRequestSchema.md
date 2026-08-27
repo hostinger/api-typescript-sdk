@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1SchemaUpdateWebhookRequestSchema } from 'hostinger-api-sdk';
+import { MailV1SchemaUpdateWebhookRequestSchema } from '@hostinger/sdk';
 
 const instance: MailV1SchemaUpdateWebhookRequestSchema = {
     name,

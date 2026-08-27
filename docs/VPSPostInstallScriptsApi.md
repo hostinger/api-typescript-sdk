@@ -22,7 +22,7 @@ import {
     VPSPostInstallScriptsApi,
     Configuration,
     VPSV1PostInstallScriptStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSPostInstallScriptsApi(configuration);
@@ -76,7 +76,7 @@ Delete a post-install script from your account.         Use this endpoint to rem
 import {
     VPSPostInstallScriptsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSPostInstallScriptsApi(configuration);
@@ -129,7 +129,7 @@ Retrieve post-install script by its ID.  Use this endpoint to view specific auto
 import {
     VPSPostInstallScriptsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSPostInstallScriptsApi(configuration);
@@ -182,7 +182,7 @@ Retrieve post-install scripts associated with your account.  Use this endpoint t
 import {
     VPSPostInstallScriptsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSPostInstallScriptsApi(configuration);
@@ -236,7 +236,7 @@ import {
     VPSPostInstallScriptsApi,
     Configuration,
     VPSV1PostInstallScriptStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSPostInstallScriptsApi(configuration);

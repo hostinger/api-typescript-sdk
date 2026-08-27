@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { WordPressV1ThemesInstalledThemeResource } from 'hostinger-api-sdk';
+import { WordPressV1ThemesInstalledThemeResource } from '@hostinger/sdk';
 
 const instance: WordPressV1ThemesInstalledThemeResource = {
     name,

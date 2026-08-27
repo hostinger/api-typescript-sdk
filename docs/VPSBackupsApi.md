@@ -18,7 +18,7 @@ Retrieve backups for a specified virtual machine.  Use this endpoint to view ava
 import {
     VPSBackupsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSBackupsApi(configuration);
@@ -74,7 +74,7 @@ Restore a backup for a specified virtual machine.  The system will then initiate
 import {
     VPSBackupsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSBackupsApi(configuration);

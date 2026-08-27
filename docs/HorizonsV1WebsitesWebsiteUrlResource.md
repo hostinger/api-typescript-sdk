@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HorizonsV1WebsitesWebsiteUrlResource } from 'hostinger-api-sdk';
+import { HorizonsV1WebsitesWebsiteUrlResource } from '@hostinger/sdk';
 
 const instance: HorizonsV1WebsitesWebsiteUrlResource = {
     website_url,

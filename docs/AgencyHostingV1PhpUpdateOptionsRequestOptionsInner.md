@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AgencyHostingV1PhpUpdateOptionsRequestOptionsInner } from 'hostinger-api-sdk';
+import { AgencyHostingV1PhpUpdateOptionsRequestOptionsInner } from '@hostinger/sdk';
 
 const instance: AgencyHostingV1PhpUpdateOptionsRequestOptionsInner = {
     name,

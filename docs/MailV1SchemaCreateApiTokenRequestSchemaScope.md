@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1SchemaCreateApiTokenRequestSchemaScope } from 'hostinger-api-sdk';
+import { MailV1SchemaCreateApiTokenRequestSchemaScope } from '@hostinger/sdk';
 
 const instance: MailV1SchemaCreateApiTokenRequestSchemaScope = {
     has_all_mailboxes,

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { WordPressV1HostingerPluginsUpdateAiOptionStatusRequest } from 'hostinger-api-sdk';
+import { WordPressV1HostingerPluginsUpdateAiOptionStatusRequest } from '@hostinger/sdk';
 
 const instance: WordPressV1HostingerPluginsUpdateAiOptionStatusRequest = {
     option,

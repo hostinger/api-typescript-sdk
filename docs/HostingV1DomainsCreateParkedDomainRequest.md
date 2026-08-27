@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1DomainsCreateParkedDomainRequest } from 'hostinger-api-sdk';
+import { HostingV1DomainsCreateParkedDomainRequest } from '@hostinger/sdk';
 
 const instance: HostingV1DomainsCreateParkedDomainRequest = {
     parked_domain,

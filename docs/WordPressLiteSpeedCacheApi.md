@@ -18,7 +18,7 @@ Purge the LiteSpeed Cache for the specified WordPress installation.  Provide the
 import {
     WordPressLiteSpeedCacheApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressLiteSpeedCacheApi(configuration);
@@ -74,7 +74,7 @@ Show the LiteSpeed Cache status for the specified WordPress installation.  Provi
 import {
     WordPressLiteSpeedCacheApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new WordPressLiteSpeedCacheApi(configuration);

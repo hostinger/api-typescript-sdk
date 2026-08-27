@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HorizonsV1WebsitesCreateWebsiteRequest } from 'hostinger-api-sdk';
+import { HorizonsV1WebsitesCreateWebsiteRequest } from '@hostinger/sdk';
 
 const instance: HorizonsV1WebsitesCreateWebsiteRequest = {
     message,

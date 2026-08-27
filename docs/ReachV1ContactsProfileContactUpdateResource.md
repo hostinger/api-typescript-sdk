@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1ContactsProfileContactUpdateResource } from 'hostinger-api-sdk';
+import { ReachV1ContactsProfileContactUpdateResource } from '@hostinger/sdk';
 
 const instance: ReachV1ContactsProfileContactUpdateResource = {
     uuid,

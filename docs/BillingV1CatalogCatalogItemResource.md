@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { BillingV1CatalogCatalogItemResource } from 'hostinger-api-sdk';
+import { BillingV1CatalogCatalogItemResource } from '@hostinger/sdk';
 
 const instance: BillingV1CatalogCatalogItemResource = {
     id,

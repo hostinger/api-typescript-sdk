@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1PublicKeyStoreRequest } from 'hostinger-api-sdk';
+import { VPSV1PublicKeyStoreRequest } from '@hostinger/sdk';
 
 const instance: VPSV1PublicKeyStoreRequest = {
     name,

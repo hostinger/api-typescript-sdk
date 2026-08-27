@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1DomainsCreateSubdomainRequest } from 'hostinger-api-sdk';
+import { HostingV1DomainsCreateSubdomainRequest } from '@hostinger/sdk';
 
 const instance: HostingV1DomainsCreateSubdomainRequest = {
     subdomain,

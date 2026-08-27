@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AgencyHostingV1OrdersDiskUsageMetricsMetricResource } from 'hostinger-api-sdk';
+import { AgencyHostingV1OrdersDiskUsageMetricsMetricResource } from '@hostinger/sdk';
 
 const instance: AgencyHostingV1OrdersDiskUsageMetricsMetricResource = {
     disk_bytes,

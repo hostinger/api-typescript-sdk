@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1ActionListResponse } from 'hostinger-api-sdk';
+import { VPSV1ActionListResponse } from '@hostinger/sdk';
 
 const instance: VPSV1ActionListResponse = {
     data,

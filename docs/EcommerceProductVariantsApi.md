@@ -21,7 +21,7 @@ import {
     EcommerceProductVariantsApi,
     Configuration,
     EcommerceV1VariantCreateVariantRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceProductVariantsApi(configuration);
@@ -81,7 +81,7 @@ Delete a single variant from the product.
 import {
     EcommerceProductVariantsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceProductVariantsApi(configuration);
@@ -140,7 +140,7 @@ List a product\'s variants, ordered by rank, with their options, prices and inve
 import {
     EcommerceProductVariantsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceProductVariantsApi(configuration);
@@ -200,7 +200,7 @@ import {
     EcommerceProductVariantsApi,
     Configuration,
     EcommerceV1VariantBatchUpdateVariantsRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceProductVariantsApi(configuration);

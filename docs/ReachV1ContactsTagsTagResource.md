@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1ContactsTagsTagResource } from 'hostinger-api-sdk';
+import { ReachV1ContactsTagsTagResource } from '@hostinger/sdk';
 
 const instance: ReachV1ContactsTagsTagResource = {
     uuid,

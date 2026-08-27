@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1SchemaChangeMailboxPasswordRequestSchema } from 'hostinger-api-sdk';
+import { MailV1SchemaChangeMailboxPasswordRequestSchema } from '@hostinger/sdk';
 
 const instance: MailV1SchemaChangeMailboxPasswordRequestSchema = {
     password,

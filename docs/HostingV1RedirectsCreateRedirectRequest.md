@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1RedirectsCreateRedirectRequest } from 'hostinger-api-sdk';
+import { HostingV1RedirectsCreateRedirectRequest } from '@hostinger/sdk';
 
 const instance: HostingV1RedirectsCreateRedirectRequest = {
     from,

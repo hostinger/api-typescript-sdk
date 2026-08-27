@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1DockerManagerContainerResource } from 'hostinger-api-sdk';
+import { VPSV1DockerManagerContainerResource } from '@hostinger/sdk';
 
 const instance: VPSV1DockerManagerContainerResource = {
     id,

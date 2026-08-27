@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EcommerceV1DiscountCreateDiscountRequest } from 'hostinger-api-sdk';
+import { EcommerceV1DiscountCreateDiscountRequest } from '@hostinger/sdk';
 
 const instance: EcommerceV1DiscountCreateDiscountRequest = {
     code,

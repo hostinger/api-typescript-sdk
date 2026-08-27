@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1VirtualMachineMetricGetRequest } from 'hostinger-api-sdk';
+import { VPSV1VirtualMachineMetricGetRequest } from '@hostinger/sdk';
 
 const instance: VPSV1VirtualMachineMetricGetRequest = {
     date_from,

@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainsV1WHOISProfileResource } from 'hostinger-api-sdk';
+import { DomainsV1WHOISProfileResource } from '@hostinger/sdk';
 
 const instance: DomainsV1WHOISProfileResource = {
     id,

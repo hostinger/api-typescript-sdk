@@ -19,7 +19,7 @@ import {
     HorizonsWebsitesApi,
     Configuration,
     HorizonsV1WebsitesCreateWebsiteRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HorizonsWebsitesApi(configuration);
@@ -73,7 +73,7 @@ Get a link for the user to edit their website in Hostinger Horizons interface.\\
 import {
     HorizonsWebsitesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HorizonsWebsitesApi(configuration);

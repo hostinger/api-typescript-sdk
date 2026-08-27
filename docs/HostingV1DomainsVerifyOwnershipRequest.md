@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1DomainsVerifyOwnershipRequest } from 'hostinger-api-sdk';
+import { HostingV1DomainsVerifyOwnershipRequest } from '@hostinger/sdk';
 
 const instance: HostingV1DomainsVerifyOwnershipRequest = {
     domain,

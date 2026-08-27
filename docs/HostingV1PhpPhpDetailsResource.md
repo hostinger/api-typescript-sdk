@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1PhpPhpDetailsResource } from 'hostinger-api-sdk';
+import { HostingV1PhpPhpDetailsResource } from '@hostinger/sdk';
 
 const instance: HostingV1PhpPhpDetailsResource = {
     php_version,

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainsV1AvailabilityAlternativesFromDescriptionRequest } from 'hostinger-api-sdk';
+import { DomainsV1AvailabilityAlternativesFromDescriptionRequest } from '@hostinger/sdk';
 
 const instance: DomainsV1AvailabilityAlternativesFromDescriptionRequest = {
     description,

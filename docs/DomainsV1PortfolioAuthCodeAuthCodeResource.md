@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainsV1PortfolioAuthCodeAuthCodeResource } from 'hostinger-api-sdk';
+import { DomainsV1PortfolioAuthCodeAuthCodeResource } from '@hostinger/sdk';
 
 const instance: DomainsV1PortfolioAuthCodeAuthCodeResource = {
     auth_code,

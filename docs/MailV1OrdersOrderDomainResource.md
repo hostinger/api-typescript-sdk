@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1OrdersOrderDomainResource } from 'hostinger-api-sdk';
+import { MailV1OrdersOrderDomainResource } from '@hostinger/sdk';
 
 const instance: MailV1OrdersOrderDomainResource = {
     id,

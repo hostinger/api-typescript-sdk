@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DNSV1ZoneRecordResource } from 'hostinger-api-sdk';
+import { DNSV1ZoneRecordResource } from '@hostinger/sdk';
 
 const instance: DNSV1ZoneRecordResource = {
     name,

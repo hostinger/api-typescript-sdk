@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainsV1MoveIncomingUpdateRequestDomainContacts } from 'hostinger-api-sdk';
+import { DomainsV1MoveIncomingUpdateRequestDomainContacts } from '@hostinger/sdk';
 
 const instance: DomainsV1MoveIncomingUpdateRequestDomainContacts = {
     owner_id,

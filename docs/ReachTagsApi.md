@@ -24,7 +24,7 @@ Assign a tag to a single contact.  Unlike the bulk endpoint this is applied imme
 import {
     ReachTagsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachTagsApi(configuration);
@@ -84,7 +84,7 @@ import {
     ReachTagsApi,
     Configuration,
     ReachV1ContactsTagsManageContactsRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachTagsApi(configuration);
@@ -145,7 +145,7 @@ import {
     ReachTagsApi,
     Configuration,
     ReachV1ContactsTagsStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachTagsApi(configuration);
@@ -202,7 +202,7 @@ Delete a tag and remove it from every contact carrying it.  The contacts themsel
 import {
     ReachTagsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachTagsApi(configuration);
@@ -258,7 +258,7 @@ Get all tags defined in a profile.  Tags are the way contacts are grouped in Rea
 import {
     ReachTagsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachTagsApi(configuration);
@@ -311,7 +311,7 @@ Remove a tag from a single contact.  Unlike the bulk endpoint this is applied im
 import {
     ReachTagsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachTagsApi(configuration);
@@ -371,7 +371,7 @@ import {
     ReachTagsApi,
     Configuration,
     ReachV1ContactsTagsManageContactsRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachTagsApi(configuration);
@@ -432,7 +432,7 @@ import {
     ReachTagsApi,
     Configuration,
     ReachV1ContactsTagsUpdateRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachTagsApi(configuration);

@@ -26,7 +26,7 @@ Activate a firewall for a specified virtual machine.  Only one firewall can be a
 import {
     VPSFirewallApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSFirewallApi(configuration);
@@ -84,7 +84,7 @@ import {
     VPSFirewallApi,
     Configuration,
     VPSV1FirewallRulesStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSFirewallApi(configuration);
@@ -142,7 +142,7 @@ import {
     VPSFirewallApi,
     Configuration,
     VPSV1FirewallStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSFirewallApi(configuration);
@@ -196,7 +196,7 @@ Deactivate a firewall for a specified virtual machine.  Use this endpoint to rem
 import {
     VPSFirewallApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSFirewallApi(configuration);
@@ -253,7 +253,7 @@ Delete a specific firewall rule from a specified firewall.  Any virtual machine 
 import {
     VPSFirewallApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSFirewallApi(configuration);
@@ -309,7 +309,7 @@ Delete a specified firewall.  Any virtual machine that has this firewall activat
 import {
     VPSFirewallApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSFirewallApi(configuration);
@@ -362,7 +362,7 @@ Retrieve firewall by its ID and rules associated with it.  Use this endpoint to 
 import {
     VPSFirewallApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSFirewallApi(configuration);
@@ -415,7 +415,7 @@ Retrieve all available firewalls.  Use this endpoint to view existing firewall c
 import {
     VPSFirewallApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSFirewallApi(configuration);
@@ -468,7 +468,7 @@ Sync a firewall for a specified virtual machine.  Firewall can lose sync with vi
 import {
     VPSFirewallApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSFirewallApi(configuration);
@@ -526,7 +526,7 @@ import {
     VPSFirewallApi,
     Configuration,
     VPSV1FirewallRulesStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSFirewallApi(configuration);

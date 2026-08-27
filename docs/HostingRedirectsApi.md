@@ -20,7 +20,7 @@ import {
     HostingRedirectsApi,
     Configuration,
     HostingV1RedirectsCreateRedirectRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingRedirectsApi(configuration);
@@ -80,7 +80,7 @@ Permanently deletes the redirect identified by its source URL.  Pass the `from` 
 import {
     HostingRedirectsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingRedirectsApi(configuration);
@@ -140,7 +140,7 @@ Returns a paginated list of redirects configured for the selected website.
 import {
     HostingRedirectsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingRedirectsApi(configuration);

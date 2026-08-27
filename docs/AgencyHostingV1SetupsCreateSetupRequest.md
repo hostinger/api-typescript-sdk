@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AgencyHostingV1SetupsCreateSetupRequest } from 'hostinger-api-sdk';
+import { AgencyHostingV1SetupsCreateSetupRequest } from '@hostinger/sdk';
 
 const instance: AgencyHostingV1SetupsCreateSetupRequest = {
     datacenter_code,

@@ -17,7 +17,7 @@ Retrieve a list of datacenters available for setting up hosting plans based on a
 import {
     HostingDatacentersApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingDatacentersApi(configuration);

@@ -19,7 +19,7 @@ Get a single campaign with its sender, subject, template reference, targeting an
 import {
     ReachCampaignsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachCampaignsApi(configuration);
@@ -75,7 +75,7 @@ Get the performance of a campaign: delivery, opens, clicks and unsubscribes, wit
 import {
     ReachCampaignsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachCampaignsApi(configuration);
@@ -131,7 +131,7 @@ Get a paginated list of the campaigns in a profile.  Each campaign carries its h
 import {
     ReachCampaignsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachCampaignsApi(configuration);

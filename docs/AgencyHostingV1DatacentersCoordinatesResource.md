@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AgencyHostingV1DatacentersCoordinatesResource } from 'hostinger-api-sdk';
+import { AgencyHostingV1DatacentersCoordinatesResource } from '@hostinger/sdk';
 
 const instance: AgencyHostingV1DatacentersCoordinatesResource = {
     latitude,

@@ -19,7 +19,7 @@ Retrieve DNS snapshots for a domain.  Use this endpoint to view available DNS ba
 import {
     DNSSnapshotApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DNSSnapshotApi(configuration);
@@ -72,7 +72,7 @@ Retrieve particular DNS snapshot with contents of DNS zone records.  Use this en
 import {
     DNSSnapshotApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DNSSnapshotApi(configuration);
@@ -128,7 +128,7 @@ Restore DNS zone to the selected snapshot.  Use this endpoint to revert domain D
 import {
     DNSSnapshotApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DNSSnapshotApi(configuration);

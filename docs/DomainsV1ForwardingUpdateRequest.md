@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainsV1ForwardingUpdateRequest } from 'hostinger-api-sdk';
+import { DomainsV1ForwardingUpdateRequest } from '@hostinger/sdk';
 
 const instance: DomainsV1ForwardingUpdateRequest = {
     redirect_type,

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AgencyHostingV1WebsitesWebsiteServerResource } from 'hostinger-api-sdk';
+import { AgencyHostingV1WebsitesWebsiteServerResource } from '@hostinger/sdk';
 
 const instance: AgencyHostingV1WebsitesWebsiteServerResource = {
     hostname,

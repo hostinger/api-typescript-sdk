@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1FormsFormTemplateDetailsResource } from 'hostinger-api-sdk';
+import { ReachV1FormsFormTemplateDetailsResource } from '@hostinger/sdk';
 
 const instance: ReachV1FormsFormTemplateDetailsResource = {
     uuid,

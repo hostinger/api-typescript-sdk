@@ -20,7 +20,7 @@ import {
     DomainsTransferApi,
     Configuration,
     DomainsV1TransferClaimRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsTransferApi(configuration);
@@ -74,7 +74,7 @@ Retrieve all domain transfers in your portfolio.  Use this endpoint to monitor i
 import {
     DomainsTransferApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsTransferApi(configuration);
@@ -120,7 +120,7 @@ Retrieve the transfer for a specified domain.  Use this endpoint to track an inc
 import {
     DomainsTransferApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsTransferApi(configuration);

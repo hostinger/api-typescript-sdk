@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1VirtualMachineVirtualMachineResource } from 'hostinger-api-sdk';
+import { VPSV1VirtualMachineVirtualMachineResource } from '@hostinger/sdk';
 
 const instance: VPSV1VirtualMachineVirtualMachineResource = {
     id,

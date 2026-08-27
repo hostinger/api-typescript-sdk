@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DNSV1ZoneUpdateRequestZoneInnerRecordsInner } from 'hostinger-api-sdk';
+import { DNSV1ZoneUpdateRequestZoneInnerRecordsInner } from '@hostinger/sdk';
 
 const instance: DNSV1ZoneUpdateRequestZoneInnerRecordsInner = {
     content,

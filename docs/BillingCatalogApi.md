@@ -17,7 +17,7 @@ Retrieve catalog items available for order.  Prices in catalog items is displaye
 import {
     BillingCatalogApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new BillingCatalogApi(configuration);

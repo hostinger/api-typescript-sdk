@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailListWebhookDeliveryLogsV1200Response } from 'hostinger-api-sdk';
+import { MailListWebhookDeliveryLogsV1200Response } from '@hostinger/sdk';
 
 const instance: MailListWebhookDeliveryLogsV1200Response = {
     data,

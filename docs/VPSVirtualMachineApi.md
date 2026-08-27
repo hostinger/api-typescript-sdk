@@ -31,7 +31,7 @@ Retrieve public keys attached to a specified virtual machine.  Use this endpoint
 import {
     VPSVirtualMachineApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSVirtualMachineApi(configuration);
@@ -87,7 +87,7 @@ Retrieve historical metrics for a specified virtual machine.  It includes the fo
 import {
     VPSVirtualMachineApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSVirtualMachineApi(configuration);
@@ -147,7 +147,7 @@ Retrieve detailed information about a specified virtual machine.  Use this endpo
 import {
     VPSVirtualMachineApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSVirtualMachineApi(configuration);
@@ -200,7 +200,7 @@ Retrieve all available virtual machines.  Use this endpoint to view available VP
 import {
     VPSVirtualMachineApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSVirtualMachineApi(configuration);
@@ -247,7 +247,7 @@ import {
     VPSVirtualMachineApi,
     Configuration,
     VPSV1VirtualMachinePurchaseRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSVirtualMachineApi(configuration);
@@ -302,7 +302,7 @@ import {
     VPSVirtualMachineApi,
     Configuration,
     VPSV1VirtualMachineRecreateRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSVirtualMachineApi(configuration);
@@ -359,7 +359,7 @@ Reset hostname and PTR record of a specified virtual machine to default value.  
 import {
     VPSVirtualMachineApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSVirtualMachineApi(configuration);
@@ -412,7 +412,7 @@ Restart a specified virtual machine by fully stopping and starting it.  If the v
 import {
     VPSVirtualMachineApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSVirtualMachineApi(configuration);
@@ -466,7 +466,7 @@ import {
     VPSVirtualMachineApi,
     Configuration,
     VPSV1VirtualMachineHostnameUpdateRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSVirtualMachineApi(configuration);
@@ -524,7 +524,7 @@ import {
     VPSVirtualMachineApi,
     Configuration,
     VPSV1VirtualMachineNameserversUpdateRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSVirtualMachineApi(configuration);
@@ -582,7 +582,7 @@ import {
     VPSVirtualMachineApi,
     Configuration,
     VPSV1VirtualMachinePanelPasswordUpdateRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSVirtualMachineApi(configuration);
@@ -640,7 +640,7 @@ import {
     VPSVirtualMachineApi,
     Configuration,
     VPSV1VirtualMachineRootPasswordUpdateRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSVirtualMachineApi(configuration);
@@ -698,7 +698,7 @@ import {
     VPSVirtualMachineApi,
     Configuration,
     VPSV1VirtualMachineSetupRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSVirtualMachineApi(configuration);
@@ -755,7 +755,7 @@ Start a specified virtual machine.  If the virtual machine is already running, t
 import {
     VPSVirtualMachineApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSVirtualMachineApi(configuration);
@@ -808,7 +808,7 @@ Stop a specified virtual machine.  If the virtual machine is already stopped, th
 import {
     VPSVirtualMachineApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSVirtualMachineApi(configuration);

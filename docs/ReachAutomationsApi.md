@@ -19,7 +19,7 @@ Get a single automation with the counts of contacts that entered it, are moving 
 import {
     ReachAutomationsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachAutomationsApi(configuration);
@@ -75,7 +75,7 @@ Get the workflow of an automation as a flat list of steps.  The steps form a tre
 import {
     ReachAutomationsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachAutomationsApi(configuration);
@@ -131,7 +131,7 @@ Get a paginated list of the automations in a profile.  Every automation comes wi
 import {
     ReachAutomationsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachAutomationsApi(configuration);

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainsV1IRTPVerificationResource } from 'hostinger-api-sdk';
+import { DomainsV1IRTPVerificationResource } from '@hostinger/sdk';
 
 const instance: DomainsV1IRTPVerificationResource = {
     domain,

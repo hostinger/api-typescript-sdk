@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AgencyHostingV1WebsitesBuildAssetsRequest } from 'hostinger-api-sdk';
+import { AgencyHostingV1WebsitesBuildAssetsRequest } from '@hostinger/sdk';
 
 const instance: AgencyHostingV1WebsitesBuildAssetsRequest = {
     archive_path,

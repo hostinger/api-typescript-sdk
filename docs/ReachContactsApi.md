@@ -27,7 +27,7 @@ import {
     ReachContactsApi,
     Configuration,
     ReachV1ContactsStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachContactsApi(configuration);
@@ -82,7 +82,7 @@ import {
     ReachContactsApi,
     Configuration,
     ReachV1ContactsBulkStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachContactsApi(configuration);
@@ -140,7 +140,7 @@ import {
     ReachContactsApi,
     Configuration,
     ReachV1ContactsStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachContactsApi(configuration);
@@ -197,7 +197,7 @@ Delete a contact with the specified UUID.  This endpoint permanently removes a c
 import {
     ReachContactsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachContactsApi(configuration);
@@ -250,7 +250,7 @@ Permanently delete a contact from a profile.  The contact is removed together wi
 import {
     ReachContactsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachContactsApi(configuration);
@@ -306,7 +306,7 @@ Get the full details of a single contact.  Alongside the contact\'s own attribut
 import {
     ReachContactsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachContactsApi(configuration);
@@ -362,7 +362,7 @@ Get a list of all contact groups.  This endpoint returns a list of contact group
 import {
     ReachContactsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachContactsApi(configuration);
@@ -408,7 +408,7 @@ Get a list of contacts, optionally filtered by group and subscription status.  T
 import {
     ReachContactsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachContactsApi(configuration);
@@ -467,7 +467,7 @@ Get a paginated list of contacts belonging to a profile.  Contacts can be filter
 import {
     ReachContactsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachContactsApi(configuration);
@@ -536,7 +536,7 @@ import {
     ReachContactsApi,
     Configuration,
     ReachV1ContactsUpdateRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachContactsApi(configuration);

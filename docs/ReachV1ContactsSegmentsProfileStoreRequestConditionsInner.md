@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1ContactsSegmentsProfileStoreRequestConditionsInner } from 'hostinger-api-sdk';
+import { ReachV1ContactsSegmentsProfileStoreRequestConditionsInner } from '@hostinger/sdk';
 
 const instance: ReachV1ContactsSegmentsProfileStoreRequestConditionsInner = {
     attribute,

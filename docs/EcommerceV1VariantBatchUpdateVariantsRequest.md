@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EcommerceV1VariantBatchUpdateVariantsRequest } from 'hostinger-api-sdk';
+import { EcommerceV1VariantBatchUpdateVariantsRequest } from '@hostinger/sdk';
 
 const instance: EcommerceV1VariantBatchUpdateVariantsRequest = {
     variants,

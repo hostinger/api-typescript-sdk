@@ -27,7 +27,7 @@ import {
     VPSDockerManagerApi,
     Configuration,
     VPSV1VirtualMachineDockerManagerUpRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSDockerManagerApi(configuration);
@@ -84,7 +84,7 @@ Completely removes a Docker Compose project from the virtual machine, stopping a
 import {
     VPSDockerManagerApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSDockerManagerApi(configuration);
@@ -141,7 +141,7 @@ Retrieves a list of all containers belonging to a specific Docker Compose projec
 import {
     VPSDockerManagerApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSDockerManagerApi(configuration);
@@ -198,7 +198,7 @@ Retrieves the complete project information including the docker-compose.yml file
 import {
     VPSDockerManagerApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSDockerManagerApi(configuration);
@@ -255,7 +255,7 @@ Retrieves a list of all Docker Compose projects currently deployed on the virtua
 import {
     VPSDockerManagerApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSDockerManagerApi(configuration);
@@ -309,7 +309,7 @@ Retrieves aggregated log entries from all services within a Docker Compose proje
 import {
     VPSDockerManagerApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSDockerManagerApi(configuration);
@@ -366,7 +366,7 @@ Restarts all services in a Docker Compose project by stopping and starting conta
 import {
     VPSDockerManagerApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSDockerManagerApi(configuration);
@@ -423,7 +423,7 @@ Starts all services in a Docker Compose project that are currently stopped.   Th
 import {
     VPSDockerManagerApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSDockerManagerApi(configuration);
@@ -480,7 +480,7 @@ Stops all running services in a Docker Compose project while preserving containe
 import {
     VPSDockerManagerApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSDockerManagerApi(configuration);
@@ -537,7 +537,7 @@ Updates a Docker Compose project by pulling the latest image versions and recrea
 import {
     VPSDockerManagerApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSDockerManagerApi(configuration);

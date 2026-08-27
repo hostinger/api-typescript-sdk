@@ -21,7 +21,7 @@ import {
     VPSPublicKeysApi,
     Configuration,
     VPSV1PublicKeyAttachRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSPublicKeysApi(configuration);
@@ -79,7 +79,7 @@ import {
     VPSPublicKeysApi,
     Configuration,
     VPSV1PublicKeyStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSPublicKeysApi(configuration);
@@ -133,7 +133,7 @@ Delete a public key from your account.   **Deleting public key from account does
 import {
     VPSPublicKeysApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSPublicKeysApi(configuration);
@@ -186,7 +186,7 @@ Retrieve public keys associated with your account.  Use this endpoint to view av
 import {
     VPSPublicKeysApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSPublicKeysApi(configuration);

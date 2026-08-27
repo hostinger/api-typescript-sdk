@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1RedirectsDeleteRedirectRequest } from 'hostinger-api-sdk';
+import { HostingV1RedirectsDeleteRedirectRequest } from '@hostinger/sdk';
 
 const instance: HostingV1RedirectsDeleteRedirectRequest = {
     from,

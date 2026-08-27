@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1PhpPhpInfoResource } from 'hostinger-api-sdk';
+import { HostingV1PhpPhpInfoResource } from '@hostinger/sdk';
 
 const instance: HostingV1PhpPhpInfoResource = {
     info,

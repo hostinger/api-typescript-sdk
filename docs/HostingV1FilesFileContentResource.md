@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1FilesFileContentResource } from 'hostinger-api-sdk';
+import { HostingV1FilesFileContentResource } from '@hostinger/sdk';
 
 const instance: HostingV1FilesFileContentResource = {
     path,

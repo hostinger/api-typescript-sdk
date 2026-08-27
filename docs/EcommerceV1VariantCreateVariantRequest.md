@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EcommerceV1VariantCreateVariantRequest } from 'hostinger-api-sdk';
+import { EcommerceV1VariantCreateVariantRequest } from '@hostinger/sdk';
 
 const instance: EcommerceV1VariantCreateVariantRequest = {
     title,

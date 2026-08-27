@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1VirtualMachinePurchaseRequest } from 'hostinger-api-sdk';
+import { VPSV1VirtualMachinePurchaseRequest } from '@hostinger/sdk';
 
 const instance: VPSV1VirtualMachinePurchaseRequest = {
     item_id,

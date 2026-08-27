@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { WordPressV1HostingerPluginsAiOptionStatusResource } from 'hostinger-api-sdk';
+import { WordPressV1HostingerPluginsAiOptionStatusResource } from '@hostinger/sdk';
 
 const instance: WordPressV1HostingerPluginsAiOptionStatusResource = {
     is_llmstxt_enabled,

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { BillingV1OrderPurchaseRequestItemsInner } from 'hostinger-api-sdk';
+import { BillingV1OrderPurchaseRequestItemsInner } from '@hostinger/sdk';
 
 const instance: BillingV1OrderPurchaseRequestItemsInner = {
     item_id,

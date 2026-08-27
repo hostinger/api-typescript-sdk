@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainAccessVerifierV2VerificationsListRequest } from 'hostinger-api-sdk';
+import { DomainAccessVerifierV2VerificationsListRequest } from '@hostinger/sdk';
 
 const instance: DomainAccessVerifierV2VerificationsListRequest = {
     domains,

@@ -21,7 +21,7 @@ import {
     DomainsForwardingApi,
     Configuration,
     DomainsV1ForwardingStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsForwardingApi(configuration);
@@ -75,7 +75,7 @@ Delete domain forwarding data.  Use this endpoint to remove redirect configurati
 import {
     DomainsForwardingApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsForwardingApi(configuration);
@@ -128,7 +128,7 @@ Retrieve domain forwarding data.  Use this endpoint to view current redirect con
 import {
     DomainsForwardingApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsForwardingApi(configuration);
@@ -182,7 +182,7 @@ import {
     DomainsForwardingApi,
     Configuration,
     DomainsV1ForwardingUpdateRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsForwardingApi(configuration);

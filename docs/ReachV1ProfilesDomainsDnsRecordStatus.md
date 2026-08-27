@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1ProfilesDomainsDnsRecordStatus } from 'hostinger-api-sdk';
+import { ReachV1ProfilesDomainsDnsRecordStatus } from '@hostinger/sdk';
 
 const instance: ReachV1ProfilesDomainsDnsRecordStatus = {
     actual,

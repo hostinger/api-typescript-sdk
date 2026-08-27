@@ -25,7 +25,7 @@ Retrieve logs from a specific Node.js build process.  To stream live output whil
 import {
     HostingNodeJSApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingNodeJSApi(configuration);
@@ -88,7 +88,7 @@ Auto-detect Node.js build settings from a package.json inside an archive already
 import {
     HostingNodeJSApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingNodeJSApi(configuration);
@@ -148,7 +148,7 @@ Retrieve a paginated list of Node.js build processes for a specific website.  Ea
 import {
     HostingNodeJSApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingNodeJSApi(configuration);
@@ -213,7 +213,7 @@ Lists the Node.js environment variables currently set for the website. Values ar
 import {
     HostingNodeJSApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingNodeJSApi(configuration);
@@ -269,7 +269,7 @@ Lists known npm package vulnerabilities detected on a Node.js website, enriched 
 import {
     HostingNodeJSApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingNodeJSApi(configuration);
@@ -329,7 +329,7 @@ import {
     HostingNodeJSApi,
     Configuration,
     HostingV1NodeJsPatchVulnerabilitiesRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingNodeJSApi(configuration);
@@ -390,7 +390,7 @@ import {
     HostingNodeJSApi,
     Configuration,
     HostingV1NodeJsSetBuildEnvVarsRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingNodeJSApi(configuration);
@@ -450,7 +450,7 @@ Restarts the Node.js server process for the website. Does not rebuild or redeplo
 import {
     HostingNodeJSApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingNodeJSApi(configuration);
@@ -507,7 +507,7 @@ import {
     HostingNodeJSApi,
     Configuration,
     HostingV1NodeJsStartBuildRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingNodeJSApi(configuration);

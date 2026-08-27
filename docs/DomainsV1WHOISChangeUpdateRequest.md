@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainsV1WHOISChangeUpdateRequest } from 'hostinger-api-sdk';
+import { DomainsV1WHOISChangeUpdateRequest } from '@hostinger/sdk';
 
 const instance: DomainsV1WHOISChangeUpdateRequest = {
     new_whois_id,

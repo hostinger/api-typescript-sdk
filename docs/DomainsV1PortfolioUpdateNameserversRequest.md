@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DomainsV1PortfolioUpdateNameserversRequest } from 'hostinger-api-sdk';
+import { DomainsV1PortfolioUpdateNameserversRequest } from '@hostinger/sdk';
 
 const instance: DomainsV1PortfolioUpdateNameserversRequest = {
     ns1,

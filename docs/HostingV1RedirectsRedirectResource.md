@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1RedirectsRedirectResource } from 'hostinger-api-sdk';
+import { HostingV1RedirectsRedirectResource } from '@hostinger/sdk';
 
 const instance: HostingV1RedirectsRedirectResource = {
     from,

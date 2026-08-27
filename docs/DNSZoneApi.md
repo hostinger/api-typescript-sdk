@@ -22,7 +22,7 @@ import {
     DNSZoneApi,
     Configuration,
     DNSV1ZoneDestroyRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DNSZoneApi(configuration);
@@ -79,7 +79,7 @@ Retrieve DNS zone records for a specific domain.  Use this endpoint to view curr
 import {
     DNSZoneApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DNSZoneApi(configuration);
@@ -133,7 +133,7 @@ import {
     DNSZoneApi,
     Configuration,
     DNSV1ZoneResetRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DNSZoneApi(configuration);
@@ -191,7 +191,7 @@ import {
     DNSZoneApi,
     Configuration,
     DNSV1ZoneUpdateRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DNSZoneApi(configuration);
@@ -249,7 +249,7 @@ import {
     DNSZoneApi,
     Configuration,
     DNSV1ZoneUpdateRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DNSZoneApi(configuration);

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1ContactsSegmentsStoreRequest } from 'hostinger-api-sdk';
+import { ReachV1ContactsSegmentsStoreRequest } from '@hostinger/sdk';
 
 const instance: ReachV1ContactsSegmentsStoreRequest = {
     name,

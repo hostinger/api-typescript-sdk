@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1DomainsFreeSubdomainResource } from 'hostinger-api-sdk';
+import { HostingV1DomainsFreeSubdomainResource } from '@hostinger/sdk';
 
 const instance: HostingV1DomainsFreeSubdomainResource = {
     domain,

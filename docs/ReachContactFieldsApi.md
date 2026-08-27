@@ -21,7 +21,7 @@ import {
     ReachContactFieldsApi,
     Configuration,
     ReachV1ContactsFieldsStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachContactFieldsApi(configuration);
@@ -78,7 +78,7 @@ Delete a custom contact field.  Every value contacts hold for the field is delet
 import {
     ReachContactFieldsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachContactFieldsApi(configuration);
@@ -134,7 +134,7 @@ Get the custom contact fields defined in a profile.  Custom fields let you store
 import {
     ReachContactFieldsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachContactFieldsApi(configuration);
@@ -188,7 +188,7 @@ import {
     ReachContactFieldsApi,
     Configuration,
     ReachV1ContactsFieldsUpdateRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new ReachContactFieldsApi(configuration);

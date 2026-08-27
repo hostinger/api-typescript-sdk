@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1MetricsMetricsCollection } from 'hostinger-api-sdk';
+import { VPSV1MetricsMetricsCollection } from '@hostinger/sdk';
 
 const instance: VPSV1MetricsMetricsCollection = {
     cpu_usage,

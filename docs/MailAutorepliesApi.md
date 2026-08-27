@@ -21,7 +21,7 @@ import {
     MailAutorepliesApi,
     Configuration,
     MailV1SchemaUpsertAutoreplyRequestSchema
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailAutorepliesApi(configuration);
@@ -80,7 +80,7 @@ Delete the autoreply of a mailbox. The mailbox stops sending automatic replies i
 import {
     MailAutorepliesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailAutorepliesApi(configuration);
@@ -135,7 +135,7 @@ Retrieve a paginated list of autoreplies across all mailboxes of a mail order.
 import {
     MailAutorepliesApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailAutorepliesApi(configuration);
@@ -197,7 +197,7 @@ import {
     MailAutorepliesApi,
     Configuration,
     MailV1SchemaUpsertAutoreplyRequestSchema
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new MailAutorepliesApi(configuration);

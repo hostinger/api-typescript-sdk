@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1FirewallStoreRequest } from 'hostinger-api-sdk';
+import { VPSV1FirewallStoreRequest } from '@hostinger/sdk';
 
 const instance: VPSV1FirewallStoreRequest = {
     name,

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { InlineObject2Errors } from 'hostinger-api-sdk';
+import { InlineObject2Errors } from '@hostinger/sdk';
 
 const instance: InlineObject2Errors = {
     field_1,

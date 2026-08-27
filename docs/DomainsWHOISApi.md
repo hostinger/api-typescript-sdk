@@ -26,7 +26,7 @@ Cancel a pending IRTP verification.  Use this endpoint to back out of a WHOIS ch
 import {
     DomainsWHOISApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsWHOISApi(configuration);
@@ -80,7 +80,7 @@ import {
     DomainsWHOISApi,
     Configuration,
     DomainsV1WHOISChangeUpdateRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsWHOISApi(configuration);
@@ -135,7 +135,7 @@ import {
     DomainsWHOISApi,
     Configuration,
     DomainsV1WHOISStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsWHOISApi(configuration);
@@ -189,7 +189,7 @@ Delete WHOIS contact profile.  Use this endpoint to remove unused contact profil
 import {
     DomainsWHOISApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsWHOISApi(configuration);
@@ -242,7 +242,7 @@ Retrieve a pending IRTP verification for a domain.  Both the old and new registr
 import {
     DomainsWHOISApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsWHOISApi(configuration);
@@ -295,7 +295,7 @@ Retrieve WHOIS contact profiles.  Use this endpoint to view available contact pr
 import {
     DomainsWHOISApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsWHOISApi(configuration);
@@ -348,7 +348,7 @@ Retrieve domain list where provided WHOIS contact profile is used.  Use this end
 import {
     DomainsWHOISApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsWHOISApi(configuration);
@@ -401,7 +401,7 @@ Retrieve a WHOIS contact profile.  Use this endpoint to view domain registration
 import {
     DomainsWHOISApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsWHOISApi(configuration);
@@ -454,7 +454,7 @@ Set WHOIS contact profile as default.  The default profile is pre-selected for t
 import {
     DomainsWHOISApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsWHOISApi(configuration);
@@ -507,7 +507,7 @@ Unset WHOIS contact profile as default.  The profile itself is kept, it is only 
 import {
     DomainsWHOISApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainsWHOISApi(configuration);

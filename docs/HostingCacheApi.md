@@ -19,7 +19,7 @@ Permanently clears all server-side cache for the website at once. Use it when co
 import {
     HostingCacheApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingCacheApi(configuration);
@@ -79,7 +79,7 @@ import {
     HostingCacheApi,
     Configuration,
     HostingV1CacheToggleCachelessModeRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingCacheApi(configuration);
@@ -140,7 +140,7 @@ import {
     HostingCacheApi,
     Configuration,
     HostingV1CacheToggleCacheRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HostingCacheApi(configuration);

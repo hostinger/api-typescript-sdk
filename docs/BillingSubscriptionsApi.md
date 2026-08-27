@@ -20,7 +20,7 @@ Disable auto-renewal for a subscription.  Use this endpoint when disable auto-re
 import {
     BillingSubscriptionsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new BillingSubscriptionsApi(configuration);
@@ -73,7 +73,7 @@ Enable auto-renewal for a subscription.  Use this endpoint when enable auto-rene
 import {
     BillingSubscriptionsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new BillingSubscriptionsApi(configuration);
@@ -126,7 +126,7 @@ Retrieve a list of all subscriptions associated with your account.  Use this end
 import {
     BillingSubscriptionsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new BillingSubscriptionsApi(configuration);
@@ -173,7 +173,7 @@ import {
     BillingSubscriptionsApi,
     Configuration,
     BillingV1SubscriptionRenewalRenewRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new BillingSubscriptionsApi(configuration);

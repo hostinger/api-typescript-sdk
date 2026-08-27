@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { BillingV1OrderOrderBillingAddressResource } from 'hostinger-api-sdk';
+import { BillingV1OrderOrderBillingAddressResource } from '@hostinger/sdk';
 
 const instance: BillingV1OrderOrderBillingAddressResource = {
     first_name,

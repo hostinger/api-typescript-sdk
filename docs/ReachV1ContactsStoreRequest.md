@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1ContactsStoreRequest } from 'hostinger-api-sdk';
+import { ReachV1ContactsStoreRequest } from '@hostinger/sdk';
 
 const instance: ReachV1ContactsStoreRequest = {
     email,

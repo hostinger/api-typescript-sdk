@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1NodeJsPatchResultResource } from 'hostinger-api-sdk';
+import { HostingV1NodeJsPatchResultResource } from '@hostinger/sdk';
 
 const instance: HostingV1NodeJsPatchResultResource = {
     pr_url,

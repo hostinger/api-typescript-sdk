@@ -19,7 +19,7 @@ import {
     VPSRecoveryApi,
     Configuration,
     VPSV1VirtualMachineRecoveryStartRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSRecoveryApi(configuration);
@@ -76,7 +76,7 @@ Stop recovery mode for a specified virtual machine.  If virtual machine is not i
 import {
     VPSRecoveryApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSRecoveryApi(configuration);

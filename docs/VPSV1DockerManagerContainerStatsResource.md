@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1DockerManagerContainerStatsResource } from 'hostinger-api-sdk';
+import { VPSV1DockerManagerContainerStatsResource } from '@hostinger/sdk';
 
 const instance: VPSV1DockerManagerContainerStatsResource = {
     cpu_percentage,

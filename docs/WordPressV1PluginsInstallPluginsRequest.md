@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { WordPressV1PluginsInstallPluginsRequest } from 'hostinger-api-sdk';
+import { WordPressV1PluginsInstallPluginsRequest } from '@hostinger/sdk';
 
 const instance: WordPressV1PluginsInstallPluginsRequest = {
     plugins,

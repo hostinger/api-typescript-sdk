@@ -20,7 +20,7 @@ import {
     EcommerceSalesChannelsApi,
     Configuration,
     EcommerceV1SalesChannelStoreRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceSalesChannelsApi(configuration);
@@ -77,7 +77,7 @@ List a store\'s active sales channels with their full metadata.
 import {
     EcommerceSalesChannelsApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceSalesChannelsApi(configuration);
@@ -131,7 +131,7 @@ import {
     EcommerceSalesChannelsApi,
     Configuration,
     EcommerceV1SalesChannelUpdateRequest
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EcommerceSalesChannelsApi(configuration);

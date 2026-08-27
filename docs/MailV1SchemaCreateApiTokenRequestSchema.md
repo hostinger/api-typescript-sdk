@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MailV1SchemaCreateApiTokenRequestSchema } from 'hostinger-api-sdk';
+import { MailV1SchemaCreateApiTokenRequestSchema } from '@hostinger/sdk';
 
 const instance: MailV1SchemaCreateApiTokenRequestSchema = {
     name,

@@ -17,7 +17,7 @@ Retrieve all available data centers.  Use this endpoint to view location options
 import {
     VPSDataCentersApi,
     Configuration
-} from 'hostinger-api-sdk';
+} from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VPSDataCentersApi(configuration);

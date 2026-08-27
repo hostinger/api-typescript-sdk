@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HostingV1DatabasesCreateDatabaseRequest } from 'hostinger-api-sdk';
+import { HostingV1DatabasesCreateDatabaseRequest } from '@hostinger/sdk';
 
 const instance: HostingV1DatabasesCreateDatabaseRequest = {
     name,

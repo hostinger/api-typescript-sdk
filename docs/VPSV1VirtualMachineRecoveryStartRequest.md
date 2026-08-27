@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VPSV1VirtualMachineRecoveryStartRequest } from 'hostinger-api-sdk';
+import { VPSV1VirtualMachineRecoveryStartRequest } from '@hostinger/sdk';
 
 const instance: VPSV1VirtualMachineRecoveryStartRequest = {
     root_password,
