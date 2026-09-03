@@ -12,8 +12,6 @@ Name | Type | Description | Notes
 **domain** | **string** | Primary domain to attach to the website. Omit or set to null to get a free auto-generated *.hostingersite.com subdomain instead. | [optional] [default to undefined]
 **type** | **string** | Website type | [optional] [default to undefined]
 **wordpress** | [**AgencyHostingV1SetupsCreateSetupRequestWordpress**](AgencyHostingV1SetupsCreateSetupRequestWordpress.md) |  | [optional] [default to undefined]
-**clone** | [**AgencyHostingV1SetupsCreateSetupRequestClone**](AgencyHostingV1SetupsCreateSetupRequestClone.md) |  | [optional] [default to undefined]
-**derive_domain** | [**AgencyHostingV1SetupsCreateSetupRequestDeriveDomain**](AgencyHostingV1SetupsCreateSetupRequestDeriveDomain.md) |  | [optional] [default to undefined]
 
 ## Example
 
@@ -27,8 +25,6 @@ const instance: AgencyHostingV1SetupsCreateSetupRequest = {
     domain,
     type,
     wordpress,
-    clone,
-    derive_domain,
 };
 ```
 
