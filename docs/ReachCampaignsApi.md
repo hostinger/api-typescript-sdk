@@ -4,9 +4,68 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
+|[**createADraftCampaignV1**](#createadraftcampaignv1) | **POST** /api/reach/v1/profiles/{profileUuid}/campaigns | Create a draft campaign|
 |[**getCampaignDetailsV1**](#getcampaigndetailsv1) | **GET** /api/reach/v1/profiles/{profileUuid}/campaigns/{campaignUuid} | Get campaign details|
 |[**getCampaignPerformanceV1**](#getcampaignperformancev1) | **GET** /api/reach/v1/profiles/{profileUuid}/campaigns/{campaignUuid}/statistics | Get campaign performance|
 |[**listCampaignsV1**](#listcampaignsv1) | **GET** /api/reach/v1/profiles/{profileUuid}/campaigns | List campaigns|
+
+# **createADraftCampaignV1**
+> ReachV1CampaignsCreatedCampaignResource createADraftCampaignV1(reachV1CampaignsStoreRequest)
+
+Create a campaign in a profile.  The campaign is created as a draft, so nothing is sent and no contact is touched. It has no audience yet either - targeting and scheduling are not part of this request, the draft is finished and sent from the Reach interface.
+
+### Example
+
+```typescript
+import {
+    ReachCampaignsApi,
+    Configuration,
+    ReachV1CampaignsStoreRequest
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new ReachCampaignsApi(configuration);
+
+let profileUuid: string; //Profile uuid parameter (default to undefined)
+let reachV1CampaignsStoreRequest: ReachV1CampaignsStoreRequest; //
+
+const { status, data } = await apiInstance.createADraftCampaignV1(
+    profileUuid,
+    reachV1CampaignsStoreRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **reachV1CampaignsStoreRequest** | **ReachV1CampaignsStoreRequest**|  | |
+| **profileUuid** | [**string**] | Profile uuid parameter | defaults to undefined|
+
+
+### Return type
+
+**ReachV1CampaignsCreatedCampaignResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCampaignDetailsV1**
 > ReachV1CampaignsCampaignDetailsResource getCampaignDetailsV1()
