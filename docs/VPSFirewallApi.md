@@ -13,6 +13,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**getFirewallDetailsV1**](#getfirewalldetailsv1) | **GET** /api/vps/v1/firewall/{firewallId} | Get firewall details|
 |[**getFirewallListV1**](#getfirewalllistv1) | **GET** /api/vps/v1/firewall | Get firewall list|
 |[**replaceAllFirewallRulesInGroupV1**](#replaceallfirewallrulesingroupv1) | **PUT** /api/vps/v1/firewall/{firewallId}/rules | Replace all firewall rules in group|
+|[**syncFirewallToAllAssignedVMsV1**](#syncfirewalltoallassignedvmsv1) | **POST** /api/vps/v1/firewall/{firewallId}/sync | Sync firewall to all assigned VMs|
 |[**syncFirewallV1**](#syncfirewallv1) | **POST** /api/vps/v1/firewall/{firewallId}/sync/{virtualMachineId} | Sync firewall|
 |[**updateFirewallRuleV1**](#updatefirewallrulev1) | **PUT** /api/vps/v1/firewall/{firewallId}/rules/{ruleId} | Update firewall rule|
 
@@ -516,10 +517,64 @@ const { status, data } = await apiInstance.replaceAllFirewallRulesInGroupV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **syncFirewallToAllAssignedVMsV1**
+> CommonSuccessEmptyResource syncFirewallToAllAssignedVMsV1()
+
+Sync a firewall\'s rules to every virtual machine it\'s assigned to.  Firewall can lose sync with a virtual machine if the firewall has new rules added, removed or updated.  Use this endpoint to apply updated firewall rules to all VPS instances assigned to the firewall.
+
+### Example
+
+```typescript
+import {
+    VPSFirewallApi,
+    Configuration
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new VPSFirewallApi(configuration);
+
+let firewallId: number; //Firewall ID (default to undefined)
+
+const { status, data } = await apiInstance.syncFirewallToAllAssignedVMsV1(
+    firewallId
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **firewallId** | [**number**] | Firewall ID | defaults to undefined|
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success empty response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **syncFirewallV1**
 > VPSV1ActionActionResource syncFirewallV1()
 
-Sync a firewall for a specified virtual machine.  Firewall can lose sync with virtual machine if the firewall has new rules added, removed or updated.  Use this endpoint to apply updated firewall rules to VPS instances.
+Deprecated: use `POST /api/vps/v1/firewall/{firewallId}/sync` instead, which syncs the firewall to all virtual machines assigned to it.  Sync a firewall for a specified virtual machine.  Firewall can lose sync with virtual machine if the firewall has new rules added, removed or updated.  Use this endpoint to apply updated firewall rules to VPS instances.
 
 ### Example
 
