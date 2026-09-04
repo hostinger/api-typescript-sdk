@@ -4,8 +4,13 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
+|[**analyseFailedNodeJsBuildV1**](#analysefailednodejsbuildv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/{uuid}/analysis | Analyse failed Node.js build|
+|[**clearNodeJsRuntimeLogsV1**](#clearnodejsruntimelogsv1) | **DELETE** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/runtime-logs | Clear Node.js runtime logs|
 |[**getNodeJSBuildLogsV1**](#getnodejsbuildlogsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/{uuid}/logs | Get NodeJS build logs|
+|[**getNodeJsBuildDetailsV1**](#getnodejsbuilddetailsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/{uuid} | Get Node.js build details|
 |[**getNodeJsBuildSettingsFromArchiveV1**](#getnodejsbuildsettingsfromarchivev1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/settings/from-archive | Get Node.js build settings from archive|
+|[**getNodeJsBuildSettingsV1**](#getnodejsbuildsettingsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/settings | Get Node.js build settings|
+|[**getNodeJsRuntimeLogsV1**](#getnodejsruntimelogsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/runtime-logs | Get Node.js runtime logs|
 |[**listNodeJSBuildsV1**](#listnodejsbuildsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds | List NodeJS builds|
 |[**listNodeJsEnvironmentVariablesV1**](#listnodejsenvironmentvariablesv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/settings/env | List Node.js environment variables|
 |[**listNodeJsVulnerabilitiesV1**](#listnodejsvulnerabilitiesv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/vulnerabilities | List Node.js vulnerabilities|
@@ -13,6 +18,123 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**replaceNodeJsEnvironmentVariablesV1**](#replacenodejsenvironmentvariablesv1) | **PUT** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/settings/env | Replace Node.js environment variables|
 |[**restartNodeJsApplicationV1**](#restartnodejsapplicationv1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/server/restart | Restart Node.js application|
 |[**startNodeJsBuildV1**](#startnodejsbuildv1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds | Start Node.js build|
+|[**updateNodeJsBuildSettingsV1**](#updatenodejsbuildsettingsv1) | **PUT** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/settings | Update Node.js build settings|
+
+# **analyseFailedNodeJsBuildV1**
+> HostingV1NodeJsBuildAnalysisResource analyseFailedNodeJsBuildV1()
+
+Returns an AI analysis of why a build failed and how to fix it, based on the build logs, the project file list and package.json. Only builds in the `failed` state can be analysed; any other state returns 422. When no analysis could be produced both `analysis` and `solution` are null, in which case read `Get NodeJS build logs` instead.  Each call runs the analysis again, so call it once per failed build and keep the result. Limited to 5 calls per minute per API client (429 above that).
+
+### Example
+
+```typescript
+import {
+    HostingNodeJSApi,
+    Configuration
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingNodeJSApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+let uuid: string; //Build UUID (default to undefined)
+
+const { status, data } = await apiInstance.analyseFailedNodeJsBuildV1(
+    username,
+    domain,
+    uuid
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+| **uuid** | [**string**] | Build UUID | defaults to undefined|
+
+
+### Return type
+
+**HostingV1NodeJsBuildAnalysisResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **clearNodeJsRuntimeLogsV1**
+> CommonSuccessEmptyResource clearNodeJsRuntimeLogsV1()
+
+Empties the Node.js application\'s runtime log file. This cannot be undone, so confirm with the user before calling it. Returns success even when no log file exists yet.  Use it before reproducing a problem so the next `Get Node.js runtime logs` call returns only fresh entries; start that call with `period` again instead of reusing a `from_line` from before the clear.
+
+### Example
+
+```typescript
+import {
+    HostingNodeJSApi,
+    Configuration
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingNodeJSApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+
+const { status, data } = await apiInstance.clearNodeJsRuntimeLogsV1(
+    username,
+    domain
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success empty response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getNodeJSBuildLogsV1**
 > HostingV1NodeJsBuildLogsResource getNodeJSBuildLogsV1()
@@ -77,6 +199,65 @@ const { status, data } = await apiInstance.getNodeJSBuildLogsV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getNodeJsBuildDetailsV1**
+> HostingV1NodeJsBuildResource getNodeJsBuildDetailsV1()
+
+Returns one build by UUID: its state (`pending`, `running`, `completed`, `failed`), the options it ran with and timestamps. Poll this while a build is pending or running. When it is failed, read `Get NodeJS build logs` and `Analyse failed Node.js build` for the cause. Returns 404 when the UUID does not belong to a build of this website.
+
+### Example
+
+```typescript
+import {
+    HostingNodeJSApi,
+    Configuration
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingNodeJSApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+let uuid: string; //Build UUID (default to undefined)
+
+const { status, data } = await apiInstance.getNodeJsBuildDetailsV1(
+    username,
+    domain,
+    uuid
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+| **uuid** | [**string**] | Build UUID | defaults to undefined|
+
+
+### Return type
+
+**HostingV1NodeJsBuildResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getNodeJsBuildSettingsFromArchiveV1**
 > HostingV1NodeJsBuildSettingsResource getNodeJsBuildSettingsFromArchiveV1()
 
@@ -116,6 +297,131 @@ const { status, data } = await apiInstance.getNodeJsBuildSettingsFromArchiveV1(
 ### Return type
 
 **HostingV1NodeJsBuildSettingsResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getNodeJsBuildSettingsV1**
+> HostingV1NodeJsStoredBuildSettingsResource getNodeJsBuildSettingsV1()
+
+Returns the build settings stored for the website: framework (`app_type`), Node.js version, root and output directory, build script, entry file and package manager. Stored settings drive Git auto-deployment builds. A build started through the API uses the values sent in that request and saves them here only when no settings exist yet.  Returns 404 until the first build or the first settings update stores them. Use this after a failed build to check whether the framework or the entry file were detected wrong, then fix them with the `Update Node.js build settings` endpoint.
+
+### Example
+
+```typescript
+import {
+    HostingNodeJSApi,
+    Configuration
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingNodeJSApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+
+const { status, data } = await apiInstance.getNodeJsBuildSettingsV1(
+    username,
+    domain
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**HostingV1NodeJsStoredBuildSettingsResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getNodeJsRuntimeLogsV1**
+> HostingV1NodeJsRuntimeLogsResource getNodeJsRuntimeLogsV1()
+
+Returns the Node.js application\'s runtime console log entries, oldest first, each with timestamp, level and message. On the first call send `period` (`1h`, `1d`, `1w` or `1m`) and optionally `levels` and `limit` (1-5000, default 1000); when more entries match than `limit`, the newest are kept.  To poll for new entries send `total_lines + 1` from the previous response as `from_line` and omit `period`; `period` and `from_line` cannot be combined. Lines that are not JSON with a timestamp, level and message are skipped, so `logs` may hold fewer than `limit` entries while `total_lines` counts every raw line. Entries with a timestamp before `last_deployed_at` belong to the previous deployment. Returns an empty `logs` list when the application has not written a log file yet.
+
+### Example
+
+```typescript
+import {
+    HostingNodeJSApi,
+    Configuration
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingNodeJSApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+let period: '1h' | '1d' | '1w' | '1m'; //Time window for the first fetch. Required when `from_line` is not sent. (optional) (default to undefined)
+let fromLine: number; //1-based line of the log file to start from. For polling send `total_lines + 1` from the previous response. Cannot be combined with `period`. (optional) (default to undefined)
+let limit: number; //Maximum number of log entries to return. When more entries match, the newest are kept. (optional) (default to 1000)
+let levels: Array<'LOG' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'TRACE'>; //Return only entries with these log levels, sent as a comma-separated list, e.g. ERROR,WARN. Matching runs on the raw log line, so entries written with numeric levels (for example by pino) are excluded while this filter is set. (optional) (default to undefined)
+
+const { status, data } = await apiInstance.getNodeJsRuntimeLogsV1(
+    username,
+    domain,
+    period,
+    fromLine,
+    limit,
+    levels
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+| **period** | [**&#39;1h&#39; | &#39;1d&#39; | &#39;1w&#39; | &#39;1m&#39;**]**Array<&#39;1h&#39; &#124; &#39;1d&#39; &#124; &#39;1w&#39; &#124; &#39;1m&#39;>** | Time window for the first fetch. Required when &#x60;from_line&#x60; is not sent. | (optional) defaults to undefined|
+| **fromLine** | [**number**] | 1-based line of the log file to start from. For polling send &#x60;total_lines + 1&#x60; from the previous response. Cannot be combined with &#x60;period&#x60;. | (optional) defaults to undefined|
+| **limit** | [**number**] | Maximum number of log entries to return. When more entries match, the newest are kept. | (optional) defaults to 1000|
+| **levels** | **Array<&#39;LOG&#39; &#124; &#39;ERROR&#39; &#124; &#39;WARN&#39; &#124; &#39;INFO&#39; &#124; &#39;DEBUG&#39; &#124; &#39;TRACE&#39;>** | Return only entries with these log levels, sent as a comma-separated list, e.g. ERROR,WARN. Matching runs on the raw log line, so entries written with numeric levels (for example by pino) are excluded while this filter is set. | (optional) defaults to undefined|
+
+
+### Return type
+
+**HostingV1NodeJsRuntimeLogsResource**
 
 ### Authorization
 
@@ -535,6 +841,67 @@ const { status, data } = await apiInstance.startNodeJsBuildV1(
 ### Return type
 
 **HostingV1NodeJsBuildResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateNodeJsBuildSettingsV1**
+> HostingV1NodeJsStoredBuildSettingsResource updateNodeJsBuildSettingsV1(hostingV1NodeJsUpdateBuildSettingsRequest)
+
+Replaces the build settings stored for the website. Send the full set: `node_version` is required and every nullable field you omit is stored as null. Creates the settings when none exist yet.  This does not start a build. Stored settings drive Git auto-deployment builds; a build started through the API uses the values sent in that request, so to rebuild with corrected settings call `Start Node.js build` with the same values. Typical fixes: a wrong `app_type` after auto-detection, or a missing `entry_file` for express, fastify, nest, nuxt and hono apps.
+
+### Example
+
+```typescript
+import {
+    HostingNodeJSApi,
+    Configuration,
+    HostingV1NodeJsUpdateBuildSettingsRequest
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingNodeJSApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+let hostingV1NodeJsUpdateBuildSettingsRequest: HostingV1NodeJsUpdateBuildSettingsRequest; //
+
+const { status, data } = await apiInstance.updateNodeJsBuildSettingsV1(
+    username,
+    domain,
+    hostingV1NodeJsUpdateBuildSettingsRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **hostingV1NodeJsUpdateBuildSettingsRequest** | **HostingV1NodeJsUpdateBuildSettingsRequest**|  | |
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**HostingV1NodeJsStoredBuildSettingsResource**
 
 ### Authorization
 
