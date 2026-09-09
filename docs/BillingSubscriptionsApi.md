@@ -164,7 +164,7 @@ This endpoint does not have any parameters.
 # **renewSubscriptionV1**
 > BillingV1OrderOrderResource renewSubscriptionV1()
 
-Create a renewal order for an existing Hostinger subscription.  This endpoint places a renewal order for a single subscription, leveraging the existing billing infrastructure. Use the [subscriptions endpoint](#tag/billing-subscriptions) to look up the `subscriptionId` values available for renewal.  If no payment method is provided, your default payment method will be used automatically.  Use this endpoint to renew any subscription available in your account.
+Create a renewal order for an existing Hostinger subscription.  This endpoint places a renewal order for a single subscription, leveraging the existing billing infrastructure. Use the [subscriptions endpoint](#tag/billing-subscriptions) to look up the `subscriptionId` values available for renewal.  If no payment method is provided, your default payment method will be used automatically.  If the response is `202 Accepted`, the payment is still being processed and the renewal will complete asynchronously once the payment is confirmed.  Use this endpoint to renew any subscription available in your account.
 
 ### Example
 
@@ -213,6 +213,7 @@ const { status, data } = await apiInstance.renewSubscriptionV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success response |  -  |
+|**202** | Payment is being processed, the order will complete asynchronously |  -  |
 |**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |

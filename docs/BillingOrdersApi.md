@@ -9,7 +9,7 @@ All URIs are relative to *https://developers.hostinger.com*
 # **createPurchaseOrderV1**
 > BillingV1OrderOrderResource createPurchaseOrderV1(billingV1OrderPurchaseRequest)
 
-Create a purchase order for any Hostinger product.  This unified endpoint places an order for one or more catalog items and works across all Hostinger products, leveraging the existing billing infrastructure. Use the [catalog endpoint](#tag/billing-catalog) to look up the `item_id` values available for purchase.  If no payment method is provided, your default payment method will be used automatically.  This endpoint only places the order. Product-specific provisioning (e.g. VPS setup or domain registration) is not performed here — once the order completes, use the relevant product endpoints or [hPanel](https://hpanel.hostinger.com/) to finalize setup.  Use this endpoint to purchase any product available in the catalog.
+Create a purchase order for any Hostinger product.  This unified endpoint places an order for one or more catalog items and works across all Hostinger products, leveraging the existing billing infrastructure. Use the [catalog endpoint](#tag/billing-catalog) to look up the `item_id` values available for purchase.  If no payment method is provided, your default payment method will be used automatically.  If the response is `202 Accepted`, the payment is still being processed and the order will complete asynchronously once the payment is confirmed.  This endpoint only places the order. Product-specific provisioning (e.g. VPS setup or domain registration) is not performed here — once the order completes, use the relevant product endpoints or [hPanel](https://hpanel.hostinger.com/) to finalize setup.  Use this endpoint to purchase any product available in the catalog.
 
 ### Example
 
@@ -55,6 +55,7 @@ const { status, data } = await apiInstance.createPurchaseOrderV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success response |  -  |
+|**202** | Payment is being processed, the order will complete asynchronously |  -  |
 |**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
