@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **tld** | **string** | TLD to which contact profile can be applied to | [optional] [default to undefined]
 **country** | **string** | ISO 3166 2-letter country code | [optional] [default to undefined]
 **entity_type** | **string** | WHOIS profile entity type | [optional] [default to undefined]
+**is_default** | **boolean** | Whether the profile is pre-selected when registering new domains of its TLD | [optional] [default to undefined]
 **whois_details** | **object** | WHOIS profile details | [optional] [default to undefined]
 **tld_details** | **object** | TLD details | [optional] [default to undefined]
 **created_at** | **string** |  | [optional] [default to undefined]
@@ -24,6 +25,7 @@ const instance: DomainsV1WHOISProfileResource = {
     tld,
     country,
     entity_type,
+    is_default,
     whois_details,
     tld_details,
     created_at,
