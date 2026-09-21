@@ -13,6 +13,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**listAccountDatabasesV1**](#listaccountdatabasesv1) | **GET** /api/hosting/v1/accounts/{username}/databases | List account databases|
 |[**listDatabaseRemoteConnectionsV1**](#listdatabaseremoteconnectionsv1) | **GET** /api/hosting/v1/accounts/{username}/databases/remote-connections | List database remote connections|
 |[**repairDatabaseV1**](#repairdatabasev1) | **PATCH** /api/hosting/v1/accounts/{username}/databases/{name}/repair | Repair database|
+|[**setupWebsiteDatabaseV1**](#setupwebsitedatabasev1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/databases/setup | Setup website database|
 
 # **changeDatabasePasswordV1**
 > CommonSuccessEmptyResource changeDatabasePasswordV1(hostingV1DatabasesChangeDatabasePasswordRequest)
@@ -540,6 +541,67 @@ const { status, data } = await apiInstance.repairDatabaseV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success empty response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **setupWebsiteDatabaseV1**
+> HostingV1DatabasesWebsiteDatabaseResource setupWebsiteDatabaseV1()
+
+Creates a new MySQL database for the website and writes its connection details into the website\'s environment variables, then restarts the application. The platform generates the password (and the database name and user, unless supplied). The password is never returned; the application reads it from the environment.  Written variables: `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD` and `DATABASE_URL` (`mysql://user:password@host:port/name`, user and password percent-encoded). Existing variables are kept. If the website already has any variable with one of these names the call fails with 422 and nothing is created; the `Replace Node.js environment variables` endpoint removes them.  After this call the variables are ordinary environment variables: the `Replace Node.js environment variables` endpoint changes or removes them like any other.  A restart is enough for apps that read environment variables at process start, such as Express or NestJS. Frameworks that bake variables into the build output (Next.js, `NEXT_PUBLIC_*`) see the new values only after a fresh build (`Start Node.js build` endpoint).  A password in the request is ignored; the platform always generates it. The optional `name` and `user` are identifiers, not secrets.
+
+### Example
+
+```typescript
+import {
+    HostingDatabasesApi,
+    Configuration,
+    HostingV1DatabasesSetupDatabaseRequest
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingDatabasesApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+let hostingV1DatabasesSetupDatabaseRequest: HostingV1DatabasesSetupDatabaseRequest; // (optional)
+
+const { status, data } = await apiInstance.setupWebsiteDatabaseV1(
+    username,
+    domain,
+    hostingV1DatabasesSetupDatabaseRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **hostingV1DatabasesSetupDatabaseRequest** | **HostingV1DatabasesSetupDatabaseRequest**|  | |
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**HostingV1DatabasesWebsiteDatabaseResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
 
