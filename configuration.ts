@@ -48,7 +48,7 @@ export class Configuration {
         this.baseOptions = {
             ...param.baseOptions,
             headers: {
-                'User-Agent': "hostinger-typescript-sdk/1.54.1",
+                'User-Agent': "hostinger-typescript-sdk/1.54.2",
                 ...param.baseOptions?.headers,
             },
         };
