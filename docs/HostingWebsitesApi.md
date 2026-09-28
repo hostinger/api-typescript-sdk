@@ -7,12 +7,13 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**createWebsiteV1**](#createwebsitev1) | **POST** /api/hosting/v1/websites | Create website|
 |[**deleteWebsiteV1**](#deletewebsitev1) | **DELETE** /api/hosting/v1/websites/{domain} | Delete website|
 |[**deployStaticSiteArchiveV1**](#deploystaticsitearchivev1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/deploy | Deploy static site archive|
+|[**listWebsiteSetupsV1**](#listwebsitesetupsv1) | **GET** /api/hosting/v1/onboardings | List website setups|
 |[**listWebsitesV1**](#listwebsitesv1) | **GET** /api/hosting/v1/websites | List websites|
 
 # **createWebsiteV1**
 > CommonSuccessEmptyResource createWebsiteV1(hostingV1WebsitesCreateWebsiteRequest)
 
-Create a new website for the authenticated client.  You must choose which hosting order to create this website on. Pass that order as `order_id` together with the domain name. List orders to see available IDs; the website is provisioned on that order\'s hosting plan.  The datacenter_code parameter is required when creating the first website on a new hosting plan - this will set up and configure new hosting account in the selected datacenter.  Subsequent websites will be hosted on the same datacenter automatically.  Website creation takes up to a few minutes to complete. Check the websites list endpoint to see when your new website becomes available.
+Create a new website for the authenticated client.  You must choose which hosting order to create this website on. Pass that order as `order_id` together with the domain name. List orders to see available IDs; the website is provisioned on that order\'s hosting plan.  The datacenter_code parameter is required when creating the first website on a new hosting plan - this will set up and configure new hosting account in the selected datacenter.  Subsequent websites will be hosted on the same datacenter automatically.  Website creation is asynchronous and takes up to a few minutes. Poll the list website setups endpoint with the `domain` filter every 10 to 15 seconds and wait for `status: completed` before uploading files, deploying or creating databases. While the setup is `running`, endpoints that operate on the website may respond with `404` or `409`. `is_enabled` on the websites list reflects suspension, not readiness.
 
 ### Example
 
@@ -179,10 +180,64 @@ const { status, data } = await apiInstance.deployStaticSiteArchiveV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **listWebsiteSetupsV1**
+> Array<HostingV1OnboardingsOnboardingResource> listWebsiteSetupsV1()
+
+Returns the website setups started in the last 24 hours for the hosting accounts accessible to the authenticated client, newest first.  Meant for polling right after creating a website: the website shows up in the websites list before its server-side setup has finished, and while the setup is `running` endpoints that operate on that website may respond with `404` or `409`. Poll this endpoint with the `domain` filter every 10 to 15 seconds and wait for `status: completed` before uploading files, deploying or creating databases. `failed` means the setup stopped before finishing or has not reported progress for over an hour. Setups older than 24 hours are not listed.
+
+### Example
+
+```typescript
+import {
+    HostingWebsitesApi,
+    Configuration
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingWebsitesApi(configuration);
+
+let domain: string; //Filter by domain name (exact match) (optional) (default to undefined)
+
+const { status, data } = await apiInstance.listWebsiteSetupsV1(
+    domain
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain** | [**string**] | Filter by domain name (exact match) | (optional) defaults to undefined|
+
+
+### Return type
+
+**Array<HostingV1OnboardingsOnboardingResource>**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **listWebsitesV1**
 > HostingListWebsitesV1200Response listWebsitesV1()
 
-Retrieve a paginated list of websites (CloudLinux, Builder, and Horizons) accessible to the authenticated client.  This endpoint returns websites from your hosting accounts as well as websites from other client hosting accounts that have shared access with you.  Each website includes a `website_type` field describing the type of website detected on the underlying platform (`wordpress`, `builder`, `horizons`, `nodejs`, or `other`). Some fields, such as `vhost_type`, `username`, and `root_directory`, only apply to CloudLinux websites and are null for other platforms.  Use `website_types` to list only websites of a given detected type, e.g. only WordPress websites (`website_types=wordpress`) or only Node.js websites (`website_types=nodejs`). Combine with the other available query parameters to filter by username, order ID, enabled status, or domain name for more targeted results.
+Retrieve a paginated list of websites (CloudLinux, Builder, and Horizons) accessible to the authenticated client.  This endpoint returns websites from your hosting accounts as well as websites from other client hosting accounts that have shared access with you.  Each website includes a `website_type` field describing the type of website detected on the underlying platform (`wordpress`, `builder`, `horizons`, `nodejs`, or `other`). Some fields, such as `vhost_type`, `username`, and `root_directory`, only apply to CloudLinux websites and are null for other platforms.  Use `website_types` to list only websites of a given detected type, e.g. only WordPress websites (`website_types=wordpress`) or only Node.js websites (`website_types=nodejs`). Combine with the other available query parameters to filter by username, order ID, enabled status, or domain name for more targeted results.  A website appears in this list before its server-side setup has finished, and `is_enabled` reflects suspension, not readiness. To know when a newly created website is ready for file, deploy or database operations, poll the list website setups endpoint instead.
 
 ### Example
 
