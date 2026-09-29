@@ -7,6 +7,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**claimFreeDomainTransferV1**](#claimfreedomaintransferv1) | **POST** /api/domains/v1/transfers/claim | Claim free domain transfer|
 |[**getTransferListV1**](#gettransferlistv1) | **GET** /api/domains/v1/transfers | Get transfer list|
 |[**getTransferV1**](#gettransferv1) | **GET** /api/domains/v1/transfers/{domain} | Get transfer|
+|[**startDomainTransferV1**](#startdomaintransferv1) | **POST** /api/domains/v1/transfers | Start domain transfer|
 
 # **claimFreeDomainTransferV1**
 > DomainsV1TransferTransferResource claimFreeDomainTransferV1(domainsV1TransferClaimRequest)
@@ -157,6 +158,61 @@ const { status, data } = await apiInstance.getTransferV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **startDomainTransferV1**
+> CommonSuccessEmptyResource startDomainTransferV1(domainsV1TransferTransferRequest)
+
+Transfer a domain from another registrar to your account.  The transfer runs on a domain transfer service you have already purchased.  Before making request, unlock the domain at the current registrar and get its authorization code.  A successful response means the transfer has been started. Completion depends on the current registrar and can be followed with the [transfer list endpoint](#tag/domains-transfer).  If no WHOIS information is provided, default contact information for that TLD will be used. Before making request, ensure WHOIS information for desired TLD exists in your account.  Use this endpoint to bring domains registered elsewhere into your account.
+
+### Example
+
+```typescript
+import {
+    DomainsTransferApi,
+    Configuration,
+    DomainsV1TransferTransferRequest
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new DomainsTransferApi(configuration);
+
+let domainsV1TransferTransferRequest: DomainsV1TransferTransferRequest; //
+
+const { status, data } = await apiInstance.startDomainTransferV1(
+    domainsV1TransferTransferRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domainsV1TransferTransferRequest** | **DomainsV1TransferTransferRequest**|  | |
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success empty response |  -  |
+|**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
 
