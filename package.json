@@ -1,6 +1,6 @@
 {
   "name": "@hostinger/sdk",
-  "version": "1.58.2",
+  "version": "1.58.3",
   "description": "Hostinger API TypeScript SDK",
   "author": "Hostinger",
   "repository": {
