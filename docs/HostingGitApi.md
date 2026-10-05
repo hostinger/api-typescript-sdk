@@ -5,9 +5,13 @@ All URIs are relative to *https://developers.hostinger.com*
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
 |[**deleteGitAutoDeploymentSettingsV1**](#deletegitautodeploymentsettingsv1) | **DELETE** /api/hosting/v1/accounts/{username}/websites/{domain}/git/auto-deployments/settings | Delete Git auto-deployment settings|
+|[**deployWebsiteGitRepositoryV1**](#deploywebsitegitrepositoryv1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/git/repositories/deploy | Deploy website Git repository|
+|[**generateGitSSHKeyV1**](#generategitsshkeyv1) | **POST** /api/hosting/v1/accounts/{username}/git/ssh-key | Generate Git SSH key|
 |[**getGitAutoDeploymentSettingsV1**](#getgitautodeploymentsettingsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/git/auto-deployments/settings | Get Git auto-deployment settings|
+|[**getGitSSHPublicKeyV1**](#getgitsshpublickeyv1) | **GET** /api/hosting/v1/accounts/{username}/git/ssh-key | Get Git SSH public key|
 |[**listGitInstallationRepositoriesV1**](#listgitinstallationrepositoriesv1) | **GET** /api/hosting/v1/git/installations/{uuid}/repositories | List Git installation repositories|
 |[**listGitInstallationsV1**](#listgitinstallationsv1) | **GET** /api/hosting/v1/git/installations | List Git installations|
+|[**listWebsiteGitRepositoriesV1**](#listwebsitegitrepositoriesv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/git/repositories | List website Git repositories|
 |[**updateGitAutoDeploymentSettingsV1**](#updategitautodeploymentsettingsv1) | **PUT** /api/hosting/v1/accounts/{username}/websites/{domain}/git/auto-deployments/settings | Update Git auto-deployment settings|
 
 # **deleteGitAutoDeploymentSettingsV1**
@@ -66,6 +70,121 @@ const { status, data } = await apiInstance.deleteGitAutoDeploymentSettingsV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **deployWebsiteGitRepositoryV1**
+> HostingV1GitGitDeployOutputResource deployWebsiteGitRepositoryV1(hostingV1GitDeployWebsiteGitRepositoryRequest)
+
+Clones a Git repository into a directory of the website, or pulls it again. An empty or missing directory gets a clone of the branch. A directory that already holds this repository and branch is reset to its last commit and pulled: changes made on the server to files the repository tracks are discarded, files it does not track stay. A directory that holds other files, including another repository or another branch of this one, is rejected. `composer install` runs after the clone or pull when the repository has a `composer.json`.  The call waits for the deployment and returns its log. `is_success` false means Git or composer failed and the log says why. A second call for the same directory is rejected while the first is still waiting for the server. If the request times out, the deployment may still finish on the server; calling again later with the same repository and branch pulls.  Private repositories need an SSH URL and the account\'s Git SSH key from `Generate Git SSH key`, added to the repository as a deploy key.
+
+### Example
+
+```typescript
+import {
+    HostingGitApi,
+    Configuration,
+    HostingV1GitDeployWebsiteGitRepositoryRequest
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingGitApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+let hostingV1GitDeployWebsiteGitRepositoryRequest: HostingV1GitDeployWebsiteGitRepositoryRequest; //
+
+const { status, data } = await apiInstance.deployWebsiteGitRepositoryV1(
+    username,
+    domain,
+    hostingV1GitDeployWebsiteGitRepositoryRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **hostingV1GitDeployWebsiteGitRepositoryRequest** | **HostingV1GitDeployWebsiteGitRepositoryRequest**|  | |
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**HostingV1GitGitDeployOutputResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generateGitSSHKeyV1**
+> HostingV1GitGitSshKeyResource generateGitSSHKeyV1()
+
+Creates the SSH key pair of the hosting account and returns the public key. When the account already has a key, returns that key unchanged. One key serves every website of the account; add the public key to a private repository as a deploy key before deploying it.
+
+### Example
+
+```typescript
+import {
+    HostingGitApi,
+    Configuration
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingGitApi(configuration);
+
+let username: string; // (default to undefined)
+
+const { status, data } = await apiInstance.generateGitSSHKeyV1(
+    username
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **username** | [**string**] |  | defaults to undefined|
+
+
+### Return type
+
+**HostingV1GitGitSshKeyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getGitAutoDeploymentSettingsV1**
 > HostingV1GitGitAutoDeploymentSettingsResource getGitAutoDeploymentSettingsV1()
 
@@ -102,6 +221,59 @@ const { status, data } = await apiInstance.getGitAutoDeploymentSettingsV1(
 ### Return type
 
 **HostingV1GitGitAutoDeploymentSettingsResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getGitSSHPublicKeyV1**
+> HostingV1GitGitSshKeyResource getGitSSHPublicKeyV1()
+
+Returns the public SSH key of the hosting account. `Deploy website Git repository` uses this key to clone and pull over SSH, so a private repository works once the key is added to it as a deploy key on the Git host. `public_key` is null when the account has no key yet.
+
+### Example
+
+```typescript
+import {
+    HostingGitApi,
+    Configuration
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingGitApi(configuration);
+
+let username: string; // (default to undefined)
+
+const { status, data } = await apiInstance.getGitSSHPublicKeyV1(
+    username
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **username** | [**string**] |  | defaults to undefined|
+
+
+### Return type
+
+**HostingV1GitGitSshKeyResource**
 
 ### Authorization
 
@@ -229,6 +401,62 @@ const { status, data } = await apiInstance.listGitInstallationsV1(
 |-------------|-------------|------------------|
 |**200** | Success response |  -  |
 |**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **listWebsiteGitRepositoriesV1**
+> Array<HostingV1GitWebsiteGitRepositoryResource> listWebsiteGitRepositoriesV1()
+
+Lists the Git repositories linked to directories of the website, with `Deploy website Git repository` or in the Git section of hPanel: clone URL, branch and directory of each one. A repository whose clone failed stays listed; deploying it again retries the clone. GitHub and GitLab auto-deployments are not listed here; see `Get Git auto-deployment settings`.
+
+### Example
+
+```typescript
+import {
+    HostingGitApi,
+    Configuration
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingGitApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+
+const { status, data } = await apiInstance.listWebsiteGitRepositoriesV1(
+    username,
+    domain
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**Array<HostingV1GitWebsiteGitRepositoryResource>**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
 
