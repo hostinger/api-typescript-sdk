@@ -9,6 +9,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**deployStaticSiteArchiveV1**](#deploystaticsitearchivev1) | **POST** /api/hosting/v1/accounts/{username}/websites/{domain}/deploy | Deploy static site archive|
 |[**listWebsiteSetupsV1**](#listwebsitesetupsv1) | **GET** /api/hosting/v1/onboardings | List website setups|
 |[**listWebsitesV1**](#listwebsitesv1) | **GET** /api/hosting/v1/websites | List websites|
+|[**startWebsiteSetupV1**](#startwebsitesetupv1) | **POST** /api/hosting/v1/orders/{order_id}/onboardings | Start website setup|
 
 # **createWebsiteV1**
 > CommonSuccessEmptyResource createWebsiteV1(hostingV1WebsitesCreateWebsiteRequest)
@@ -183,7 +184,7 @@ const { status, data } = await apiInstance.deployStaticSiteArchiveV1(
 # **listWebsiteSetupsV1**
 > Array<HostingV1OnboardingsOnboardingResource> listWebsiteSetupsV1()
 
-Returns the website setups started in the last 24 hours for the hosting accounts accessible to the authenticated client, newest first.  Meant for polling right after creating a website: the website shows up in the websites list before its server-side setup has finished, and while the setup is `running` endpoints that operate on that website may respond with `404` or `409`. Poll this endpoint with the `domain` filter every 10 to 15 seconds and wait for `status: completed` before uploading files, deploying or creating databases. `failed` means the setup stopped before finishing or has not reported progress for over an hour. Setups older than 24 hours are not listed.
+Returns the website setups started in the last 24 hours for the hosting accounts accessible to the authenticated client, newest first. Narrow the list with the `order_id`, `subscription_id` or `domain` filters.  Meant for polling right after creating a website or starting a website setup: the website shows up in the websites list before its server-side setup has finished, and while the setup is `running` endpoints that operate on that website may respond with `404` or `409`. Poll this endpoint with the `domain` filter every 10 to 15 seconds and wait for `status: completed` before uploading files, deploying or creating databases. `failed` means the setup stopped before finishing or has not reported progress for over an hour. Setups older than 24 hours are not listed.  `type` is the website type the setup was started with (`wordpress`, `headless_wordpress`, `headless_ecommerce`, `headless_pocketbase`), or `null` for an empty website.
 
 ### Example
 
@@ -196,9 +197,13 @@ import {
 const configuration = new Configuration();
 const apiInstance = new HostingWebsitesApi(configuration);
 
+let orderId: number; //Order ID (optional) (default to undefined)
+let subscriptionId: string; //Filter by hosting order subscription ID (optional) (default to undefined)
 let domain: string; //Filter by domain name (exact match) (optional) (default to undefined)
 
 const { status, data } = await apiInstance.listWebsiteSetupsV1(
+    orderId,
+    subscriptionId,
     domain
 );
 ```
@@ -207,6 +212,8 @@ const { status, data } = await apiInstance.listWebsiteSetupsV1(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
+| **orderId** | [**number**] | Order ID | (optional) defaults to undefined|
+| **subscriptionId** | [**string**] | Filter by hosting order subscription ID | (optional) defaults to undefined|
 | **domain** | [**string**] | Filter by domain name (exact match) | (optional) defaults to undefined|
 
 
@@ -301,6 +308,66 @@ const { status, data } = await apiInstance.listWebsitesV1(
 |-------------|-------------|------------------|
 |**200** | Success response |  -  |
 |**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **startWebsiteSetupV1**
+> HostingV1OnboardingsOnboardingResource startWebsiteSetupV1(hostingV1OnboardingsStartOnboardingRequest)
+
+Starts a website setup on a Web or Cloud hosting order and returns the created setup right away; the website itself is provisioned asynchronously. Poll the list website setups endpoint with the `domain` filter every 10 to 15 seconds and wait for `status: completed` before uploading files, deploying or creating databases.  Omit `type` for an empty website. `type: wordpress` installs WordPress in the website root with the admin user, email and password from `wordpress`, the domain as the site title, and `en_US` when `wordpress.language` is omitted. The headless types (`headless_wordpress`, `headless_ecommerce`, `headless_pocketbase`) create a headless website; `headless_wordpress` additionally installs WordPress into the `cms` directory of the website root with generated credentials.  Omit `domain` to set the website up on a generated temporary free subdomain.  The order must already have a hosting account: to create the first website on a new hosting plan use the create website endpoint, which takes the `datacenter_code`. Returns 404 when the order does not exist or is not accessible to the authenticated client, and 409 with a `Retry-After` header while a setup for the same domain is still running.
+
+### Example
+
+```typescript
+import {
+    HostingWebsitesApi,
+    Configuration,
+    HostingV1OnboardingsStartOnboardingRequest
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingWebsitesApi(configuration);
+
+let orderId: number; //Hosting order ID. List orders to find available IDs. (default to undefined)
+let hostingV1OnboardingsStartOnboardingRequest: HostingV1OnboardingsStartOnboardingRequest; //
+
+const { status, data } = await apiInstance.startWebsiteSetupV1(
+    orderId,
+    hostingV1OnboardingsStartOnboardingRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **hostingV1OnboardingsStartOnboardingRequest** | **HostingV1OnboardingsStartOnboardingRequest**|  | |
+| **orderId** | [**number**] | Hosting order ID. List orders to find available IDs. | defaults to undefined|
+
+
+### Return type
+
+**HostingV1OnboardingsOnboardingResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**201** | Created response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**404** | Error response |  -  |
+|**409** | Conflict response. &#x60;Retry-After&#x60;, when present, is the number of seconds to wait before retrying. |  * Retry-After - Seconds to wait before retrying the request <br>  |
 |**500** | Error response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

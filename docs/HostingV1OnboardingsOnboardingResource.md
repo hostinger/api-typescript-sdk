@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **domain** | **string** | Domain of the website being set up. | [default to undefined]
 **username** | **string** | Hosting account username. | [default to undefined]
+**type** | **string** | Website type requested for the setup: &#x60;wordpress&#x60;, &#x60;headless_wordpress&#x60;, &#x60;headless_ecommerce&#x60; or &#x60;headless_pocketbase&#x60;. &#x60;null&#x60; for an empty website. Setups started outside this API may report other legacy types. | [optional] [default to undefined]
 **status** | **string** | &#x60;running&#x60; while the website is still being set up, &#x60;completed&#x60; once the setup has finished, &#x60;failed&#x60; when it stopped before finishing or has not reported progress for over an hour. | [default to undefined]
 **created_at** | **string** | When the setup was requested. | [default to undefined]
 **updated_at** | **string** | When the setup last reported progress. | [default to undefined]
@@ -19,6 +20,7 @@ import { HostingV1OnboardingsOnboardingResource } from '@hostinger/sdk';
 const instance: HostingV1OnboardingsOnboardingResource = {
     domain,
     username,
+    type,
     status,
     created_at,
     updated_at,
