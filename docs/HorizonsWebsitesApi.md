@@ -226,7 +226,7 @@ This endpoint does not have any parameters.
 # **getWebsiteV1**
 > HorizonsV1WebsitesWebsiteUrlResource getWebsiteV1()
 
-Get the link for the user to open their website in Hostinger Horizons interface.\\n Use this tool when the user wants the link to an existing website, or when you need its website URL before or after editing it.\\n Websites can be edited with the `Edit website` tool, or by the user in Hostinger Horizons interface in the provided website URL.
+Get the link for the user to open their website in Hostinger Horizons interface.\\n Use this tool when the user wants the link to an existing website, or when you need its website URL before or after editing it.\\n `is_in_progress` is true while changes are being generated or the website is being published; wait until it is false before publishing. `published_at` is when the website was last published, `is_template` is whether its published pages show the \"Use template\" banner, and `has_ecommerce_store` is whether it has an online store.\\n Websites can be edited with the `Edit website` tool, or by the user in Hostinger Horizons interface in the provided website URL.
 
 ### Example
 
@@ -279,23 +279,26 @@ const { status, data } = await apiInstance.getWebsiteV1(
 # **publishWebsiteV1**
 > HorizonsV1WebsitesPublishedWebsiteResource publishWebsiteV1()
 
-Publish a Hostinger Horizons website so its latest changes go live.\\n Use this tool when the user asks to publish, deploy or make their website live.\\n This tool starts the publish process and returns the URL the website will be live on. Publishing happens asynchronously and takes a few minutes.\\n After invoking this tool, your chat reply must be EXACTLY 1 sentence summarizing that the website is being published and you should provide the published URL to the user immediately.
+Publish a Hostinger Horizons website so its latest changes go live.\\n Use this tool when the user asks to publish, deploy or make their website live.\\n This tool starts the publish process and returns the URL the website will be live on. Publishing happens asynchronously and takes a few minutes.\\n Set `is_template` only when the user explicitly asks to share the website as a template: true adds a \"Use template\" banner to its published pages that copies the website into the visitor\'s own account, and false removes it. Leave it out to keep the current setting.\\n After invoking this tool, your chat reply must be EXACTLY 1 sentence summarizing that the website is being published and you should provide the published URL to the user immediately.
 
 ### Example
 
 ```typescript
 import {
     HorizonsWebsitesApi,
-    Configuration
+    Configuration,
+    HorizonsV1WebsitesPublishWebsiteRequest
 } from '@hostinger/sdk';
 
 const configuration = new Configuration();
 const apiInstance = new HorizonsWebsitesApi(configuration);
 
 let websiteId: string; //The website ID (default to undefined)
+let horizonsV1WebsitesPublishWebsiteRequest: HorizonsV1WebsitesPublishWebsiteRequest; // (optional)
 
 const { status, data } = await apiInstance.publishWebsiteV1(
-    websiteId
+    websiteId,
+    horizonsV1WebsitesPublishWebsiteRequest
 );
 ```
 
@@ -303,6 +306,7 @@ const { status, data } = await apiInstance.publishWebsiteV1(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
+| **horizonsV1WebsitesPublishWebsiteRequest** | **HorizonsV1WebsitesPublishWebsiteRequest**|  | |
 | **websiteId** | [**string**] | The website ID | defaults to undefined|
 
 
@@ -316,7 +320,7 @@ const { status, data } = await apiInstance.publishWebsiteV1(
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -324,6 +328,7 @@ const { status, data } = await apiInstance.publishWebsiteV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success response |  -  |
+|**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
 
