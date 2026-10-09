@@ -23,7 +23,7 @@ All URIs are relative to *https://developers.hostinger.com*
 # **getAttachedPublicKeysV1**
 > VPSV1PublicKeyListResponse getAttachedPublicKeysV1()
 
-Retrieve public keys attached to a specified virtual machine.  Use this endpoint to view SSH keys configured for specific VPS instances.
+Deprecated: use `GET /api/vps/v1/virtual-machines/{virtualMachineId}/ssh-keys` instead.  Retrieve public keys attached to a specified virtual machine.  Use this endpoint to view SSH keys configured for specific VPS instances.
 
 ### Example
 

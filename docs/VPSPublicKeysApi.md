@@ -12,7 +12,7 @@ All URIs are relative to *https://developers.hostinger.com*
 # **attachPublicKeyV1**
 > VPSV1ActionActionResource attachPublicKeyV1(vPSV1PublicKeyAttachRequest)
 
-Attach existing public keys from your account to a specified virtual machine.  Multiple keys can be attached to a single virtual machine.  Use this endpoint to enable SSH key authentication for VPS instances.
+Deprecated: use `POST /api/vps/v1/virtual-machines/{virtualMachineId}/ssh-keys` instead.  Attach existing public keys from your account to a specified virtual machine.  Multiple keys can be attached to a single virtual machine.  Use this endpoint to enable SSH key authentication for VPS instances.
 
 ### Example
 
@@ -70,7 +70,7 @@ const { status, data } = await apiInstance.attachPublicKeyV1(
 # **createPublicKeyV1**
 > VPSV1PublicKeyPublicKeyResource createPublicKeyV1(vPSV1PublicKeyStoreRequest)
 
-Add a new public key to your account.  Use this endpoint to register SSH keys for VPS authentication.
+Deprecated: account-level public keys have no direct replacement. Root SSH keys are now managed per virtual machine via `POST /api/vps/v1/virtual-machines/{virtualMachineId}/ssh-keys`.  Add a new public key to your account.  Use this endpoint to register SSH keys for VPS authentication.
 
 ### Example
 
@@ -125,7 +125,7 @@ const { status, data } = await apiInstance.createPublicKeyV1(
 # **deletePublicKeyV1**
 > CommonSuccessEmptyResource deletePublicKeyV1()
 
-Delete a public key from your account.   **Deleting public key from account does not remove it from virtual machine**          Use this endpoint to remove unused SSH keys from account.
+Deprecated: account-level public keys have no direct replacement. Root SSH keys are now managed per virtual machine via `DELETE /api/vps/v1/virtual-machines/{virtualMachineId}/ssh-keys`.  Delete a public key from your account.   **Deleting public key from account does not remove it from virtual machine**          Use this endpoint to remove unused SSH keys from account.
 
 ### Example
 
@@ -178,7 +178,7 @@ const { status, data } = await apiInstance.deletePublicKeyV1(
 # **getPublicKeysV1**
 > VPSV1PublicKeyListResponse getPublicKeysV1()
 
-Retrieve public keys associated with your account.  Use this endpoint to view available SSH keys for VPS authentication.
+Deprecated: account-level public keys have no direct replacement. Root SSH keys are now managed per virtual machine via `GET /api/vps/v1/virtual-machines/{virtualMachineId}/ssh-keys`.  Retrieve public keys associated with your account.  Use this endpoint to view available SSH keys for VPS authentication.
 
 ### Example
 
