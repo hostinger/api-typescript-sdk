@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **spf** | [**ReachV1ProfilesDomainsDnsRecordStatus**](ReachV1ProfilesDomainsDnsRecordStatus.md) |  | [optional] [default to undefined]
 **dkim** | [**ReachV1ProfilesDomainsDnsRecordStatus**](ReachV1ProfilesDomainsDnsRecordStatus.md) |  | [optional] [default to undefined]
 **dmarc** | [**ReachV1ProfilesDomainsDnsRecordStatus**](ReachV1ProfilesDomainsDnsRecordStatus.md) |  | [optional] [default to undefined]
+**a** | [**ReachV1ProfilesDomainsDnsRecordStatus**](ReachV1ProfilesDomainsDnsRecordStatus.md) |  | [optional] [default to undefined]
 
 ## Example
 
@@ -22,6 +23,7 @@ const instance: ReachV1ProfilesDomainsDnsStatusResource = {
     spf,
     dkim,
     dmarc,
+    a,
 };
 ```
 
