@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **price** | **number** | Price in the smallest currency unit (e.g. cents). Must be positive. | [default to undefined]
 **description** | **string** | The product description. | [optional] [default to undefined]
 **currency** | **string** | ISO 4217 currency code. Defaults to the store\&#39;s default currency when omitted. | [optional] [default to undefined]
+**seo_settings** | [**EcommerceV1ProductCreatePhysicalProductRequestSeoSettings**](EcommerceV1ProductCreatePhysicalProductRequestSeoSettings.md) |  | [optional] [default to undefined]
 
 ## Example
 
@@ -20,6 +21,7 @@ const instance: EcommerceV1ProductCreatePhysicalProductRequest = {
     price,
     description,
     currency,
+    seo_settings,
 };
 ```
 

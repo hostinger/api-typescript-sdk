@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **name** | **string** | The product name. | [optional] [default to undefined]
 **description** | **string** | The product description. | [optional] [default to undefined]
 **status** | **string** | Set \&quot;published\&quot; to make the product buyable, \&quot;draft\&quot; to hide it, or \&quot;archived\&quot; to retire it. | [optional] [default to undefined]
+**seo_settings** | [**EcommerceV1ProductUpdateRequestSeoSettings**](EcommerceV1ProductUpdateRequestSeoSettings.md) |  | [optional] [default to undefined]
+**collection_changes** | [**EcommerceV1ProductUpdateRequestCollectionChanges**](EcommerceV1ProductUpdateRequestCollectionChanges.md) |  | [optional] [default to undefined]
 
 ## Example
 
@@ -18,6 +20,8 @@ const instance: EcommerceV1ProductUpdateRequest = {
     name,
     description,
     status,
+    seo_settings,
+    collection_changes,
 };
 ```
 

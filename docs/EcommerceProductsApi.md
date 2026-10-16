@@ -311,7 +311,7 @@ const { status, data } = await apiInstance.listProductsV1(
 # **updateAProductV1**
 > EcommerceV1ProductProductResponseResource updateAProductV1(ecommerceV1ProductUpdateRequest)
 
-Update a product\'s name, description or status. Set status to published to make it buyable, draft to hide it, or archived to retire it. Variants, prices and inventory are managed through the variant endpoints, not here. Returns the updated product summary.
+Update a product\'s name, description, status, SEO settings or collections. Set status to published to make it buyable, draft to hide it, or archived to retire it. SEO settings (title, description, slug) left out keep their values. collection_changes adds or removes collections without touching the others. Variants, prices and inventory are managed through the variant endpoints, not here. Returns the updated product summary.
 
 ### Example
 

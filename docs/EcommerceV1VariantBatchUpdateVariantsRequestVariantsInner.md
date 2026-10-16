@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **variant_id** | **string** | The id of the variant to update. | [default to undefined]
 **title** | **string** | The variant title. | [optional] [default to undefined]
+**sku** | **string** | The variant SKU. | [optional] [default to undefined]
 **inventory_quantity** | **number** | Units in stock. | [optional] [default to undefined]
 **manage_inventory** | **boolean** | Whether stock is tracked for this variant. | [optional] [default to undefined]
 **prices** | [**Array&lt;EcommerceV1VariantBatchUpdateVariantsRequestVariantsInnerPricesInner&gt;**](EcommerceV1VariantBatchUpdateVariantsRequestVariantsInnerPricesInner.md) | The full list of prices for the variant, replacing the existing ones. A free item is amount: 0. | [optional] [default to undefined]
@@ -19,6 +20,7 @@ import { EcommerceV1VariantBatchUpdateVariantsRequestVariantsInner } from '@host
 const instance: EcommerceV1VariantBatchUpdateVariantsRequestVariantsInner = {
     variant_id,
     title,
+    sku,
     inventory_quantity,
     manage_inventory,
     prices,
