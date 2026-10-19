@@ -11,7 +11,7 @@ All URIs are relative to *https://developers.hostinger.com*
 # **clearWebsiteCacheV1**
 > CommonSuccessEmptyResource clearWebsiteCacheV1()
 
-Permanently clears all server-side cache for the website at once. Use it when content was updated and needs to be visible immediately, or after making major changes.  Also purges the Hostinger CDN cache when CDN is enabled on the website. For a WordPress installation living in a subdirectory, pass the directory query parameter to clear its cache.
+Permanently clears all server-side cache for the website at once. Use it when content was updated and needs to be visible immediately, or after making major changes.  Also purges the Hostinger CDN cache when CDN is enabled on the website. To purge only the CDN cache and leave the server cache untouched, use `Purge CDN cache`. For a WordPress installation living in a subdirectory, pass the directory query parameter to clear its cache.
 
 ### Example
 
