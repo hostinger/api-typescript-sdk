@@ -9,6 +9,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**getNodeJSBuildLogsV1**](#getnodejsbuildlogsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/{uuid}/logs | Get NodeJS build logs|
 |[**getNodeJsBuildDetailsV1**](#getnodejsbuilddetailsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/{uuid} | Get Node.js build details|
 |[**getNodeJsBuildSettingsFromArchiveV1**](#getnodejsbuildsettingsfromarchivev1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/settings/from-archive | Get Node.js build settings from archive|
+|[**getNodeJsBuildSettingsFromRepositoryV1**](#getnodejsbuildsettingsfromrepositoryv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/settings/from-repository | Get Node.js build settings from repository|
 |[**getNodeJsBuildSettingsV1**](#getnodejsbuildsettingsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds/settings | Get Node.js build settings|
 |[**getNodeJsRuntimeLogsV1**](#getnodejsruntimelogsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/runtime-logs | Get Node.js runtime logs|
 |[**listNodeJSBuildsV1**](#listnodejsbuildsv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/nodejs/builds | List NodeJS builds|
@@ -292,6 +293,75 @@ const { status, data } = await apiInstance.getNodeJsBuildSettingsFromArchiveV1(
 | **username** | [**string**] |  | defaults to undefined|
 | **domain** | [**string**] | Domain name | defaults to undefined|
 | **archivePath** | [**string**] | The path to the archive file relative to the document root of the vhost | defaults to undefined|
+
+
+### Return type
+
+**HostingV1NodeJsBuildSettingsResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**422** | Validation error response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getNodeJsBuildSettingsFromRepositoryV1**
+> HostingV1NodeJsBuildSettingsResource getNodeJsBuildSettingsFromRepositoryV1()
+
+Determine the build settings for a Node.js application from the package.json file of a branch in a Git repository. Use before starting a Git-source build to find out the auto-detected settings instead of guessing them.  The repository is read through a Git installation: take `installation_uuid` from `List Git installations` and `owner` and `repository` from `List Git installation repositories`.  Returns 422 when the installation is not found, the repository or branch is not found, or the branch has no package.json.
+
+### Example
+
+```typescript
+import {
+    HostingNodeJSApi,
+    Configuration
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingNodeJSApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+let owner: string; //Repository owner login. GitLab group paths use slashes. (default to undefined)
+let repository: string; //Repository name without the .git suffix (default to undefined)
+let branch: string; //Branch whose package.json is inspected (default to undefined)
+let installationUuid: string; //Git installation used to access the repository, taken from `List Git installations` (default to undefined)
+
+const { status, data } = await apiInstance.getNodeJsBuildSettingsFromRepositoryV1(
+    username,
+    domain,
+    owner,
+    repository,
+    branch,
+    installationUuid
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+| **owner** | [**string**] | Repository owner login. GitLab group paths use slashes. | defaults to undefined|
+| **repository** | [**string**] | Repository name without the .git suffix | defaults to undefined|
+| **branch** | [**string**] | Branch whose package.json is inspected | defaults to undefined|
+| **installationUuid** | [**string**] | Git installation used to access the repository, taken from &#x60;List Git installations&#x60; | defaults to undefined|
 
 
 ### Return type
