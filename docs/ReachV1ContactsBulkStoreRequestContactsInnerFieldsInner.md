@@ -1,4 +1,4 @@
-# ReachV1ContactsUpdateRequestFieldsInner
+# ReachV1ContactsBulkStoreRequestContactsInnerFieldsInner
 
 
 ## Properties
@@ -12,9 +12,9 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReachV1ContactsUpdateRequestFieldsInner } from '@hostinger/sdk';
+import { ReachV1ContactsBulkStoreRequestContactsInnerFieldsInner } from '@hostinger/sdk';
 
-const instance: ReachV1ContactsUpdateRequestFieldsInner = {
+const instance: ReachV1ContactsBulkStoreRequestContactsInnerFieldsInner = {
     uuid,
     value,
     selected_option_uuids,

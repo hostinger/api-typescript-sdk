@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **phone** | **string** | Phone number in E.164 format (leading \&quot;+\&quot; then 7-15 digits) | [optional] [default to undefined]
 **note** | **string** |  | [optional] [default to undefined]
 **tag_uuids** | **Array&lt;string&gt;** | Existing tags to attach to the created contact | [optional] [default to undefined]
+**fields** | [**Array&lt;ReachV1ContactsBulkStoreRequestContactsInnerFieldsInner&gt;**](ReachV1ContactsBulkStoreRequestContactsInnerFieldsInner.md) | Custom field values to set on the contact. When a contact with this email already exists, only fields that have no value yet are filled. Unknown field UUIDs and values that do not match the field type are skipped. | [optional] [default to undefined]
 
 ## Example
 
@@ -24,6 +25,7 @@ const instance: ReachV1ContactsStoreRequest = {
     phone,
     note,
     tag_uuids,
+    fields,
 };
 ```
 
