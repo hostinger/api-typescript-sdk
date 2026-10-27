@@ -5,6 +5,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
 |[**clearWebsiteCacheV1**](#clearwebsitecachev1) | **DELETE** /api/hosting/v1/accounts/{username}/websites/{domain}/cache/clear | Clear website cache|
+|[**getCacheStatusV1**](#getcachestatusv1) | **GET** /api/hosting/v1/accounts/{username}/websites/{domain}/cache/status | Get cache status|
 |[**toggleCachelessModeV1**](#togglecachelessmodev1) | **PATCH** /api/hosting/v1/accounts/{username}/websites/{domain}/cacheless-mode/toggle | Toggle cacheless mode|
 |[**toggleWebsiteCacheV1**](#togglewebsitecachev1) | **PATCH** /api/hosting/v1/accounts/{username}/websites/{domain}/cache/toggle | Toggle website cache|
 
@@ -67,10 +68,66 @@ const { status, data } = await apiInstance.clearWebsiteCacheV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getCacheStatusV1**
+> HostingV1CacheCacheStatusResource getCacheStatusV1()
+
+Returns the caching state of the website: whether server-side caching is enabled and whether development (cacheless) mode is on. Works for the main domain, addon websites, parked domains and subdomains of the account; each reports its own settings and does not inherit them from its parent website.  `is_enabled` is the setting changed by `Toggle website cache` and reflects a toggle immediately. `is_cacheless_mode_enabled` is true while development mode is on; caching is then bypassed even when `is_enabled` is true. `Toggle cacheless mode` is applied in the background, so this flag can take a few minutes to follow it.  The domain must be the exact website name as listed on the account, without a `www.` prefix. Returns 404 when the domain is not a website on the account.
+
+### Example
+
+```typescript
+import {
+    HostingCacheApi,
+    Configuration
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HostingCacheApi(configuration);
+
+let username: string; // (default to undefined)
+let domain: string; //Domain name (default to undefined)
+
+const { status, data } = await apiInstance.getCacheStatusV1(
+    username,
+    domain
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **username** | [**string**] |  | defaults to undefined|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+
+
+### Return type
+
+**HostingV1CacheCacheStatusResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **toggleCachelessModeV1**
 > CommonSuccessEmptyResource toggleCachelessModeV1(hostingV1CacheToggleCachelessModeRequest)
 
-Turns development (cacheless) mode on or off, based on the enabled flag. When enabled, nothing is cached, effectively turning off all caching for the website; use it while actively developing, testing changes, debugging issues, or when real-time updates must be visible. Disable it after finishing development work to restore the performance benefits of caching.
+Turns development (cacheless) mode on or off, based on the enabled flag. When enabled, nothing is cached, effectively turning off all caching for the website; use it while actively developing, testing changes, debugging issues, or when real-time updates must be visible. Disable it after finishing development work to restore the performance benefits of caching.  The change is applied in the background and can take a few minutes. Use `Get cache status` to check the current state.
 
 ### Example
 
@@ -131,7 +188,7 @@ const { status, data } = await apiInstance.toggleCachelessModeV1(
 # **toggleWebsiteCacheV1**
 > CommonSuccessEmptyResource toggleWebsiteCacheV1(hostingV1CacheToggleCacheRequest)
 
-Turns server-side caching for the website on or off, based on the enabled flag. Enable it for faster page loads, reduced server load, and improved user experience; recommended for production websites. Disabling may impact performance; to temporarily bypass caching while developing or debugging, prefer toggling cacheless mode instead.  Does nothing if caching is already in the requested state.
+Turns server-side caching for the website on or off, based on the enabled flag. Enable it for faster page loads, reduced server load, and improved user experience; recommended for production websites. Disabling may impact performance; to temporarily bypass caching while developing or debugging, prefer toggling cacheless mode instead.  Does nothing if caching is already in the requested state. Use `Get cache status` to check the current state.
 
 ### Example
 
