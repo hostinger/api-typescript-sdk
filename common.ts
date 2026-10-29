@@ -33,6 +33,19 @@ export const assertParamExists = function (functionName: string, paramName: stri
 }
 
 /**
+ * Empty values and dot segments survive encoding and collapse or resolve away, which would change the endpoint.
+ * @throws {RequiredError}
+ * @export
+ */
+export const encodePathParam = function (paramName: string, paramValue: unknown) {
+    const value = String(paramValue);
+    if (value === '' || value === '.' || value === '..') {
+        throw new RequiredError(paramName, `Invalid value for path parameter ${paramName}.`);
+    }
+    return encodeURIComponent(value);
+}
+
+/**
  *
  * @export
  */
