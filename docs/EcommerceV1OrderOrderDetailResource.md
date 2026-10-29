@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **item_count** | **number** | Number of distinct line items. | [optional] [default to undefined]
 **created_at** | **string** | ISO timestamp of when the order was created. | [optional] [default to undefined]
 **merchant_note** | **string** | Internal note visible only to the merchant. | [optional] [default to undefined]
+**metadata** | [**EcommerceV1OrderOrderMetadataResource**](EcommerceV1OrderOrderMetadataResource.md) |  | [optional] [default to undefined]
 **subtotal** | **number** | Subtotal in the smallest currency unit. | [optional] [default to undefined]
 **discount_total** | **number** | Discount total in the smallest currency unit. | [optional] [default to undefined]
 **tax_total** | **number** | Tax total in the smallest currency unit. | [optional] [default to undefined]
@@ -44,6 +45,7 @@ const instance: EcommerceV1OrderOrderDetailResource = {
     item_count,
     created_at,
     merchant_note,
+    metadata,
     subtotal,
     discount_total,
     tax_total,
