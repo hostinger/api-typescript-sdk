@@ -120,7 +120,7 @@ const { status, data } = await apiInstance.deleteDomainForwardingV1(
 # **getDomainForwardingV1**
 > DomainsV1ForwardingForwardingResource getDomainForwardingV1()
 
-Retrieve domain forwarding data.  Use this endpoint to view current redirect configuration for domains.
+Retrieve domain forwarding data.  Returns 404 when the domain has no forwarding.  Use this endpoint to view current redirect configuration for domains.
 
 ### Example
 
