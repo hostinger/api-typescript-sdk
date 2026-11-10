@@ -12,7 +12,7 @@ All URIs are relative to *https://developers.hostinger.com*
 # **createDomainForwardingV1**
 > DomainsV1ForwardingForwardingResource createDomainForwardingV1(domainsV1ForwardingStoreRequest)
 
-Create domain forwarding configuration.  Use this endpoint to set up domain redirects to other URLs.
+Create domain forwarding configuration.  Creating a forwarding changes the domain\'s DNS. If the domain does not use Hostinger nameservers, they are switched to Hostinger\'s nameservers automatically, so website, email and other services whose DNS is hosted elsewhere stop working. The root (@) A and AAAA records in the domain\'s Hostinger DNS zone are also replaced with records pointing to Hostinger, even when the domain already uses Hostinger nameservers. The domain\'s current nameservers are returned by the [domain details endpoint](#tag/domains-portfolio); confirm with the user before creating a forwarding on a domain that uses other nameservers. DNS changes can take some time to propagate.  Use this endpoint to set up domain redirects to other URLs.
 
 ### Example
 
@@ -173,7 +173,7 @@ const { status, data } = await apiInstance.getDomainForwardingV1(
 # **updateDomainForwardingV1**
 > DomainsV1ForwardingForwardingResource updateDomainForwardingV1(domainsV1ForwardingUpdateRequest)
 
-Update domain forwarding configuration.  Use this endpoint to modify existing redirect configuration for domains.
+Update domain forwarding configuration.  Updating a forwarding changes the domain\'s DNS. If the domain does not use Hostinger nameservers, they are switched to Hostinger\'s nameservers automatically, so website, email and other services whose DNS is hosted elsewhere stop working. The root (@) A and AAAA records in the domain\'s Hostinger DNS zone are also replaced with records pointing to Hostinger, even when the domain already uses Hostinger nameservers. The domain\'s current nameservers are returned by the [domain details endpoint](#tag/domains-portfolio); confirm with the user before updating a forwarding on a domain that uses other nameservers. DNS changes can take some time to propagate.  Use this endpoint to modify existing redirect configuration for domains.
 
 ### Example
 
