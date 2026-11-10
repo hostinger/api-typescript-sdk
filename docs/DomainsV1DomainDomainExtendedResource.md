@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **_60_days_lock_expires_at** | **string** |  | [optional] [default to undefined]
 **registered_at** | **string** |  | [optional] [default to undefined]
 **expires_at** | **string** |  | [optional] [default to undefined]
+**contact_verification** | [**DomainsV1DomainDomainContactVerificationResource**](DomainsV1DomainDomainContactVerificationResource.md) |  | [optional] [default to undefined]
 
 ## Example
 
@@ -42,6 +43,7 @@ const instance: DomainsV1DomainDomainExtendedResource = {
     _60_days_lock_expires_at,
     registered_at,
     expires_at,
+    contact_verification,
 };
 ```
 

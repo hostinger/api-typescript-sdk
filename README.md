@@ -1,9 +1,9 @@
-## @hostinger/sdk@2.12.4
+## @hostinger/sdk@2.13.0
 
 For more information, please visit [https://developers.hostinger.com](https://developers.hostinger.com).
 
 ### Usage
 
 ```
-npm install @hostinger/sdk@2.12.4 --save
+npm install @hostinger/sdk@2.13.0 --save
 ```
