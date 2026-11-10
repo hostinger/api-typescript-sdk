@@ -118,7 +118,7 @@ const { status, data } = await apiInstance.deleteSnapshotV1(
 # **getSnapshotV1**
 > VPSV1SnapshotSnapshotResource getSnapshotV1()
 
-Retrieve snapshot for a specified virtual machine.  Use this endpoint to view current VPS snapshot information.
+Retrieve snapshot for a specified virtual machine.  Use this endpoint to view current VPS snapshot information.  Returns 404 when the virtual machine has no snapshot.
 
 ### Example
 
@@ -164,6 +164,7 @@ const { status, data } = await apiInstance.getSnapshotV1(
 |-------------|-------------|------------------|
 |**200** | Success response |  -  |
 |**401** | Unauthenticated response |  -  |
+|**404** | Error response |  -  |
 |**500** | Error response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

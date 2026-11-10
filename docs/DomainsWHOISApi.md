@@ -234,7 +234,7 @@ const { status, data } = await apiInstance.deleteWHOISProfileV1(
 # **getPendingIRTPVerificationV1**
 > DomainsV1IRTPVerificationResource getPendingIRTPVerificationV1()
 
-Retrieve a pending IRTP verification for a domain.  Both the old and new registrant must confirm it before the WHOIS change takes effect.  Use this endpoint to check the status of a WHOIS change awaiting registrant confirmation.
+Retrieve a pending IRTP verification for a domain.  Both the old and new registrant must confirm it before the WHOIS change takes effect.  Returns 404 when the domain has no pending IRTP verification.  Use this endpoint to check the status of a WHOIS change awaiting registrant confirmation.
 
 ### Example
 
