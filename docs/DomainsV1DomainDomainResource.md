@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **status** | **string** |  | [optional] [default to undefined]
 **created_at** | **string** |  | [optional] [default to undefined]
 **expires_at** | **string** |  | [optional] [default to undefined]
+**verification** | [**DomainsV1DomainDomainVerificationResource**](DomainsV1DomainDomainVerificationResource.md) |  | [optional] [default to undefined]
 
 ## Example
 
@@ -24,6 +25,7 @@ const instance: DomainsV1DomainDomainResource = {
     status,
     created_at,
     expires_at,
+    verification,
 };
 ```
 
