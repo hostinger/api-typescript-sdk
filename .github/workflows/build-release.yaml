@@ -5,11 +5,12 @@ on:
     branches:
       - main
 
+# npm trusted publishing trusts this whole workflow file, so only the publish jobs hold id-token: write, and
+# they install and run nothing: they publish the tarballs the read-only pack job built.
 jobs:
   release:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
       contents: write
     outputs:
       new_version: ${{ steps.version.outputs.version }}
@@ -34,61 +35,88 @@ jobs:
 
       - name: Create release
         if: steps.version.outputs.released == 'true'
-        uses: ncipollo/release-action@v1
-        with:
-          tag: v${{ steps.version.outputs.version }}
-          generateReleaseNotes: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: gh release create "v$VERSION" --target "$GITHUB_SHA" --generate-notes
 
-  publish-npmjs:
+  pack:
     runs-on: ubuntu-latest
     needs: [release]
     if: needs.release.outputs.released == 'true'
     permissions:
       contents: read
-      id-token: write
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
           node-version: '26.x'
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Update NPM
-        run: npm install -g npm@latest
 
       - name: Install dependencies
         run: npm install
 
-      - name: Publish package
-        run: npm publish --provenance --access public
+      # The package was published unscoped before moving to @hostinger. Each release is republished under
+      # the old name so existing installs keep updating. Both names point their npm trusted publisher at this
+      # workflow file, which is what the config keys on — the job/step it runs in is not part of it.
+      # hostinger-api-sdk is substituted by scripts/post-typescript-axios.sh and is empty for an API that
+      # never had an unscoped package. GitHub Packages gets its own copy named after the repository.
+      - name: Pack
+        env:
+          LEGACY: 'hostinger-api-sdk'
+        run: |
+          mkdir -p "$RUNNER_TEMP/pkg/npmjs" "$RUNNER_TEMP/pkg/legacy" "$RUNNER_TEMP/pkg/github"
+          npm pack --pack-destination "$RUNNER_TEMP/pkg/npmjs"
+          if [ -n "$LEGACY" ]; then
+            jq --arg n "$LEGACY" '.name = $n' package.json > pkg.tmp && mv pkg.tmp package.json
+            npm pack --ignore-scripts --pack-destination "$RUNNER_TEMP/pkg/legacy"
+          fi
+          jq --arg n "@$GITHUB_REPOSITORY" '.name = $n' package.json > pkg.tmp && mv pkg.tmp package.json
+          npm pack --ignore-scripts --pack-destination "$RUNNER_TEMP/pkg/github"
 
-      # The package was published unscoped before moving to @hostinger. Republish
-      # each release under the old name so existing installs keep updating.
-      # Both names point their npm trusted publisher at this workflow file, which
-      # is what the config keys on — the job/step it runs in is not part of it.
-      # hostinger-api-sdk is substituted by scripts/post-typescript-axios.sh and
-      # is empty for an API that never had an unscoped package.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: packages
+          path: ${{ runner.temp }}/pkg/
+
+  publish-npmjs:
+    runs-on: ubuntu-latest
+    needs: [pack]
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: packages
+          path: pkg
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '26.x'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Publish package
+        run: npm publish pkg/npmjs/*.tgz --provenance --access public --ignore-scripts
+
       - name: Publish legacy unscoped alias
         run: |
-          LEGACY='hostinger-api-sdk'
-          if [ -z "$LEGACY" ]; then
+          if ! ls pkg/legacy/*.tgz >/dev/null 2>&1; then
             echo "No legacy npm name configured — nothing to alias."
             exit 0
           fi
-          jq --arg n "$LEGACY" '.name = $n' package.json > pkg.tmp && mv pkg.tmp package.json
-          npm publish --provenance --access public
+          npm publish pkg/legacy/*.tgz --provenance --access public --ignore-scripts
 
   publish-github:
     runs-on: ubuntu-latest
-    needs: [release]
-    if: needs.release.outputs.released == 'true'
+    needs: [pack]
     permissions:
-      contents: read
       id-token: write
       packages: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: packages
+          path: pkg
 
       - uses: actions/setup-node@v4
         with:
@@ -96,23 +124,18 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@hostinger'
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Publish package
-        run: |
-          sed -i 's+"name": ".*+"name": "@${{ github.repository }}",+gI' ./package.json
-          npm publish --provenance --access public
+        run: npm publish pkg/github/*.tgz --provenance --access public --ignore-scripts
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   notify-failure:
-    needs: [release, publish-npmjs, publish-github]
+    needs: [release, pack, publish-npmjs, publish-github]
     if: failure()
     runs-on: ubuntu-latest
     steps:
       - name: Notify Slack on release failure
-        uses: slackapi/slack-github-action@v4.0.0
+        uses: slackapi/slack-github-action@dcb1066f776dd043e64d0e8ba94ca15cc7e1875d # v4.0.0
         with:
           errors: true
           webhook: ${{ secrets.PLATFORM_INCIDENT_SLACK_CHANNEL_WEBHOOK }}
