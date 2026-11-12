@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | Unique API token identifier | [optional] [default to undefined]
-**token** | **string** | Plaintext API token, returned only in this response. Grants access to the [Hostinger Email API](https://api.mail.hostinger.com/) for mailbox provisioning and management. | [optional] [default to undefined]
+**token** | **string** | Plaintext API token, returned only in this response. Grants access to the mailboxes it is scoped to through the [Hostinger Mail API](https://api.mail.hostinger.com/). | [optional] [default to undefined]
 **name** | **string** | Human-readable label for this token | [optional] [default to undefined]
 **scope** | [**MailV1ApiTokensApiTokenScopeResource**](MailV1ApiTokensApiTokenScopeResource.md) |  | [optional] [default to undefined]
 **created_at** | **string** |  | [optional] [default to undefined]

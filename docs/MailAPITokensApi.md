@@ -11,7 +11,7 @@ All URIs are relative to *https://developers.hostinger.com*
 # **createAPITokenV1**
 > MailV1ApiTokensApiTokenCreatedResource createAPITokenV1(mailV1SchemaCreateApiTokenRequestSchema)
 
-Create an API token for the given mail order. The token grants access to the [Hostinger Email API](https://api.mail.hostinger.com/), where you can provision and manage the mailboxes it is scoped to.  The plaintext token is returned only in this response, never again. A maximum of 10 tokens can exist per order. Use `scope.has_all_mailboxes` to cover all current and future mailboxes, or list specific mailboxes in `scope.mailbox_ids`.
+Create an API token for the given mail order. Through the [Hostinger Mail API](https://api.mail.hostinger.com/), the token grants access to the mailboxes it is scoped to (for example, to read, search, send and organise email messages), without signing in with a mailbox password over IMAP, SMTP or webmail.  A token covers either all mailboxes of the order or only the ones you choose. Set `scope.has_all_mailboxes` to `true` to cover all current and future mailboxes, or to `false` and list specific mailboxes in `scope.mailbox_ids`.  The plaintext token is returned only in this response, never again. Store it securely, because anyone who has it gets the same access. A maximum of 10 tokens can exist per order.
 
 ### Example
 
@@ -71,7 +71,7 @@ const { status, data } = await apiInstance.createAPITokenV1(
 # **listAPITokensV1**
 > MailListAPITokensV1200Response listAPITokensV1()
 
-Retrieve a paginated list of [Hostinger Email API](https://api.mail.hostinger.com/) tokens across all your mail orders, optionally filtered by order. Plaintext tokens are never included; they are returned only when a token is created.
+Retrieve a paginated list of [Hostinger Mail API](https://api.mail.hostinger.com/) tokens across all your mail orders, optionally filtered by order. Plaintext tokens are never included; they are returned only when a token is created.
 
 ### Example
 
@@ -131,7 +131,7 @@ const { status, data } = await apiInstance.listAPITokensV1(
 # **revokeAPITokenV1**
 > CommonSuccessEmptyResource revokeAPITokenV1()
 
-Revoke an API token. The token immediately loses access to the [Hostinger Email API](https://api.mail.hostinger.com/). This action cannot be undone.
+Revoke an API token. The token immediately loses access to the [Hostinger Mail API](https://api.mail.hostinger.com/). This action cannot be undone.
 
 ### Example
 
