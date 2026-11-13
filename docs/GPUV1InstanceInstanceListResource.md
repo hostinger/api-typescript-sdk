@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **name** | **string** |  | [optional] [default to undefined]
 **status** | **string** |  | [optional] [default to undefined]
 **action_lock** | **string** | Whether an action is in progress on the instance | [optional] [default to undefined]
+**action_lock_reason** | **string** | Action in progress on the instance, &#x60;null&#x60; when unlocked | [optional] [default to undefined]
 **pool** | [**GPUV1PoolPoolResource**](GPUV1PoolPoolResource.md) |  | [optional] [default to undefined]
 **pool_instance** | [**GPUV1PoolPoolInstanceResource**](GPUV1PoolPoolInstanceResource.md) |  | [optional] [default to undefined]
 **os_template** | [**GPUV1OsTemplateOsTemplateResource**](GPUV1OsTemplateOsTemplateResource.md) |  | [optional] [default to undefined]
@@ -23,6 +24,7 @@ const instance: GPUV1InstanceInstanceListResource = {
     name,
     status,
     action_lock,
+    action_lock_reason,
     pool,
     pool_instance,
     os_template,

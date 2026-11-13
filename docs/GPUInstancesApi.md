@@ -114,6 +114,7 @@ const { status, data } = await apiInstance.deleteInstanceV1(
 |-------------|-------------|------------------|
 |**200** | Success empty response |  -  |
 |**401** | Unauthenticated response |  -  |
+|**404** | Error response |  -  |
 |**500** | Error response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -167,6 +168,7 @@ const { status, data } = await apiInstance.getInstanceDetailsV1(
 |-------------|-------------|------------------|
 |**200** | Success response |  -  |
 |**401** | Unauthenticated response |  -  |
+|**404** | Error response |  -  |
 |**500** | Error response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -220,6 +222,7 @@ const { status, data } = await apiInstance.getInstanceMetricsV1(
 |-------------|-------------|------------------|
 |**200** | Success response |  -  |
 |**401** | Unauthenticated response |  -  |
+|**404** | Error response |  -  |
 |**500** | Error response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

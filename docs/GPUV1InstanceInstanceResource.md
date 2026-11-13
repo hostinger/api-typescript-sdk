@@ -9,9 +9,11 @@ Name | Type | Description | Notes
 **name** | **string** |  | [optional] [default to undefined]
 **status** | **string** |  | [optional] [default to undefined]
 **action_lock** | **string** | Whether an action is in progress on the instance | [optional] [default to undefined]
+**action_lock_reason** | **string** | Action in progress on the instance, &#x60;null&#x60; when unlocked | [optional] [default to undefined]
 **pool** | [**GPUV1PoolPoolResource**](GPUV1PoolPoolResource.md) |  | [optional] [default to undefined]
 **pool_instance** | [**GPUV1PoolPoolInstanceResource**](GPUV1PoolPoolInstanceResource.md) |  | [optional] [default to undefined]
 **os_template** | [**GPUV1OsTemplateOsTemplateResource**](GPUV1OsTemplateOsTemplateResource.md) |  | [optional] [default to undefined]
+**llm_model_variant** | [**GPUV1LlmModelVariantLlmModelVariantResource**](GPUV1LlmModelVariantLlmModelVariantResource.md) |  | [optional] [default to undefined]
 **ssh_keys** | [**Array&lt;GPUV1SshKeySshKeyResource&gt;**](GPUV1SshKeySshKeyResource.md) | Array of [&#x60;GPU.V1.SshKey.SshKeyResource&#x60;](#model/gpuv1sshkeysshkeyresource) | [optional] [default to undefined]
 
 ## Example
@@ -24,9 +26,11 @@ const instance: GPUV1InstanceInstanceResource = {
     name,
     status,
     action_lock,
+    action_lock_reason,
     pool,
     pool_instance,
     os_template,
+    llm_model_variant,
     ssh_keys,
 };
 ```
