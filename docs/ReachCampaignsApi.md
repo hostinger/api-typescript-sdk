@@ -8,6 +8,8 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**getCampaignDetailsV1**](#getcampaigndetailsv1) | **GET** /api/reach/v1/profiles/{profileUuid}/campaigns/{campaignUuid} | Get campaign details|
 |[**getCampaignPerformanceV1**](#getcampaignperformancev1) | **GET** /api/reach/v1/profiles/{profileUuid}/campaigns/{campaignUuid}/statistics | Get campaign performance|
 |[**listCampaignsV1**](#listcampaignsv1) | **GET** /api/reach/v1/profiles/{profileUuid}/campaigns | List campaigns|
+|[**sendCampaignV1**](#sendcampaignv1) | **POST** /api/reach/v1/profiles/{profileUuid}/campaigns/{campaignUuid}/send | Send campaign|
+|[**updateCampaignV1**](#updatecampaignv1) | **PATCH** /api/reach/v1/profiles/{profileUuid}/campaigns/{campaignUuid} | Update campaign|
 
 # **createADraftCampaignV1**
 > ReachV1CampaignsCreatedCampaignResource createADraftCampaignV1(reachV1CampaignsStoreRequest)
@@ -242,6 +244,123 @@ const { status, data } = await apiInstance.listCampaignsV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sendCampaignV1**
+> CommonSuccessEmptyResource sendCampaignV1()
+
+Send a campaign now to the audience stored on it.  This is irreversible: once accepted, the emails go out and cannot be recalled. Confirm with the customer before calling. The campaign needs a subject, sender, template and audience first - set them with the update endpoint. Delivery is asynchronous, so success means accepted, not delivered: the campaign moves to `sending` and later to `publish`, or to `failed`. Read the campaign to follow it. The request is rejected when the campaign has no recipients, its sender domain is not verified or is blocked, the plan\'s sending limits would be exceeded, or the campaign is already being sent.
+
+### Example
+
+```typescript
+import {
+    ReachCampaignsApi,
+    Configuration
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new ReachCampaignsApi(configuration);
+
+let profileUuid: string; //Profile uuid parameter (default to undefined)
+let campaignUuid: string; //Campaign uuid parameter (default to undefined)
+
+const { status, data } = await apiInstance.sendCampaignV1(
+    profileUuid,
+    campaignUuid
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **profileUuid** | [**string**] | Profile uuid parameter | defaults to undefined|
+| **campaignUuid** | [**string**] | Campaign uuid parameter | defaults to undefined|
+
+
+### Return type
+
+**CommonSuccessEmptyResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success empty response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCampaignV1**
+> ReachV1CampaignsCreatedCampaignResource updateCampaignV1(reachV1CampaignsUpdateRequest)
+
+Update a campaign\'s content, sender, template and audience.  Only `draft`, `scheduled` and `failed` campaigns can be updated; a campaign that is sending or already sent is rejected. Updating a `failed` campaign moves it back to `draft`. Audience changes replace rather than merge: `all_contacts: true` targets every contact of the profile, while `segment_uuids` replaces the segments currently targeted. Leave both out to keep the audience as it is. This does not send the campaign - use the send endpoint for that.
+
+### Example
+
+```typescript
+import {
+    ReachCampaignsApi,
+    Configuration,
+    ReachV1CampaignsUpdateRequest
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new ReachCampaignsApi(configuration);
+
+let profileUuid: string; //Profile uuid parameter (default to undefined)
+let campaignUuid: string; //Campaign uuid parameter (default to undefined)
+let reachV1CampaignsUpdateRequest: ReachV1CampaignsUpdateRequest; //
+
+const { status, data } = await apiInstance.updateCampaignV1(
+    profileUuid,
+    campaignUuid,
+    reachV1CampaignsUpdateRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **reachV1CampaignsUpdateRequest** | **ReachV1CampaignsUpdateRequest**|  | |
+| **profileUuid** | [**string**] | Profile uuid parameter | defaults to undefined|
+| **campaignUuid** | [**string**] | Campaign uuid parameter | defaults to undefined|
+
+
+### Return type
+
+**ReachV1CampaignsCreatedCampaignResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**422** | Validation error response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**500** | Error response |  -  |
 

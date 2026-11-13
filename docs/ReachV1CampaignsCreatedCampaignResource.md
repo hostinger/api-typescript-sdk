@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **sender_name** | **string** |  | [optional] [default to undefined]
 **sender_email** | **string** |  | [optional] [default to undefined]
 **template_uuid** | **string** |  | [optional] [default to undefined]
-**status** | **string** | Always &#x60;draft&#x60; for a campaign that was just created. | [optional] [default to undefined]
+**status** | **string** | Always &#x60;draft&#x60; for a campaign that was just created; the current status after an update. | [optional] [default to undefined]
 **type** | **string** |  | [optional] [default to undefined]
 **is_all_contacts** | **boolean** | Whether the campaign targets every contact instead of selected segments. | [optional] [default to undefined]
 **metadata** | **{ [key: string]: string; }** | The stored extra fields, including the ones Reach sets itself. | [optional] [default to undefined]
