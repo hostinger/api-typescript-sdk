@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**password** | **string** | Panel password for the virtual machine | [default to undefined]
+**password** | **string** | Panel password for the virtual machine. 12 to 50 characters with an uppercase letter, a lowercase letter, a number and at least one of #%+:?@ (no other symbols). Known compromised passwords are rejected. | [default to undefined]
 
 ## Example
 

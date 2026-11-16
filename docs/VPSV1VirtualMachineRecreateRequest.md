@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **template_id** | **number** | Template ID | [default to undefined]
-**password** | **string** | Root password for the virtual machine. If not provided, random password will be generated. Password will not be shown in the response. | [optional] [default to undefined]
-**panel_password** | **string** | Panel password for the panel-based OS template. If not provided, random password will be generated. If OS does not support panel_password this field will be ignored. Password will not be shown in the response. | [optional] [default to undefined]
+**password** | **string** | Root password for the virtual machine. If not provided, random password will be generated. Password will not be shown in the response. 12 to 50 characters with an uppercase letter, a lowercase letter, a number and at least one of -().&amp;@?\&#39;#;/,+ (no other symbols). Known compromised passwords are rejected. | [optional] [default to undefined]
+**panel_password** | **string** | Panel password for the panel-based OS template. If not provided, random password will be generated. If OS does not support panel_password this field will be ignored. Password will not be shown in the response. 12 to 50 characters with an uppercase letter, a lowercase letter, a number and at least one of #%+:?@ (no other symbols). Known compromised passwords are rejected. | [optional] [default to undefined]
 **post_install_script_id** | **number** | Post-install script to execute after virtual machine was recreated | [optional] [default to undefined]
 
 ## Example
