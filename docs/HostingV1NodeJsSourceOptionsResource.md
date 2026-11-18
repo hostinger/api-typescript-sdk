@@ -7,6 +7,7 @@ Which keys carry values depends on the parent source_type; the others are null.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **archive_path** | **string** | Present if sourceType is \&quot;archive\&quot; | [optional] [default to undefined]
+**message** | **string** | Summary of the deployment given when it was started (present if source_type is \&quot;archive\&quot; and one was sent) | [optional] [default to undefined]
 **owner** | **string** | Repository owner login (present if source_type is \&quot;git\&quot;) | [default to undefined]
 **repository** | **string** | Repository name without the .git suffix (present if source_type is \&quot;git\&quot;) | [default to undefined]
 **branch** | **string** | Branch that was built (present if source_type is \&quot;git\&quot;) | [default to undefined]
@@ -20,6 +21,7 @@ import { HostingV1NodeJsSourceOptionsResource } from '@hostinger/sdk';
 
 const instance: HostingV1NodeJsSourceOptionsResource = {
     archive_path,
+    message,
     owner,
     repository,
     branch,
