@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**website_url** | **string** | The website URL for the user to access their website in Hostinger Horizons interface | [default to undefined]
+**website_url** | **string** | The website URL for the user to access their website in Hostinger AI Builder interface | [default to undefined]
 **published_at** | **string** | When the website was last published, or null if it has never been published | [optional] [default to undefined]
 **is_template** | **boolean** | Whether the website is published as a template, so its published pages show a \&quot;Use template\&quot; banner | [optional] [default to undefined]
-**is_in_progress** | **boolean** | Whether Hostinger Horizons is still generating changes or publishing the website. Publishing is refused while it is true, and editing while changes are being generated. An unfinished template migration also refuses publishing, with its own error, without setting this flag. | [optional] [default to undefined]
-**is_generating** | **boolean** | Whether Hostinger Horizons is generating changes to the website. Editing and publishing are refused while it is true | [optional] [default to undefined]
+**is_in_progress** | **boolean** | Whether Hostinger AI Builder is still generating changes or publishing the website. Publishing is refused while it is true, and editing while changes are being generated. An unfinished template migration also refuses publishing, with its own error, without setting this flag. | [optional] [default to undefined]
+**is_generating** | **boolean** | Whether Hostinger AI Builder is generating changes to the website. Editing and publishing are refused while it is true | [optional] [default to undefined]
 **actions_in_progress** | **Array&lt;string&gt;** | What is running on the website right now: &#x60;website_publish&#x60; while it is being published right now, when publishing is refused; empty otherwise. An unfinished template migration also refuses publishing, with its own error, without appearing here. | [optional] [default to undefined]
 **has_ecommerce_store** | **boolean** | Whether the website has an ecommerce store | [optional] [default to undefined]
 

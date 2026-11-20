@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**website_url** | **string** | The website URL for the user to access their website in Hostinger Horizons interface | [default to undefined]
+**website_url** | **string** | The website URL for the user to access their website in Hostinger AI Builder interface | [default to undefined]
 **website_id** | **string** | The website ID | [default to undefined]
 
 ## Example

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **domain** | **string** | The domain the website is published on, if it has been published | [optional] [default to undefined]
 **status** | **string** | The website status | [default to undefined]
 **created_at** | **string** | The website creation date | [default to undefined]
-**website_url** | **string** | The website URL for the user to access their website in Hostinger Horizons interface | [default to undefined]
+**website_url** | **string** | The website URL for the user to access their website in Hostinger AI Builder interface | [default to undefined]
 
 ## Example
 
