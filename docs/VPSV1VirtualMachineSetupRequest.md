@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **ns1** | **string** | Name server 1 | [optional] [default to undefined]
 **ns2** | **string** | Name server 2 | [optional] [default to undefined]
 **public_key** | [**VPSV1VirtualMachineSetupRequestPublicKey**](VPSV1VirtualMachineSetupRequestPublicKey.md) |  | [optional] [default to undefined]
+**ssh_keys** | **Array&lt;string&gt;** | SSH public keys to add to the virtual machine | [optional] [default to undefined]
 
 ## Example
 
@@ -32,6 +33,7 @@ const instance: VPSV1VirtualMachineSetupRequest = {
     ns1,
     ns2,
     public_key,
+    ssh_keys,
 };
 ```
 
