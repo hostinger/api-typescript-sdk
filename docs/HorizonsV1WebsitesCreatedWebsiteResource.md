@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **website_url** | **string** | The website URL for the user to access their website in Hostinger AI Builder interface | [default to undefined]
 **website_id** | **string** | The website ID | [default to undefined]
+**task** | [**HorizonsV1WebsitesBuildTaskResource**](HorizonsV1WebsitesBuildTaskResource.md) |  | [optional] [default to undefined]
 
 ## Example
 
@@ -16,6 +17,7 @@ import { HorizonsV1WebsitesCreatedWebsiteResource } from '@hostinger/sdk';
 const instance: HorizonsV1WebsitesCreatedWebsiteResource = {
     website_url,
     website_id,
+    task,
 };
 ```
 

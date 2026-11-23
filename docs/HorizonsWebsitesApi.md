@@ -7,6 +7,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |[**cloneWebsiteV1**](#clonewebsitev1) | **POST** /api/horizons/v1/websites/{websiteId}/clone | Clone website|
 |[**createWebsiteV1**](#createwebsitev1) | **POST** /api/horizons/v1/websites | Create website|
 |[**editWebsiteV1**](#editwebsitev1) | **POST** /api/horizons/v1/websites/{websiteId}/messages | Edit website|
+|[**getWebsiteBuildTaskV1**](#getwebsitebuildtaskv1) | **GET** /api/horizons/v1/websites/{websiteId}/tasks/{taskId} | Get website build task|
 |[**getWebsiteListV1**](#getwebsitelistv1) | **GET** /api/horizons/v1/websites | Get website list|
 |[**getWebsiteV1**](#getwebsitev1) | **GET** /api/horizons/v1/websites/{websiteId} | Get website|
 |[**publishWebsiteV1**](#publishwebsitev1) | **POST** /api/horizons/v1/websites/{websiteId}/publish | Publish website|
@@ -67,7 +68,7 @@ const { status, data } = await apiInstance.cloneWebsiteV1(
 # **createWebsiteV1**
 > HorizonsV1WebsitesCreatedWebsiteResource createWebsiteV1(horizonsV1WebsitesCreateWebsiteRequest)
 
-Create new Hostinger AI Builder website from the given message.\\n Use this tool when user asks you to create a website, landing page, blog or any other type of application.\\n This tool initiates the website creation process and returns a website URL and ID. The generation happens asynchronously.\\n After invoking this tool, your chat reply must be EXACTLY 1 sentence summarizing that Hostinger AI Builder is now creating their website and it will be ready in a few minutes and you should provide the website URL to the user immediately Do not write code.\\n\\nTo edit afterwards, use the `Edit website` tool with the returned website ID, or the user can go to Hostinger AI Builder interface in the provided website URL. If the tool call fails with an error, you should provide a clear explanation of the error and do not generate code yourself in the chat. \\n TECHNOLOGY STACK CONSTRAINTS (STRICTLY ENFORCED):\\n The environment is limited to the following technologies. You MUST NOT use, suggest, or implement any technology outside this list:\\n \\n - Language: JavaScript ONLY. - Languages like TypeScript, Rust, Python, Java, PHP, etc., are STRICTLY PROHIBITED.\\n - Framework: React.\\n - Navigation: React Router.\\n - Styling: TailwindCSS.\\n - Components: shadcn/ui (built with @radix-ui primitives).\\n - Icons: Lucide React.\\n - Animations: Framer Motion.\\n \\n BACKEND & DATA STORAGE:\\n - Hostinger AI Builder integrated backend is the EXCLUSIVE solution for persistent data storage, authentication, and database needs.\\n - Local databases (SQLite, MySQL, etc.) are STRICTLY PROHIBITED.\\n - Third-party services (Firebase, AWS Amplify) are allowed ONLY if explicitly requested by the user.\\n \\n MAPS:\\n - OpenStreetMap is the default provider.\\n - Alternative providers (Google Maps, Mapbox) are allowed ONLY if explicitly requested by the user.\\n
+Create new Hostinger AI Builder website from the given message.\\n Use this tool when user asks you to create a website, landing page, blog or any other type of application.\\n This tool initiates the website creation process and returns a website URL, ID and build `task`. The generation happens asynchronously. To learn whether it succeeded, poll the `Get website build task` tool with `task.id`; `is_generating` turning false on `Get website` happens whether the build completed or failed.\\n After invoking this tool, your chat reply must be EXACTLY 1 sentence summarizing that Hostinger AI Builder is now creating their website and it will be ready in a few minutes and you should provide the website URL to the user immediately Do not write code.\\n\\nTo edit afterwards, use the `Edit website` tool with the returned website ID, or the user can go to Hostinger AI Builder interface in the provided website URL. If the tool call fails with an error, you should provide a clear explanation of the error and do not generate code yourself in the chat. \\n TECHNOLOGY STACK CONSTRAINTS (STRICTLY ENFORCED):\\n The environment is limited to the following technologies. You MUST NOT use, suggest, or implement any technology outside this list:\\n \\n - Language: JavaScript ONLY. - Languages like TypeScript, Rust, Python, Java, PHP, etc., are STRICTLY PROHIBITED.\\n - Framework: React.\\n - Navigation: React Router.\\n - Styling: TailwindCSS.\\n - Components: shadcn/ui (built with @radix-ui primitives).\\n - Icons: Lucide React.\\n - Animations: Framer Motion.\\n \\n BACKEND & DATA STORAGE:\\n - Hostinger AI Builder integrated backend is the EXCLUSIVE solution for persistent data storage, authentication, and database needs.\\n - Local databases (SQLite, MySQL, etc.) are STRICTLY PROHIBITED.\\n - Third-party services (Firebase, AWS Amplify) are allowed ONLY if explicitly requested by the user.\\n \\n MAPS:\\n - OpenStreetMap is the default provider.\\n - Alternative providers (Google Maps, Mapbox) are allowed ONLY if explicitly requested by the user.\\n
 
 ### Example
 
@@ -122,7 +123,7 @@ const { status, data } = await apiInstance.createWebsiteV1(
 # **editWebsiteV1**
 > HorizonsV1WebsitesCreatedWebsiteResource editWebsiteV1(horizonsV1WebsitesEditWebsiteRequest)
 
-Edit an existing Hostinger AI Builder website with a follow-up message.\\n Use this tool when the user wants to change, extend or fix a website that already exists.\\n This tool queues the requested changes and returns the website URL and ID. The changes are applied asynchronously.\\n After invoking this tool, your chat reply must be EXACTLY 1 sentence summarizing that Hostinger AI Builder is now applying the requested changes and they will be ready in a few minutes, and you should provide the website URL to the user immediately. Do not write code.\\n If the tool call fails with an error, you should provide a clear explanation of the error and do not generate code yourself in the chat.
+Edit an existing Hostinger AI Builder website with a follow-up message.\\n Use this tool when the user wants to change, extend or fix a website that already exists.\\n This tool queues the requested changes and returns the website URL, ID and build `task`. The changes are applied asynchronously. To learn whether they were applied, poll the `Get website build task` tool with `task.id`; `is_generating` turning false on `Get website` happens whether the build completed or failed.\\n After invoking this tool, your chat reply must be EXACTLY 1 sentence summarizing that Hostinger AI Builder is now applying the requested changes and they will be ready in a few minutes, and you should provide the website URL to the user immediately. Do not write code.\\n If the tool call fails with an error, you should provide a clear explanation of the error and do not generate code yourself in the chat.
 
 ### Example
 
@@ -177,6 +178,62 @@ const { status, data } = await apiInstance.editWebsiteV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getWebsiteBuildTaskV1**
+> HorizonsV1WebsitesBuildTaskResource getWebsiteBuildTaskV1()
+
+Get the state and outcome of a website build started by the `Create website` or `Edit website` tool.\\n Use this tool with the `task.id` those tools return to find out whether the build completed or failed. Poll it every 30 seconds or so while `state` is `TASK_STATE_SUBMITTED` or `TASK_STATE_WORKING`.\\n When `state` is `TASK_STATE_FAILED` or `TASK_STATE_REJECTED`, the website does not contain the requested changes: tell the user, using `message` and `reason_code`, and do not publish it. When `state` is `TASK_STATE_CANCELED`, the user stopped the build and changes made before that may be kept: publish only if the user asks to. `reason_code` `insufficient_credits` means the user must get more credits before building again.\\n When `state` is `TASK_STATE_COMPLETED`, the website can be published. A `reason_code` of `iteration_limit` on a completed build means it stopped early and kept the work done so far.
+
+### Example
+
+```typescript
+import {
+    HorizonsWebsitesApi,
+    Configuration
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new HorizonsWebsitesApi(configuration);
+
+let websiteId: string; //The website ID (default to undefined)
+let taskId: string; //The build task ID, returned as `task.id` by the `Create website` and `Edit website` tools (default to undefined)
+
+const { status, data } = await apiInstance.getWebsiteBuildTaskV1(
+    websiteId,
+    taskId
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **websiteId** | [**string**] | The website ID | defaults to undefined|
+| **taskId** | [**string**] | The build task ID, returned as &#x60;task.id&#x60; by the &#x60;Create website&#x60; and &#x60;Edit website&#x60; tools | defaults to undefined|
+
+
+### Return type
+
+**HorizonsV1WebsitesBuildTaskResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getWebsiteListV1**
 > Array<HorizonsV1WebsitesWebsiteResource> getWebsiteListV1()
 
@@ -226,7 +283,7 @@ This endpoint does not have any parameters.
 # **getWebsiteV1**
 > HorizonsV1WebsitesWebsiteUrlResource getWebsiteV1()
 
-Get the link for the user to open their website in Hostinger AI Builder interface.\\n Use this tool when the user wants the link to an existing website, or when you need its website URL before or after editing it.\\n `is_in_progress` is true while changes are being generated or the website is being published; wait until it is false before publishing. `is_generating` is true while changes are being generated, and `actions_in_progress` has `website_publish` while the website is being published. `published_at` is when the website was last published, `is_template` is whether its published pages show the \"Use template\" banner, and `has_ecommerce_store` is whether it has an online store.\\n Websites can be edited with the `Edit website` tool, or by the user in Hostinger AI Builder interface in the provided website URL.
+Get the link for the user to open their website in Hostinger AI Builder interface.\\n Use this tool when the user wants the link to an existing website, or when you need its website URL before or after editing it.\\n `is_in_progress` is true while changes are being generated or the website is being published; wait until it is false before publishing. `is_generating` is true while changes are being generated, and `actions_in_progress` has `website_publish` while the website is being published. `is_generating` turns false whether the build completed or failed: use the `Get website build task` tool to learn its outcome. `published_at` is when the website was last published, `is_template` is whether its published pages show the \"Use template\" banner, and `has_ecommerce_store` is whether it has an online store.\\n Websites can be edited with the `Edit website` tool, or by the user in Hostinger AI Builder interface in the provided website URL.
 
 ### Example
 
@@ -279,7 +336,7 @@ const { status, data } = await apiInstance.getWebsiteV1(
 # **publishWebsiteV1**
 > HorizonsV1WebsitesPublishedWebsiteResource publishWebsiteV1()
 
-Publish a Hostinger AI Builder website so its latest changes go live.\\n Use this tool when the user asks to publish, deploy or make their website live.\\n This tool starts the publish process and returns the URL the website will be live on. Publishing happens asynchronously and takes a few minutes.\\n Set `is_template` only when the user explicitly asks to share the website as a template: true adds a \"Use template\" banner to its published pages that copies the website into the visitor\'s own account, and false removes it. Leave it out to keep the current setting.\\n After invoking this tool, your chat reply must be EXACTLY 1 sentence summarizing that the website is being published and you should provide the published URL to the user immediately.
+Publish a Hostinger AI Builder website so its latest changes go live.\\n Use this tool when the user asks to publish, deploy or make their website live.\\n If you created or edited the website in this conversation, first check its build with the `Get website build task` tool and publish only when its `state` is `TASK_STATE_COMPLETED`. After a failed build, tell the user instead of publishing.\\n This tool starts the publish process and returns the URL the website will be live on. Publishing happens asynchronously and takes a few minutes.\\n Set `is_template` only when the user explicitly asks to share the website as a template: true adds a \"Use template\" banner to its published pages that copies the website into the visitor\'s own account, and false removes it. Leave it out to keep the current setting.\\n After invoking this tool, your chat reply must be EXACTLY 1 sentence summarizing that the website is being published and you should provide the published URL to the user immediately.
 
 ### Example
 
