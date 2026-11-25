@@ -23,7 +23,7 @@ const configuration = new Configuration();
 const apiInstance = new DNSPropagationApi(configuration);
 
 let domain: string; //Domain or host name to check, either a domain or a subdomain (default to undefined)
-let type: string; //DNS record type to check. One of: A, AAAA, CNAME, MX, SRV, TXT, CAA (default to undefined)
+let type: string; //DNS record type to check, uppercase. One of: A, AAAA, CAA, CNAME, DNAME, DNSKEY, HTTPS, LOC, MX, NS, PTR, SOA, SRV, SSHFP, SVCB, TLSA, TXT, URI. PTR takes the reverse name, e.g. 10.2.0.192.in-addr.arpa, not the IP address. SOA exists only at a zone\'s apex. DS and ALIAS cannot be checked. (default to undefined)
 
 const { status, data } = await apiInstance.checkDNSRecordPropagationV1(
     domain,
@@ -36,7 +36,7 @@ const { status, data } = await apiInstance.checkDNSRecordPropagationV1(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain** | [**string**] | Domain or host name to check, either a domain or a subdomain | defaults to undefined|
-| **type** | [**string**] | DNS record type to check. One of: A, AAAA, CNAME, MX, SRV, TXT, CAA | defaults to undefined|
+| **type** | [**string**] | DNS record type to check, uppercase. One of: A, AAAA, CAA, CNAME, DNAME, DNSKEY, HTTPS, LOC, MX, NS, PTR, SOA, SRV, SSHFP, SVCB, TLSA, TXT, URI. PTR takes the reverse name, e.g. 10.2.0.192.in-addr.arpa, not the IP address. SOA exists only at a zone\&#39;s apex. DS and ALIAS cannot be checked. | defaults to undefined|
 
 
 ### Return type
