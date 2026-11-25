@@ -6,6 +6,7 @@ All URIs are relative to *https://developers.hostinger.com*
 |------------- | ------------- | -------------|
 |[**createInstanceV1**](#createinstancev1) | **POST** /api/gpu/v1/instances | Create instance|
 |[**deleteInstanceV1**](#deleteinstancev1) | **DELETE** /api/gpu/v1/instances/{instanceId} | Delete instance|
+|[**getInstanceCredentialsV1**](#getinstancecredentialsv1) | **GET** /api/gpu/v1/instances/{instanceId}/credentials | Get instance credentials|
 |[**getInstanceDetailsV1**](#getinstancedetailsv1) | **GET** /api/gpu/v1/instances/{instanceId} | Get instance details|
 |[**getInstanceMetricsV1**](#getinstancemetricsv1) | **GET** /api/gpu/v1/instances/{instanceId}/metrics | Get instance metrics|
 |[**getInstancesV1**](#getinstancesv1) | **GET** /api/gpu/v1/instances | Get instances|
@@ -115,6 +116,61 @@ const { status, data } = await apiInstance.deleteInstanceV1(
 |**200** | Success empty response |  -  |
 |**401** | Unauthenticated response |  -  |
 |**404** | Error response |  -  |
+|**500** | Error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getInstanceCredentialsV1**
+> GPUV1InstanceCredentialsResource getInstanceCredentialsV1()
+
+Retrieve SSH connection credentials (hostname, port, username and password) of a specified GPU instance.  Credentials become available once the instance is provisioned; until then the endpoint responds with `409 Conflict`, so retry later.  Use this endpoint to connect to a GPU instance over SSH.
+
+### Example
+
+```typescript
+import {
+    GPUInstancesApi,
+    Configuration
+} from '@hostinger/sdk';
+
+const configuration = new Configuration();
+const apiInstance = new GPUInstancesApi(configuration);
+
+let instanceId: number; //GPU instance ID (default to undefined)
+
+const { status, data } = await apiInstance.getInstanceCredentialsV1(
+    instanceId
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **instanceId** | [**number**] | GPU instance ID | defaults to undefined|
+
+
+### Return type
+
+**GPUV1InstanceCredentialsResource**
+
+### Authorization
+
+[apiToken](../README.md#apiToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Success response |  -  |
+|**401** | Unauthenticated response |  -  |
+|**404** | Error response |  -  |
+|**409** | Conflict response. &#x60;Retry-After&#x60;, when present, is the number of seconds to wait before retrying. |  * Retry-After - Seconds to wait before retrying the request <br>  |
 |**500** | Error response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
