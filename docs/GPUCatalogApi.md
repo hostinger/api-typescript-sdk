@@ -4,56 +4,9 @@ All URIs are relative to *https://developers.hostinger.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**getPoolGroupsV1**](#getpoolgroupsv1) | **GET** /api/gpu/v1/pools/groups | Get pool groups|
 |[**getPoolInstanceTypesV1**](#getpoolinstancetypesv1) | **GET** /api/gpu/v1/pools/{poolId}/instances | Get pool instance types|
 |[**getPoolListV1**](#getpoollistv1) | **GET** /api/gpu/v1/pools | Get pool list|
 |[**getPoolOSTemplatesV1**](#getpoolostemplatesv1) | **GET** /api/gpu/v1/pools/{poolId}/instances/{poolInstanceId}/os-templates | Get pool OS templates|
-
-# **getPoolGroupsV1**
-> Array<GPUV1PoolPoolGroupResource> getPoolGroupsV1()
-
-Retrieve GPU pool groups, ordered by name.  Each group bundles the pools of one GPU model and lists its currently available pools, whether any of them is available and the lowest hourly price, in credits, among its instance types. The price is returned even when the group is out of stock.  Use this endpoint to show which GPU models can be ordered and from what price.
-
-### Example
-
-```typescript
-import {
-    GPUCatalogApi,
-    Configuration
-} from '@hostinger/sdk';
-
-const configuration = new Configuration();
-const apiInstance = new GPUCatalogApi(configuration);
-
-const { status, data } = await apiInstance.getPoolGroupsV1();
-```
-
-### Parameters
-This endpoint does not have any parameters.
-
-
-### Return type
-
-**Array<GPUV1PoolPoolGroupResource>**
-
-### Authorization
-
-[apiToken](../README.md#apiToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Success response |  -  |
-|**401** | Unauthenticated response |  -  |
-|**500** | Error response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPoolInstanceTypesV1**
 > Array<GPUV1PoolPoolInstanceResource> getPoolInstanceTypesV1()
